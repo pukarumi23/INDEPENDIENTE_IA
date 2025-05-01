@@ -13,13 +13,13 @@ let handler = async (m, { conn, args }) => {
   try {
     if (/image|video/g.test(mime) && q.download) {
       if (/video/.test(mime) && (q.msg || q).seconds > 11)
-        return conn.reply(m.chat, '[  ■ ] El video no puede durar más de *10 segundos*', m, rcanal)
+        return conn.reply(m.chat, '[ ■ ] El video no puede durar más de *10 segundos*', m, rcanal)
       buffer = await q.download()
     } else if (args[0] && isUrl(args[0])) {
       const res = await fetch(args[0])
       buffer = await res.buffer()
     } else {
-      return conn.reply(m.chat,'[  ■ ] Responde a una *imagen o video*.', m, rcanal)
+      return conn.reply(m.chat,'[ ■ ] Responde a una *imagen o video*.', m, rcanal)
     }
     await m.react('🕓')
 
