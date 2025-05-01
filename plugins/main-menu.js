@@ -28,11 +28,11 @@ const defaultMenu = {
   before: `
   *─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
-“ Hola *%name* soy *el alfeñique*, %greeting ”
+“ Hola *%name* soy *INDEPENDIETE-BOT*, %greeting ”
 
 ╭── ︿︿︿︿︿ *⭒   ⭒   ⭒   ⭒   ⭒   ⭒*
 ┊ ‹‹ *Hello* :: *%name*
-┊•*⁀➷ °⭒⭒⭒ *【 ✯ el alfeñique ✰ 】*
+┊•*⁀➷ °⭒⭒⭒ *【 ✯ INDEPENDIENTE_BOT ✰ 】*
 ╰─── ︶︶︶︶ ✰⃕  ⌇ *⭒ ⭒ ⭒*   ˚̩̥̩̥*̩̩͙✩
 ┊🍬 [ *Modo* :: *Público*
 ┊📚 [ *Baileys* :: *Multi Device*
