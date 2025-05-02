@@ -1,7 +1,7 @@
 import Starlights from "@StarlightsTeam/Scraper"
 
 let handler = async (m, { conn, args, usedPrefix, command }) => {
-if (!args[0]) return conn.reply(m.chat, '🚩 Ingrese el enlace de un archivo de Mediafire.', m, rcanal)
+if (!args[0]) return conn.reply(m.chat, '🔶 Ingrese el enlace de un archivo de Mediafire.', m, rcanal)
 if (!args[0].match(/mediafire/gi)) return conn.reply(m.chat, 'El enlace deve ser de un archivo de Mediafire.', m, rcanal)
 await m.react('🕓')
 try {
