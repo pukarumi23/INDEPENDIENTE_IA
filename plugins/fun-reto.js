@@ -11,10 +11,7 @@ function pickRandom(list) {
 }
 
 global.bucin = [
-"Pasa el pack de una hormiga",
 "Dile a tus amigos que te vas a vivir a EU y mándame una captura de lo que te haya dicho",
-"Grita desde la ventana que quieres mamar y mándame el vídeo",
-"Escribe el nombre de tu crush",
 "Debes de poner el nombre de mi creador en tu estado de WhatsApp, sin dar contexto",
 "Envíame una fotografía tuya",
 "Debes de dibujar en alguna parte de tu cuerpo el nombre de algún integrante del grupo, luego realiza una foto y envíala",
