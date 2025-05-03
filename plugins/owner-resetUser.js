@@ -11,8 +11,8 @@ let handler = async (m, { conn, text }) => {
 		var number = text
   }
 
-    if(!text && !m.quoted) return m.reply(`🚩 Etiqueta o escribe el número del usuario.`)
-    if(isNaN(number)) return m.reply(`🚩 El número no es válido.`)
+    if(!text && !m.quoted) return m.reply(`🔶 Etiqueta o escribe el número del usuario.`)
+    if(isNaN(number)) return m.reply(`🔶 El número no es válido.`)
 
       try { 
 		if(text) {
@@ -26,7 +26,7 @@ let handler = async (m, { conn, text }) => {
   } finally {
     	let number = user.split('@')[0]
         delete global.global.db.data.users[user]
-        conn.reply(m.chat, `🚩 @${number} fue reiniciado con exito.`, null, { mentions: [user] })
+        conn.reply(m.chat, `🔶 @${number} fue reiniciado con exito.`, null, { mentions: [user] })
     }
     
 }
