@@ -157,7 +157,7 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
     
     // URL de la imagen (puedes reemplazarla con tu propia URL)
-    const imageUrl = 'https://telegra.ph/file/5e7042bf17cde23989e71.jpg'
+    const imageUrl = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1N2ysfAnHDOn09rUQY9Ma_WAZbeGJKbTpQg&s'
     
     // Enviar mensaje con imagen
     await conn.sendMessage(m.chat, {
