@@ -9,7 +9,6 @@ let tags = {
   'rpg': 'Rpg',
   'rg': 'Registro',
   'sticker': 'Sticker',
-  'img': 
   'group': 'Groups',
   'nable': 'On / Off', 
   'premium': 'Premium',
