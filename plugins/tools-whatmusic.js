@@ -27,11 +27,11 @@ let handler = async (m, { conn, usedPrefix, command }) => {
       txt += `	✩   *Titulo* : ${title}${artists ? `\n	✩   *Artists* : ${artists.map(v => v.name).join(', ')}` : ''}`
       txt += `${album ? `\n	✩   *Album* : ${album.name}` : ''}${genres ? `\n	✩   *Genero* : ${genres.map(v => v.name).join(', ')}` : ''}\n`
       txt += `	✩   *Fecha de lanzamiento* : ${release_date}\n\n`
-      txt += `> 🚩 *${textbot}*`
+      txt += `> 🔶 *${textbot}*`
   await conn.sendFile(m.chat, vid.thumbnail, 'thumbnail.jpg', txt, m, null, rcanal)
   await conn.sendFile(m.chat, url, title2 + '.mp3', null, m, false, { mimetype: 'audio/mpeg', asDocument: user.useDocument })
   await m.react('✅')
-  } else return conn.reply(m.chat, `🚩 Etiqueta un audio o video de poca duración con el comando *${usedPrefix + command}* para ver que música contiene.`, m, rcanal)
+  } else return conn.reply(m.chat, `🔶 Etiqueta un audio o video de poca duración con el comando *${usedPrefix + command}* para ver que música contiene.`, m, rcanal)
 }
 handler.help = ['whatmusic *<audio/video>*']
 handler.tags = ['tools']
