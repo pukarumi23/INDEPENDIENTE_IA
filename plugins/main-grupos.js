@@ -6,13 +6,13 @@ const more = String.fromCharCode(8206)
 const readMore = more.repeat(4001)
 let txt = `*Hola!, te invito a unirte a los grupos oficiales de del Bot para convivir con la comunidad :D*
 
-1- 【 ✯ el alfeñique ✰ 】
+1- 【 ✯ INDEPENDIENTE_BOT ✰ 】
 *✰* ${global.group}
 
-2- 【 ✯ el alfeñique ✰ 】- ll
+2- 【 ✯ INDEPENDIENTE_BOT ✰ 】- ll
 *✰* ${global.group2}
 
-3- 【 ✯ el alfeñique✰ 】- lll
+3- 【 ✯ INDEPENDIENTE_BOT✰ 】- lll
 *✰* ${global.group3}
 
 *─ׄ─ׅ─ׄ⭒─ׄ─ׅ─ׄ⭒─ׄ─ׅ─ׄ⭒─ׄ─ׅ─ׄ⭒─ׄ─ׅ─ׄ⭒─ׄ─ׅ─ׄ*
