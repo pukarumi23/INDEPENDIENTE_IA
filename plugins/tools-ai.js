@@ -2,7 +2,7 @@ import Starlights from '@StarlightsTeam/Scraper'
 import fetch from 'node-fetch'
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
-if (!text) return conn.reply(m.chat,`*🚩 Ingrese su petición*\n*🪼 Ejemplo de uso:* ${usedPrefix + command} como hacer estrella de papel`, m, rcanal)
+if (!text) return conn.reply(m.chat,`*🔶 Ingrese su petición*\n*🪼 Ejemplo de uso:* ${usedPrefix + command} como hacer estrella de papel`, m, rcanal)
 await m.react('💬')
 try {
 let { msg } = await Starlights.openAi(text)
