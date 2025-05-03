@@ -122,7 +122,7 @@ let handler = async(m, { conn, usedPrefix, command, text }) => {
     }
     m.reply(Output_String)
   } else {
-    m.reply(`🚩 Ingresa un texto mas el comando.\n\nEjemplo\nEncode: *${usedPrefix}${command}* encode Hola mundo\nDecode : *${usedPrefix}${command}* decode •••• • •-•• •-•• --- / •-- --- •-• •-•• -••`)
+    m.reply(`🔶 Ingresa un texto mas el comando.\n\nEjemplo\nEncode: *${usedPrefix}${command}* encode Hola mundo\nDecode : *${usedPrefix}${command}* decode •••• • •-•• •-•• --- / •-- --- •-• •-•• -••`)
   }
 }
 
