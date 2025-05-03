@@ -25,7 +25,7 @@ const defaultMenu = {
   before: `
   *🔶♾️⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯♾️🔶*
 
-" Hola *%name* soy *INDEPENDIENTE_BOT*, %greeting "
+" Hola *%name* soy *Independiente_bot*, %greeting "
 
 ╭── ︿︿︿︿︿ *⭒   ⭒   ⭒   ⭒   ⭒   ⭒*
 ┊ ‹‹ *Hello* :: *%name*
