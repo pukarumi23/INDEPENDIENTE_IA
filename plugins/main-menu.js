@@ -6,15 +6,18 @@ let tags = {
   'main': 'Information',
   'search': 'Search',
   'game': 'Games',
+  'serbot': 'Sub-Bots',
   'rpg': 'Rpg',
   'rg': 'Registro',
   'sticker': 'Sticker',
+  'img': 'Image',
   'group': 'Groups',
   'nable': 'On / Off', 
   'premium': 'Premium',
   'downloader': 'Download',
   'tools': 'Tools',
-  'fun': 'Fun', 
+  'fun': 'Fun',
+  'nsfw': 'Nsfw', 
   'cmd': 'Database',
   'owner': 'Creador', 
   'audio': 'Audios', 
@@ -23,26 +26,26 @@ let tags = {
 
 const defaultMenu = {
   before: `
-  *🔶♾️⎯⎯⎯⎯⎯⎯⎯♾️🔶*
+  *💮💙🥢⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯🥢💙💮*
 
-" Hola *%name* soy *INDEPENDIENTE_BOT*, %greeting "
+" Hola *%name* soy *💙HATSUNE MIKU💙*, %greeting "
 
-╭── ◈◈◈◈◈◈◈◈◈◈◈🔶
+╭── ︿︿︿︿︿ *⭒   ⭒   ⭒   ⭒   ⭒   ⭒*
 ┊ ‹‹ *Hello* :: *%name*
-┊01 *INDEPENDIENTE_BOT*
-╰─── independiente bot🔶
-┊🔶 [ *Modo* :: *Público*
-┊🔶 [ *Baileys* :: *Multi Device*
-┊🔶 [ *Tiempo Activo* :: *%muptime*
-┊🔶 [ *Usuarios* :: *%totalreg*
+┊01 *💙HATSUNE MIKU CHANNEL💙*
+╰─── 💙 Hatsune Miku 💙
+┊B [ *Modo* :: *Público*
+┊V [ *Baileys* :: *Multi Device*
+┊H [ *Tiempo Activo* :: *%muptime*
+┊3 [ *Usuarios* :: *%totalreg*
 ╰─────────
 %readmore
 *─ׄ─ׅ─ׄ─⭒ L I S T A  -  M E N Ú S ⭒─ׄ─ׅ─ׄ─*
 `.trimStart(),
-  header: '╔═══>🔥【 𝑴𝑬𝑵Ú メ %category 】❇🔥<═══╗\n║╔───────────────────────',
-  body: '║❇❇⋙┊%cmd %islimit %isPremium\n',
-  footer: '║───────────────────────────\n╚═════════⁜⁜⁜═════════╝\n',
-  after: `> independiente bot`,
+  header: '╔═══◇◆🥬【 𝑴𝑬𝑵Ú メ %category 】🥬◆◇═══╗\n║╔───────────────────────',
+  body: '║🌱┊%cmd %islimit %isPremium\n',
+  footer: '║───────────────────────────\n╚═════════◆◇◆═════════╝\n',
+  after: `> 💙 HATSUNE MIKU BOT`,
 }
 
 let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
@@ -157,7 +160,7 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
     
     // URL de la imagen (puedes reemplazarla con tu propia URL)
-    const imageUrl = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1N2ysfAnHDOn09rUQY9Ma_WAZbeGJKbTpQg&s'
+    const imageUrl = 'https://telegra.ph/file/5e7042bf17cde23989e71.jpg'
     
     // Enviar mensaje con imagen
     await conn.sendMessage(m.chat, {
@@ -166,7 +169,7 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
       mentions: [m.sender],
       contextInfo: {
         externalAdReply: {
-          title: 'INDEPENDIENTE_BOT',
+          title: 'HATSUNE MIKU BOT',
           body: 'Menú Principal',
           thumbnailUrl: imageUrl,
           sourceUrl: 'https://example.com',
@@ -175,7 +178,7 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
       }
     }, { quoted: m })
 
-    await m.react('🔶')
+    await m.react('💙')
 
   } catch (e) {
     console.error('Error en el menú:', e)
