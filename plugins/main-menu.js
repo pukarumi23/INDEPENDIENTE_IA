@@ -30,7 +30,7 @@ const defaultMenu = {
 
 " Hola *%name* soy *INDEPENDIENTE_BOT*, %greeting "
 
-╭── ︿︿︿︿︿ *⭒   ⭒   ⭒   ⭒   ⭒   ⭒*
+╭── ︿︿︿︿︿ ※※※※※※※※※※※※※※※※※※※※
 ┊ ‹‹ *Hello* :: *%name*
 ┊01 *INDEPENDIENTE_BOT*
 ╰─── independiente bot
