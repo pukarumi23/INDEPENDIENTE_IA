@@ -1,9 +1,9 @@
 import { webp2mp4 } from '../lib/webp2mp4.js'
 import { ffmpeg } from '../lib/converter.js'
 let handler = async (m, { conn }) => {
-if (!m.quoted) return conn.reply(m.chat, '🚩 Responde a un *Sticker Animado.*', m, rcanal)
+if (!m.quoted) return conn.reply(m.chat, '🔶 Responde a un *Sticker Animado.*', m, rcanal)
 let mime = m.quoted.mimetype || ''
-if (!/webp|audio/.test(mime)) return conn.reply(m.chat, '🚩 Responde a un *Sticker Animado.*', m, rcanal)
+if (!/webp|audio/.test(mime)) return conn.reply(m.chat, '🔶 Responde a un *Sticker Animado.*', m, rcanal)
 await m.react('🕓')
 try {
 let media = await m.quoted.download()
