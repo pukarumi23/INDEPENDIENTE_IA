@@ -74,7 +74,6 @@ let handler = async (m, { conn, usedPrefix }) => {
        txt += `┊🪴 [ *Moneda* :: *Estrellas ⭐*\n`
        txt += `┊🍟 [ *Prefijo* :: *【  ${usedPrefix}  】*\n`
        txt += `┊✨ [ *Plugins* :: *${totalf}*\n`
-       txt += `┊☁️ [ *Sub-Bots* :: *${totalUsers || '0'}*\n`
        txt += `┊🍟 [ *Plataforma* :: *${platform()}*\n`
        txt += `┊🍁 [ *RAM* :: *${format(totalmem() - freemem())} / ${format(totalmem())}*\n`
        txt += `┊🌸 [ *FreeRAM* :: *${format(freemem())}*\n`
