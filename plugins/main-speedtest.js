@@ -17,7 +17,7 @@ let handler = async (m, { conn }) => {
         txt += `	✩   *Ping* : ${ping}\n`
         txt += `	✩   *Speed Descarga* : ${downloadSpeed}\n`
         txt += `	✩   *Speed Subida* : ${uploadSpeed}\n\n`
-        txt += `> 🚩 ${textbot}`
+        txt += `> 🔶 ${textbot}`
 
     await conn.reply(m.chat, txt, m, rcanal)
     await m.react('✅')
