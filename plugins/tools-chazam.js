@@ -31,7 +31,7 @@ let txt = `*\`-• C H A Z A M - M U S I C •-\`*\n\n` +
 `* 🍟 *Thumbnail:* ${app.thumbnail}`
 m.reply(txt)
 } else {
-return conn.reply(m.chat, '🚩 Responde a un *Audio/Video*', m, rcanal)
+return conn.reply(m.chat, '🔶 Responde a un *Audio/Video*', m, rcanal)
 }}
 handler.help = ['chazam *<Audio/Video>*']
 handler.tags = ['tools']
@@ -74,7 +74,7 @@ let txt = `*\`-• C H A Z A M - M U S I C •-\`*\n\n` +
 `🍟 *Link:* ${app.url}`
 m.reply(txt)
 } else {
-return conn.reply(m.chat, '🚩 Responde a un *Audio/Video.*', m, rcanal)
+return conn.reply(m.chat, '🔶 Responde a un *Audio/Video.*', m, rcanal)
 }}
 handler.help = ['chazam *<Audio/Video>*']
 handler.tags = ['tools']
