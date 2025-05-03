@@ -23,7 +23,7 @@ let tags = {
 
 const defaultMenu = {
   before: `
-  *🔶♾️⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯♾️🔶*
+  *🔶♾️⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯♾️🔶*
 
 " Hola *%name* soy *Independiente_bot*, %greeting "
 
@@ -37,7 +37,7 @@ const defaultMenu = {
 ┊3 [ *Usuarios* :: *%totalreg*
 ╰─────────
 %readmore
-*▭▭▭▭ L I S T A  -  M E N Ú S ⭒▭▭▭▭▭*
+*▭▭ L I S T A  -  M E N Ú S ⭒▭▭*
 `.trimStart(),
   header: '╔═══◇◆🔥【 𝑴𝑬𝑵Ú メ %category 】🔥◆◇═══╗\n║╔───────────────────────',
   body: '║🔆┊%cmd %islimit %isPremium\n',
