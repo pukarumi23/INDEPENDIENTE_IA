@@ -1,6 +1,6 @@
 let handler = async (m, { conn, text, usedPrefix, command, participants }) => {
 	text = text.split(`|`)
-	if (!text || text.length == 1) return conn.reply(m.chat, `🚩 Ingresa la pregunta y opciones.\n\n*Ejemplo:*\n*${usedPrefix + command}* INDEPENDIENTE_IA es el mejor bot de WhatsApp?|si|no`, m, rcanal)
+	if (!text || text.length == 1) return conn.reply(m.chat, `🔶 Ingresa la pregunta y opciones.\n\n*Ejemplo:*\n*${usedPrefix + command}* INDEPENDIENTE_IA es el mejor bot de WhatsApp?|si|no`, m, rcanal)
 	if (text.length > 1 && text.length < 3) return m.reply(`Mínimo *2* opciones.`)
 	if (text.length > 13) return m.reply(`Máximo *12* opciones`)
 	let array = []
