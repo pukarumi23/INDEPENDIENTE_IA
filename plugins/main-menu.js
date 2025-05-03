@@ -23,24 +23,24 @@ let tags = {
 
 const defaultMenu = {
   before: `
-  *🔸♾️⎯⎯⎯⎯⎯⎯⎯♾️🔸*
+  *🔶♾️⎯⎯⎯⎯⎯⎯⎯♾️🔶*
 
 " Hola *%name* soy *INDEPENDIENTE_BOT*, %greeting "
 
-╭── ◈◈◈◈◈◈◈◈◈◈◈◈
+╭── ◈◈◈◈◈◈◈◈◈◈◈🔶
 ┊ ‹‹ *Hello* :: *%name*
 ┊01 *INDEPENDIENTE_BOT*
-╰─── independiente bot
-┊B [ *Modo* :: *Público*
-┊V [ *Baileys* :: *Multi Device*
-┊H [ *Tiempo Activo* :: *%muptime*
-┊3 [ *Usuarios* :: *%totalreg*
+╰─── independiente bot🔶
+┊🔶 [ *Modo* :: *Público*
+┊🔶 [ *Baileys* :: *Multi Device*
+┊🔶 [ *Tiempo Activo* :: *%muptime*
+┊🔶 [ *Usuarios* :: *%totalreg*
 ╰─────────
 %readmore
 *─ׄ─ׅ─ׄ─⭒ L I S T A  -  M E N Ú S ⭒─ׄ─ׅ─ׄ─*
 `.trimStart(),
-  header: '╔═══▶🔆【 𝑴𝑬𝑵Ú メ %category 】🔆◀═══╗\n║╔───────────────────────',
-  body: '║❇️┊%cmd %islimit %isPremium\n',
+  header: '╔═══▶🔥【 𝑴𝑬𝑵Ú メ %category 】❇🔥◀═══╗\n║╔───────────────────────',
+  body: '║❇❇️┊%cmd %islimit %isPremium\n',
   footer: '║───────────────────────────\n╚═════════⁜⁜⁜═════════╝\n',
   after: `> independiente bot`,
 }
@@ -175,7 +175,7 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
       }
     }, { quoted: m })
 
-    await m.react('🔆')
+    await m.react('🔶')
 
   } catch (e) {
     console.error('Error en el menú:', e)
