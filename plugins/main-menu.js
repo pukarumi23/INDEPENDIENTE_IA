@@ -6,18 +6,15 @@ let tags = {
   'main': 'Information',
   'search': 'Search',
   'game': 'Games',
-  'serbot': 'Sub-Bots',
   'rpg': 'Rpg',
   'rg': 'Registro',
   'sticker': 'Sticker',
-  'img': 'Image',
   'group': 'Groups',
   'nable': 'On / Off', 
   'premium': 'Premium',
   'downloader': 'Download',
   'tools': 'Tools',
   'fun': 'Fun',
-  'nsfw': 'Nsfw', 
   'cmd': 'Database',
   'owner': 'Creador', 
   'audio': 'Audios', 
@@ -26,14 +23,14 @@ let tags = {
 
 const defaultMenu = {
   before: `
-  *💮💙🥢⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯🥢💙💮*
+  *🔶♾️⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯♾️🔶*
 
-" Hola *%name* soy *💙HATSUNE MIKU💙*, %greeting "
+" Hola *%name* soy *🔶HATSUNE MIKU🔶*, %greeting "
 
 ╭── ︿︿︿︿︿ *⭒   ⭒   ⭒   ⭒   ⭒   ⭒*
 ┊ ‹‹ *Hello* :: *%name*
-┊01 *💙HATSUNE MIKU CHANNEL💙*
-╰─── 💙 Hatsune Miku 💙
+┊01 *🔶HATSUNE MIKU CHANNEL🔶*
+╰─── 🔶 Hatsune Miku 🔶
 ┊B [ *Modo* :: *Público*
 ┊V [ *Baileys* :: *Multi Device*
 ┊H [ *Tiempo Activo* :: *%muptime*
@@ -42,10 +39,10 @@ const defaultMenu = {
 %readmore
 *─ׄ─ׅ─ׄ─⭒ L I S T A  -  M E N Ú S ⭒─ׄ─ׅ─ׄ─*
 `.trimStart(),
-  header: '╔═══◇◆🥬【 𝑴𝑬𝑵Ú メ %category 】🥬◆◇═══╗\n║╔───────────────────────',
-  body: '║🌱┊%cmd %islimit %isPremium\n',
+  header: '╔═══◇◆🔥【 𝑴𝑬𝑵Ú メ %category 】🔥◆◇═══╗\n║╔───────────────────────',
+  body: '║🔆┊%cmd %islimit %isPremium\n',
   footer: '║───────────────────────────\n╚═════════◆◇◆═════════╝\n',
-  after: `> 💙 HATSUNE MIKU BOT`,
+  after: `> 🔶 HATSUNE MIKU BOT`,
 }
 
 let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
@@ -178,7 +175,7 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
       }
     }, { quoted: m })
 
-    await m.react('💙')
+    await m.react('🔶')
 
   } catch (e) {
     console.error('Error en el menú:', e)
