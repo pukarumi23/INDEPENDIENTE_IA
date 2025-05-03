@@ -2,7 +2,7 @@ import { sticker } from '../lib/sticker.js'
 import axios from 'axios'
 
 let handler = async (m, { conn, text }) => {
-   if (!text) return conn.reply(m.chat, '🚩 Ingresa un texto junto al comando.', m, rcanal)
+   if (!text) return conn.reply(m.chat, '🔶 Ingresa un texto junto al comando.', m, rcanal)
    if (text.length > 30) return conn.reply(m.chat, 'Solo se permiten 30 caracteres como Máximo.', m, rcanal)
    await m.react('🕓')
    try {
