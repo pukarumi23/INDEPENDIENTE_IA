@@ -1,7 +1,7 @@
 
 let handler = async (m, { conn, args, usedPrefix, command }) => {
 	
-	if (global.db.data.chats[m.chat].expired < 1) return m.reply(`🚩 Este grupo no está configurado para caducar.`)
+	if (global.db.data.chats[m.chat].expired < 1) return m.reply(`🔶 Este grupo no está configurado para caducar.`)
     let who
     if (m.isGroup) who = args[1] ? args[1] : m.chat
     else who = args[1]
