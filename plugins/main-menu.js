@@ -25,12 +25,12 @@ const defaultMenu = {
   before: `
   *🔶♾️⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯♾️🔶*
 
-" Hola *%name* soy *🔶HATSUNE MIKU🔶*, %greeting "
+" Hola *%name* soy *🔶INDEPENDIENTE_BOT🔶*, %greeting "
 
 ╭── ︿︿︿︿︿ *⭒   ⭒   ⭒   ⭒   ⭒   ⭒*
 ┊ ‹‹ *Hello* :: *%name*
-┊01 *🔶HATSUNE MIKU CHANNEL🔶*
-╰─── 🔶 Hatsune Miku 🔶
+┊01 *🔶INDEPENDIENTE🔶*
+╰─── 🔶 alfeñique 🔶
 ┊B [ *Modo* :: *Público*
 ┊V [ *Baileys* :: *Multi Device*
 ┊H [ *Tiempo Activo* :: *%muptime*
@@ -42,7 +42,7 @@ const defaultMenu = {
   header: '╔═══◇◆🔥【 𝑴𝑬𝑵Ú メ %category 】🔥◆◇═══╗\n║╔───────────────────────',
   body: '║🔆┊%cmd %islimit %isPremium\n',
   footer: '║───────────────────────────\n╚═════════◆◇◆═════════╝\n',
-  after: `> 🔶 HATSUNE MIKU BOT`,
+  after: `> 🔶 INDEPENDIENTE_BOT`,
 }
 
 let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
