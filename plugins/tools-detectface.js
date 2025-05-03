@@ -8,7 +8,7 @@ let q = m.quoted ? m.quoted : m;
 let mime = (q.msg || q).mimetype || '';
 
 if (!mime.startsWith('image/')) { 
-return m.reply('🚩 Responde a una *Imagen.*');
+return m.reply('🔶 Responde a una *Imagen.*');
 }
   
 await m.react('🕓');
@@ -27,7 +27,7 @@ let { results } = json;
 let txt = '`乂  D E T E C T - F A C E`\n\n'
     txt += `	✩  *Forma* : ${results.form}\n` 
     txt += `	✩  *Genero* : ${results.gender}\n\n` 
-    txt += `> 🚩 *${textbot}*`
+    txt += `> 🔶 *${textbot}*`
 
 await conn.reply(m.chat, txt, m, null, rcanal)
 await m.react('✅')
