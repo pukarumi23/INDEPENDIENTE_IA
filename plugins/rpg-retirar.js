@@ -16,7 +16,7 @@ let handler = async (m, { args }) => {
    if (user.bank < count) return m.reply(`Solo tienes *${user.bank} ⭐ Estrellas* en el Banco.`)
    user.bank -= count * 1
    user.limit += count * 1
-   await m.reply(`🚩 Retiraste *${count} ⭐ Estrellas* del Banco.`)
+   await m.reply(`🔶 Retiraste *${count} ⭐ Estrellas* del Banco.`)
 }
 
 handler.help = ['retirar']
