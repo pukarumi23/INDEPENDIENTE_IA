@@ -1,7 +1,7 @@
 import fetch from 'node-fetch'
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
-    if (!text) return conn.reply(m.chat, '🚩 Ingrese el nombre de usuario de Twitter.\n\n`Ejemplo:`\n' + `> *${usedPrefix + command}* Fernanfloo`, m, rcanal)
+    if (!text) return conn.reply(m.chat, '🔶 Ingrese el nombre de usuario de Twitter.\n\n`Ejemplo:`\n' + `> *${usedPrefix + command}* Fernanfloo`, m, rcanal)
     await m.react('🕓')
 
     try {
@@ -13,7 +13,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
                 txt += `  ✩   *Usuario* : ${json.names}\n`
                 txt += `  ✩   *Bio* : ${json.bio}\n`
                 txt += `  ✩   *Url* : ${json.link}\n\n`
-                txt += `> 🚩 *${textbot}*`
+                txt += `> 🔶 *${textbot}*`
                 
             await conn.reply(m.chat, txt, m, rcanal)
             await m.react('✅')
