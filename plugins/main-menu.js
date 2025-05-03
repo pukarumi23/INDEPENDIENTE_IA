@@ -41,7 +41,7 @@ const defaultMenu = {
 `.trimStart(),
   header: '╔═══◇◆🔥【 𝑴𝑬𝑵Ú メ %category 】🔥◆◇═══╗\n║╔──────────────────',
   body: '║🔆┊%cmd %islimit %isPremium\n',
-  footer: '║─────────────────────\n╚═══════◆◇◆═══════╝\n',
+  footer: '║──────────────────\n╚═══════◆◇◆═══════╝\n',
   after: `> 🔶 INDEPENDIENTE_BOT`,
 }
 
