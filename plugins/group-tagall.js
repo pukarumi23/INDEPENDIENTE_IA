@@ -10,13 +10,13 @@ const handler = async (m, {isOwner, isAdmin, conn, text, participants, args, com
   }
   const pesan = args.join` `;
   const oi = `${pesan}`;
-  let teks = `*Hatsune Miku 💙*\n\n *Integrantes :  ${participants.length}* ${oi}\n\n┌──⭓ Como tan muchachos?\n`;
+  let teks = `*INDEPENDIENTE_BOT 🔶*\n\n *Integrantes :  ${participants.length}* ${oi}\n\n┌──⫸ Como tan muchachos?\n`;
   for (const mem of participants) {
-    teks += `🌱 @${mem.id.split('@')[0]}\n`;
+    teks += `🔆 @${mem.id.split('@')[0]}\n`;
   }
-  teks += `└───────⭓
+  teks += `└───────⫸
 
-© Hatsune Miku| By (ㅎㅊDEPOOLㅊㅎ)`;
+© Independiente_bot| power By (chaski)`;
   conn.sendMessage(m.chat, {text: teks, mentions: participants.map((a) => a.id)} );
 };
 handler.help = ['tagall <mesaje>', 'invocar <mesaje>'];
