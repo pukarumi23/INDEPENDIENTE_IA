@@ -1,7 +1,7 @@
 import { youtubedlv2, youtubedl } from '@bochilteam/scraper'
 import fetch from 'node-fetch'
 let handler = async (m, { conn, args, command }) => {
-  if (!args[0]) return conn.reply(m.chat, `🚩 Ingresa un enlace del vídeo de YouTube junto al comando.`, m, rcanal)
+  if (!args[0]) return conn.reply(m.chat, `🔶 Ingresa un enlace del vídeo de YouTube junto al comando.`, m, rcanal)
   await m.react('🕓')
   let v = args[0]
 
