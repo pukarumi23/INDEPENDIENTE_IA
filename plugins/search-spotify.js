@@ -1,7 +1,7 @@
 import Starlights from '@StarlightsTeam/Scraper'
 
 let handler = async (m, { conn, command, args, text, usedPrefix }) => {
-  if (!text) return conn.reply(m.chat, '🚩 Ingresa el título de un video o canción de YouTube.\n\n`Ejemplo:`\n' + `> *${usedPrefix + command}* Gemini Aaliyah - If Only`, m, rcanal)
+  if (!text) return conn.reply(m.chat, '🔶 Ingresa el título de un video o canción de YouTube.\n\n`Ejemplo:`\n' + `> *${usedPrefix + command}* Gemini Aaliyah - If Only`, m, rcanal)
   await m.react('🕓')
   try {
     let res = await Starlights.spotifySearch(text)
