@@ -166,7 +166,7 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
       mentions: [m.sender],
       contextInfo: {
         externalAdReply: {
-          title: 'HATSUNE MIKU BOT',
+          title: 'INDEPENDIENTE_BOT',
           body: 'Menú Principal',
           thumbnailUrl: imageUrl,
           sourceUrl: 'https://example.com',
