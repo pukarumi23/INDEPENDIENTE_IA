@@ -10,15 +10,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
             "Noche silenciosa\nel aroma del jazmín\npenetra mi alma"
         ],
         soneto: [
-            "Cuando me paro a contemplar mi estado\ny a ver los pasos por dó me ha traído...",
-            "¡Oh soledad, dulce y segura amiga!\nconversación de aquellos que en sí mismos..."
-"Te amé en silencio,
-como ama la noche a la luna:
-sin tocarla,
-pero con todo el alma""Tus ojos son el mapa de mi calma,
-\tu risa, el mar que en mi pecho canta.
-\Si estoy contigo, el mundo se detiene,
-y hasta el dolor, sin querer, se marcha."
+       la vida sigue aún que no lo creas
         ],
         verso: [
             "El viento canta entre los árboles\nuna canción que solo yo comprendo",
