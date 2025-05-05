@@ -1,7 +1,7 @@
 let handler = async (m, { conn, usedPrefix, command }) => {
     // Imágenes opcionales para acompañar los poemas
-    let pp = 'https://tinyurl.com/26djysdo'
-    let pp2 = 'https://tinyurl.com/294oahv9'
+    let pp = 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhM1OEzwpC4oTeMi0UkeLXGq2KCK-p2OhqTXoKAvimFzHfZUP3fQmAqJQSLxEKK55v48lsHsS2PmuFyiClM0MOxGQqHdKQYb7T0qi01d2nOtf4RLxzR-xxj0YuKRm8NEWNtlj5TP0c2MiwX/s1600/Vallejo.jpg'
+    let pp2 = 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhM1OEzwpC4oTeMi0UkeLXGq2KCK-p2OhqTXoKAvimFzHfZUP3fQmAqJQSLxEKK55v48lsHsS2PmuFyiClM0MOxGQqHdKQYb7T0qi01d2nOtf4RLxzR-xxj0YuKRm8NEWNtlj5TP0c2MiwX/s1600/Vallejo.jpg'
     
     // Tipos de poemas disponibles
     const tiposPoemas = {
