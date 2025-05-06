@@ -10,7 +10,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     users[who].banned = true
     conn.reply(m.chat, `💙 @${who.split`@`[0]} ha sido baneado con exito, ya no podrá volver a usar mis comandos.`, m, { mentions: [who] })
 }
-handler.help = ['mban *@user*']
+handler.help = ['ban *@user*']
 handler.tags = ['owner']
 handler.command = /^banuser$/i
 handler.rowner = true
