@@ -9,7 +9,7 @@ let handler = async (m, {conn, usedPrefix}) => {
     let img = await (await fetch(`https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHtttaSHOYt9ixwknQINA-_jL7BVXqbQ48UQ&s`)).buffer()
     let txt = ` –  *intis -  U S E R*\n\n`
         txt += `┌  ✩  *Nombre* : ${user.name}\n`
-        txt += `│  ✩  *Estrellas* : ${toNum(user.limit)} ( *${user.limit}* )\n`
+        txt += `│  ✩  *intis* : ${toNum(user.limit)} ( *${user.limit}* )\n`
         txt += `│  ✩  *Bank* : ${toNum(user.bank)} ( *${user.bank}* )\n`
         txt += `└  ✩  *XP* : ${toNum(user.exp)} ( *${user.exp}* )`
     let mentionedJid = [who]
@@ -18,7 +18,7 @@ await conn.sendFile(m.chat, img, 'thumbnail.jpg', txt, m, null, rcanal)
 }
 handler.help = ['intis']
 handler.tags = ['rpg']
-handler.command = ['coins', 'wallet', 'cartera', 'estrellas', 'stars', 'bal', 'balance']
+handler.command = ['coins', 'wallet', 'cartera', 'intis', 'bal', 'balance']
 handler.register = true 
 export default handler
 
