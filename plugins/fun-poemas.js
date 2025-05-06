@@ -1,7 +1,7 @@
 let handler = async (m, { conn, usedPrefix, command }) => {
     // Imágenes opcionales para acompañar los poemas
     let pp = 'https://images.app.goo.gl/tqHFf'
-    let pp2 = 'https://images.app.goo.gl/Chwdd'
+    let pp2 = 'https://images.app.goo.gl/tqHFf'
     
     // Tipos de poemas disponibles
     const tiposPoemas = {
