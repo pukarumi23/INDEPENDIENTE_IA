@@ -6,8 +6,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
     // Tipos de poemas disponibles
     const tiposPoemas = {
         haiku: [
-            "El viejo estanque\nuna rana se zambulle\nel sonido del agua",
-            "Noche silenciosa\nel aroma del jazmín\npenetra mi alma"
+            "Noche silenciosa\nel aroma del jazmín\n que penetra mi alma"
         ],
         soneto: [
        "En tus ojos me perdí,\ncomo el río va al mar,\nsin saber cómo fui,\nni querer regresar."
