@@ -1,58 +1,33 @@
+
+
 import MessageType from '@whiskeysockets/baileys'
-
 let impuesto = 0.02
-
 let handler = async (m, { conn, text }) => {
-    // Verificar si es un mensaje citado o mencionado
-    let who = m.mentionedJid[0] || m.quoted?.sender
-    if (!who && m.isGroup) throw '🔶 Menciona al usuario con *@user* o responde a su mensaje.'
-    if (!who && !m.isGroup) who = m.sender // Para chats privados
-    
-    // Validar que el usuario objetivo existe en la base de datos
-    if (!global.db.data.users[who]) throw '🔶 El usuario no está registrado en la base de datos.'
-    
-    // Obtener y validar la cantidad
-    let txt = text.replace('@' + (who.split`@`[0] || ''), '').trim()
-    if (!txt) throw '🔶 Ingrese la cantidad de *⭐ intis* que quiere transferir.'
-    
+    let who
+    if (m.isGroup) who = m.mentionedJid[0]
+    else who = m.chat
+    if (!who) throw '💙 Menciona al usuario con *@user.*'
+    let txt = text.replace('@' + who.split`@`[0], '').trim()
+    if (!txt) throw '💙 Ingrese la cantidad de *🌱 intis* que quiere transferir.'
+    if (isNaN(txt)) throw 'Sólo números.'
     let poin = parseInt(txt)
-    if (isNaN(poin) || poin < 1) throw '🔶 Cantidad inválida. Mínimo es *1 ⭐ intis*.'
-    
-    // Calcular impuesto y total
+    let limit = poin
     let imt = Math.ceil(poin * impuesto)
-    let total = poin + imt
+    limit += imt
+    if (limit < 1) throw '💙 Mínimo es *1 🌱 intis*.'
+    let users = global.db.data.users
+    if (limit > users[m.sender].limit) throw 'No tienes suficientes *🌱 intis* para dar.'
+    users[m.sender].limit -= limit
+    users[who].limit += poin
     
-    // Verificar saldo
-    let sender = global.db.data.users[m.sender]
-    if (sender.limit < total) throw `🔶 No tienes suficientes *⭐ intis* (Necesitas ${total}, tienes ${sender.limit}).`
-    
-    // Realizar la transferencia
-    sender.limit -= total
-    global.db.data.users[who].limit += poin
-    
-    // Enviar confirmación
-    await conn.sendMessage(m.chat, {
-        text: `💠 *Transferencia realizada* 💠\n\n` +
-              `➖ Enviado: *${poin}* ⭐ intis\n` +
-              `➖ Impuesto (2%): *${imt}* ⭐ intis\n` +
-              `➖ Total debitado: *${total}* ⭐ intis`,
-        mentions: [who]
-    }, { quoted: m })
-    
-    // Notificar al receptor si es diferente del remitente
-    if (who !== m.sender) {
-        await conn.sendMessage(who, {
-            text: `💠 *Has recibido una transferencia* 💠\n\n` +
-                  `➕ Cantidad: *${poin}* ⭐ intis\n` +
-                  `👤 Remitente: @${m.sender.split('@')[0]}`,
-            mentions: [m.sender]
-        })
-    }
+    await m.reply(`*${-poin}* 🌱 intis
+Impuesto 2% : *${-imt}* 🌱 intis
+Total gastado: *${-limit}* 🌱 intis`)
+    conn.fakeReply(m.chat, `*+${poin}* *🌱 intis.*`, who, m.text)
 }
-
-handler.help = ['darintis @usuario cantidad', 'transferir @usuario cantidad']
-handler.tags = ['economy']
-handler.command = ['darcoins', 'darintis', 'transferir', 'transfer']
-handler.register = true
+handler.help = ['darcebollines *@user <cantidad>*']
+handler.tags = ['rpg']
+handler.command = ['darcoins', 'darcebollines']
+handler.register = true 
 
 export default handler
