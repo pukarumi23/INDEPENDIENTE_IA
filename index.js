@@ -10,7 +10,7 @@ import cfonts from 'cfonts'
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const require = createRequire(__dirname)
 
-cfonts.say('independiente\nALFEÑIQUE', {
+cfonts.say('INDEPENDIENTE_BOT\nINDEPENDIENTE_BOT', {
   font: 'chrome',
   align: 'center',
   gradient: ['red', 'magenta']
