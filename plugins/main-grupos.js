@@ -7,13 +7,13 @@ const readMore = more.repeat(4001)
 let txt = `*Hola!, te invito a unirte a los grupos oficiales de del Bot para convivir con la comunidad :D*
 
 1- 【 ✯ INDEPENDIENTE_BOT ✰ 】
-*✰* ${global.group}
+*✰* ${global.https://chat.whatsapp.com/FwtE0kKhDf076Ar1LYDlyI}
 
 2- 【 ✯ INDEPENDIENTE_BOT ✰ 】- ll
-*✰* ${global.group2}
+*✰* ${global.https://chat.whatsapp.com/FwtE0kKhDf076Ar1LYDlyI}
 
 3- 【 ✯ INDEPENDIENTE_BOT✰ 】- lll
-*✰* ${global.group3}
+*✰* ${global.https://chat.whatsapp.com/FwtE0kKhDf076Ar1LYDlyI}
 
 *─ׄ─ׅ─ׄ⭒─ׄ─ׅ─ׄ⭒─ׄ─ׅ─ׄ⭒─ׄ─ׅ─ׄ⭒─ׄ─ׅ─ׄ⭒─ׄ─ׅ─ׄ*
 
