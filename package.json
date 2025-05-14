@@ -1,5 +1,5 @@
 {
-	"name": "Ai Hoshino",
+	"name": "INDEPENDIENTE_BOT",
 	"version": "6.0.0",
 	"description": "Simple WhatsApp Bot Multi Device",
 	"main": "index.js",
@@ -23,16 +23,16 @@
 		"MD",
 		"baileys-md"
 	],
-	"homepage": "https://github.com/StarlightsTeam/Ai-Hoshino",
+	"homepage": "https://github.com/pukarumi23/INDEPENDIENTE_BOT",
 	"author": {
-		"name": "Irokz Dal ダーク⁩"
+		"name": "RAFAEL ₷⁩"
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/StarlightsTeam/Ai-Hoshino.git"
+		"url": "git+https://github.com/pukarumi23/INDEPENDIENTE_IA.git"
 	},
 	"bugs": {
-		"url": "https://github.com/StarlightsTeam/Ai-Hoshino/issues"
+		"url": "https://github.com/pukarumi23/INDEPENDIENTE_BOT/issues"
 	},
 	"license": "GPL-3.0-or-later",
 	"dependencies": {
