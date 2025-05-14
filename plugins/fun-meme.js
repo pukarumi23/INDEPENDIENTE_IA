@@ -8,6 +8,11 @@ let handler = async (m, { conn, usedPrefix, command }) => {
     "https://vm.tiktok.com/ZMBKuENd9/",
     "https://vm.tiktok.com/ZMBK9kcu5/",
     "https://vm.tiktok.com/ZMBK9Sdjm/",
+    "https://www.tiktok.com/@gekogx/video/7425447559558171909?is_from_webapp=1&sender_device=pc&web_id=7453501864148600326",
+    "https://www.tiktok.com/@revanvr_/video/7474333463487794438?is_from_webapp=1&sender_device=pc&web_id=7453501864148600326",
+    "https://www.tiktok.com/@wikferviz/video/7447432950813134086?is_from_webapp=1&sender_device=pc&web_id=7453501864148600326",
+    "https://www.tiktok.com/@raytx000/video/7103401096684637446?is_from_webapp=1&sender_device=pc&web_id=7453501864148600326",
+    "https://www.tiktok.com/@brandonrodas691/video/7446592544714050821?is_from_webapp=1&sender_device=pc&web_id=7453501864148600326",
   ];
   
   try {
