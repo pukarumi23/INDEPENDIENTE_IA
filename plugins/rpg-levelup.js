@@ -10,11 +10,11 @@ let handler = async (m, { conn }) => {
         let { min, xp, max } = xpRange(user.level, global.multiplier)
         let txt = `
 ╔═══════════════════════
-║  ✨ *PROGRESO DE NIVEL* ✨
+║  🔶 *PROGRESO DE NIVEL* 🔶
 ╠═══════════════════════
-║  🏷️ *Nombre:* ${name}
-║  🎚️ *Nivel actual:* ${user.level}
-║  ⚡ *Experiencia:* ${user.exp - min}/${xp}
+║  🔆 *Nombre:* ${name}
+║  🔆 *Nivel actual:* ${user.level}
+║  🔆 *Experiencia:* ${user.exp - min}/${xp}
 ╠═══════════════════════
 ║  📈 *Faltan ${max - user.exp} XP*
 ║  para subir al siguiente nivel!
@@ -31,11 +31,11 @@ let handler = async (m, { conn }) => {
 ╔═══════════════════════
 ║  🎉 *¡NIVEL SUBIDO!* 🎉
 ╠═══════════════════════
-║  🏷️ *Nombre:* ${name}
-║  ⬅️ *Nivel anterior:* ${before}
-║  ➡️ *Nuevo nivel:* ${user.level}
+║  🔆 *Nombre:* ${name}
+║  🔆 *Nivel anterior:* ${before}
+║  🔆 *Nuevo nivel:* ${user.level}
 ╠═══════════════════════
-║  💡 Sigue interactuando
+║  🔥 Sigue interactuando
 ║  con *INDEPENDIENTE_BOT* para
 ║  subir más de nivel!
 ╚═══════════════════════
