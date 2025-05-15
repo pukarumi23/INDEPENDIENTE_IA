@@ -3,32 +3,49 @@ import fetch from 'node-fetch'
 
 let handler = async (m, { conn }) => {
     let img = await (await fetch(`https://th.bing.com/th/id/OIG1.Rd6AfLoMfpvBvI1nxgfn?cb=iwp2&pid=ImgGn`)).buffer()
-	let name = conn.getName(m.sender)
+    let name = conn.getName(m.sender)
     let user = global.db.data.users[m.sender]
+    
     if (!canLevelUp(user.level, user.exp, global.multiplier)) {
         let { min, xp, max } = xpRange(user.level, global.multiplier)
-        let txt = ` –  *L E V E L U P  -  U S E R*\n\n`
-            txt += `┌  ✩  *Nombre* : ${name}\n`
-            txt += `│  ✩  *Nivel* : ${user.level}\n`
-            txt += `└  ✩  *XP* : ${user.exp - min}/${xp}\n\n`
-            txt += `Te falta *${max - user.exp}* de *💫 XP* para subir de nivel`
-await conn.sendFile(m.chat, img, 'thumbnail.jpg', txt, m, null, rcanal)
+        let txt = `
+╔═══════════════════════
+║  ✨ *PROGRESO DE NIVEL* ✨
+╠═══════════════════════
+║  🏷️ *Nombre:* ${name}
+║  🎚️ *Nivel actual:* ${user.level}
+║  ⚡ *Experiencia:* ${user.exp - min}/${xp}
+╠═══════════════════════
+║  📈 *Faltan ${max - user.exp} XP*
+║  para subir al siguiente nivel!
+╚═══════════════════════
+`.trim()
+        await conn.sendFile(m.chat, img, 'thumbnail.jpg', txt, m, null, rcanal)
     }
+    
     let before = user.level * 1
     while (canLevelUp(user.level, user.exp, global.multiplier)) user.level++
+    
     if (before !== user.level) {
-       let txt = ` –  *L E V E L U P  -  U S E R*\n\n`
-           txt += `┌  ✩  *Nombre* : ${conn.getName(m.sender)}\n`
-           txt += `│  ✩  *Nivel Anterior* : ${before}\n`
-           txt += `└  ✩  *Nivel Actual* : ${user.level}\n\n`
-           txt += `🔶 Cuanto más interactúes con *el alfeñique*, mayor será tu Nivel`
-
-await conn.sendFile(m.chat, img, 'thumbnail.jpg', txt, m, null, rcanal)
-        }
+        let txt = `
+╔═══════════════════════
+║  🎉 *¡NIVEL SUBIDO!* 🎉
+╠═══════════════════════
+║  🏷️ *Nombre:* ${name}
+║  ⬅️ *Nivel anterior:* ${before}
+║  ➡️ *Nuevo nivel:* ${user.level}
+╠═══════════════════════
+║  💡 Sigue interactuando
+║  con *INDEPENDIENTE_BOT* para
+║  subir más de nivel!
+╚═══════════════════════
+`.trim()
+        await conn.sendFile(m.chat, img, 'thumbnail.jpg', txt, m, null, rcanal)
     }
+}
+
 handler.help = ['levelup']
 handler.tags = ['rpg']
-
 handler.command = ['nivel', 'lvl', 'levelup', 'level'] 
 handler.register = true 
 export default handler
