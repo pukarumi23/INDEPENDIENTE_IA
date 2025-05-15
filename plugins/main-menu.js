@@ -29,12 +29,12 @@ const defaultMenu = {
 
 ╭──◈◈◈◈◈◈◈◈◈◈◈◈◈
 ┊ ‹‹ *Hello* :: *%name*
-┊01 *🔶INDEPENDIENTE🔶*
+┊⫸ *🔶INDEPENDIENTE🔶*
 ╰─── 🔶 alfeñique 🔶
-┊B [ *Modo* :: *Público*
-┊V [ *Baileys* :: *Multi Device*
-┊H [ *Tiempo Activo* :: *%muptime*
-┊3 [ *Usuarios* :: *%totalreg*
+┊⫸ [ *Modo* :: *Público*
+┊⫸ [ *Baileys* :: *Multi Device*
+┊⫸ [ *Tiempo Activo* :: *%muptime*
+┊⫸ [ *Usuarios* :: *%totalreg*
 ╰─────────
 %readmore
 *▭ L I S T A  -  M E N Ú S ⭒▭*
