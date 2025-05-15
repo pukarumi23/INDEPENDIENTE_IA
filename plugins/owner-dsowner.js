@@ -31,6 +31,6 @@ const handler = async (m, { conn, usedPrefix }) => {
 };
 //handler.tags = ['owner']
 //handler.help = ['dsowner']
-handler.command = /^(del_reg_in_session_owner|dsowner|clearallsession)$/i;
+handler.command = /^(del_reg_in_session_owner|"dsowner""ds"|clearallsession)$/i;
 handler.rowner = true
 export default handler;
