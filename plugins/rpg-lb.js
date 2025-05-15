@@ -19,9 +19,10 @@ let handler = async (m, { conn, args, participants }) => {
     return '▰'.repeat(filled) + '▱'.repeat(length - filled)
   }
   
-  // Función para formatear números con estilo
+  // Función para formatear números correctamente
   const formatNumber = num => {
-    return new Intl.NumberFormat('es-ES').format(num)
+    if (isNaN(num)) return '0'
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
   }
   
   // Emojis para las posiciones
@@ -40,10 +41,11 @@ ${sortedLim.slice(0, len).map(({ jid, limit }, i) => {
   let name = participants.some(p => jid === p.jid) ? conn.getName(jid) : jid.split`@`[0]
   let medal = getMedal(i)
   let bar = progressBar(limit, sortedLim[0].limit, 12)
-  return `${medal} ${name} ➟ *${formatNumber(limit)}* 🪙\n   ${bar} ${Math.round((limit/sortedLim[0].limit)*100)}%`
+  let percentage = Math.round((limit/sortedLim[0].limit)*100)
+  return `${medal} ${name} ➟ *${formatNumber(limit)}* 🪙\n   ${bar} ${percentage}%`
 }).join('\n')}
 
-📊 *Tu posición:* #${usersLim.indexOf(m.sender) + 1} de ${usersLim.length}
+📊 *Tu posición:* #${formatNumber(usersLim.indexOf(m.sender) + 1)} de ${formatNumber(usersLim.length)}
 
 ══════════════════
 
@@ -52,10 +54,11 @@ ${sortedExp.slice(0, len).map(({ jid, exp }, i) => {
   let name = participants.some(p => jid === p.jid) ? conn.getName(jid) : jid.split`@`[0]
   let medal = getMedal(i)
   let bar = progressBar(exp, sortedExp[0].exp, 12)
-  return `${medal} ${name} ➟ *${formatNumber(exp)}* XP\n   ${bar} ${Math.round((exp/sortedExp[0].exp)*100)}%`
+  let percentage = Math.round((exp/sortedExp[0].exp)*100)
+  return `${medal} ${name} ➟ *${formatNumber(exp)}* XP\n   ${bar} ${percentage}%`
 }).join('\n')}
 
-📊 *Tu posición:* #${usersExp.indexOf(m.sender) + 1} de ${usersExp.length}
+📊 *Tu posición:* #${formatNumber(usersExp.indexOf(m.sender) + 1)} de ${formatNumber(usersExp.length)}
 
 ══════════════════
 
@@ -64,10 +67,11 @@ ${sortedLevel.slice(0, len).map(({ jid, level }, i) => {
   let name = participants.some(p => jid === p.jid) ? conn.getName(jid) : jid.split`@`[0]
   let medal = getMedal(i)
   let bar = progressBar(level, sortedLevel[0].level, 12)
-  return `${medal} ${name} ➟ Nivel *${formatNumber(level)}*\n   ${bar} ${Math.round((level/sortedLevel[0].level)*100)}%`
+  let percentage = Math.round((level/sortedLevel[0].level)*100)
+  return `${medal} ${name} ➟ Nivel *${formatNumber(level)}*\n   ${bar} ${percentage}%`
 }).join('\n')}
 
-📊 *Tu posición:* #${usersLevel.indexOf(m.sender) + 1} de ${usersLevel.length}
+📊 *Tu posición:* #${formatNumber(usersLevel.indexOf(m.sender) + 1)} de ${formatNumber(usersLevel.length)}
 
 ══════════════════
 💡 *Sigue activo para subir en el ranking!*
