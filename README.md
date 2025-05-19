@@ -1,6 +1,6 @@
 <h1 align="center">【 🔶INDEPENDIENTE_BOT🔶 】</p>
 <p>
-        <img src= "storage/img/chaski-kun 1.jpeg" width="300" height="200" alt="Foto>
+        <img src= "storage/img/chaski-kun 1.jpeg" width="200" height="200" alt="Foto>
     </p>
     <p align="center">
         <a href="#"><img title="simple-whatsapp-bot" src="https://img.shields.io/badge/-SIMPLE--WHATSAPP--BOT-green?colorA=%23ff0000&colorB=%23017e40&style=for-the-badge"></a>
