@@ -1,6 +1,6 @@
 <h1 align="center">【 🔶INDEPENDIENTE_BOT🔶 】</p>
 <p>
-        <img src= "https://i.ibb.co/C5DNBRH/file.jpg">
+        <img src= "https://i.ibb.co/https://sl.bing.net/gJnBzoIPZIG">
     </p>
     <p align="center">
         <a href="#"><img title="simple-whatsapp-bot" src="https://img.shields.io/badge/-SIMPLE--WHATSAPP--BOT-green?colorA=%23ff0000&colorB=%23017e40&style=for-the-badge"></a>
@@ -41,7 +41,7 @@
 
 - Si la Bot tiene algún contactame ฅ^•ﻌ•^ฅ
 
-* <a href="https://wa.me/5218261000681"><img alt="WhatsApp" src="https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white"/></a>
+* <a href="https://wa.me/51939508653"><img alt="WhatsApp" src="https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white"/></a>
 
 ---------
 
@@ -50,7 +50,7 @@
 
 - Si quieres probar la Bot antes de instalar
 
-* <a href="https://chat.whatsapp.com/CqdWTXmS702JD31SQzr0Ph"><img alt="Group" src="https://img.shields.io/badge/Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white"/></a>
+* <a href="https://chat.whatsapp.com/FwtE0kKhDf076Ar1LYDlyI"><img alt="Group" src="https://img.shields.io/badge/Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white"/></a>
 
 ---------
 
