@@ -58,8 +58,8 @@ let handler = async (m, { conn, usedPrefix, __dirname }) => {
 *L I S T A - D E - C O M A N D O S* 
 
 ╭┈❊🔆⃘🔥۬۫◌⃘⃪◌۬۫🔥̸ٜ࣭🔶❊❊❊ׅ┈╮  
-◈  🄸🄽🄳🄴🄿🄴🄽🄳🄸🄴🄽🅃🄴       
-|⩶▭▭▭▭▭▭▭▭▭▭▭
+◈……🄸🄽🄳🄴🄿🄴🄽🄳🄸🄴🄽🅃🄴……◈       
+⌊…………………………………………………………⌋
 ├ׁ̟̇❍✎ .menu
 ├ׁ̟̇❍✎ .runtime
 ├ׁ̟̇❍✎ .script
