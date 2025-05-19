@@ -1,4 +1,4 @@
-<h1 align="center">【 ✯ Ai Hoshino - MD ✰ 】</p>
+<h1 align="center"> 🔶INDEPENDIENTE_BOT🔶 </p>
 <p>
         <img src= "https://i.ibb.co/C5DNBRH/file.jpg">
     </p>
