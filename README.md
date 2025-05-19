@@ -1,6 +1,6 @@
 <h1 align="center">【 🔶INDEPENDIENTE_BOT🔶 】</p>
 <p>
-        <img src= "https://i.ibb.co/https://sl.bing.net/gJnBzoIPZIG">
+        <img src= "https://sl.bing.net/ha4NVi23gqG">
     </p>
     <p align="center">
         <a href="#"><img title="simple-whatsapp-bot" src="https://img.shields.io/badge/-SIMPLE--WHATSAPP--BOT-green?colorA=%23ff0000&colorB=%23017e40&style=for-the-badge"></a>
