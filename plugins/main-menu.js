@@ -29,9 +29,9 @@ const defaultMenu = {
   before: `
   *💮💙🥢⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯🥢💙💮*
 
-"Hola *%name* soy *💙HATSUNE MIKU💙*, %greeting"
+“ Hola *%name* soy *💙HATSUNE MIKU💙*, %greeting ”
 
-╭── ︿︿︿︿︿ *⭒   ⭒   ⭒   ⭒   ⭒   ⭒*
+╭── ︿︿︿︿︿ *⭒   ⭒   ⭒   ⭒   ⭒   ⭒*
 ┊ ‹‹ *Hello* :: *%name*
 ┊01 *💙HATSUNE MIKU CHANNEL💙*
 ╰─── 💙 Hatsune Miku 💙
@@ -46,12 +46,12 @@ const defaultMenu = {
   header: '╔═══◇◆🥬【 𝑴𝑬𝑵Ú メ %category 】🥬◆◇═══╗\n║╔───────────────────────',
   body: '║🌱┊%cmd %islimit %isPremium\n',
   footer: '║───────────────────────────\n╚═════════◆◇◆═════════╝\n',
-  after: `> 💙 Hatsune Miku Bot`,
+  after: `> 💙 ${textbot}`,
 }
 
 let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
   try {
-    let _package = JSON.parse(await promises.readFile(join(__dirname, '../package.json')).catch(_ => ({})) || {}
+    let _package = JSON.parse(await promises.readFile(join(__dirname, '../package.json')).catch(_ => ({}))) || {}
     let { exp, limit, level } = global.db.data.users[m.sender]
     let { min, xp, max } = xpRange(level, global.multiplier)
     let name = await conn.getName(m.sender)
@@ -142,16 +142,14 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
       totalexp: exp,
       xp4levelup: max - exp,
       github: _package.homepage ? _package.homepage.url || _package.homepage : '[unknown github url]',
-      level, limit, name, weton, week, date, dateIslamic, time, totalreg, rtotalreg,
-      readmore: readMore,
-      greeting: getGreeting()
+      greeting, level, limit, name, weton, week, date, dateIslamic, time, totalreg, rtotalreg,
+      readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    
-    let pp = 'https://telegra.ph/file/5e7042bf17cde23989e71.jpg'
+
     let img = `./storage/img/menu.jpg`
     await m.react('💙')
-    await conn.sendFile(m.chat, img, 'thumbnail.jpg', text.trim(), m)
+    await conn.sendFile(m.chat, img, 'thumbnail.jpg', text.trim(), m, null, rcanal)
 
   } catch (e) {
     conn.reply(m.chat, '❎ Lo sentimos, el menú tiene un error.', m)
@@ -175,38 +173,32 @@ function clockString(ms) {
   return [h, m, s].map(v => v.toString().padStart(2, 0)).join(':')
 }
 
-function getGreeting() {
-  let ase = new Date();
-  let hour = ase.getHours();
-  let greeting;
-  
-  switch(hour) {
-    case 0: greeting = 'una linda noche 🌙'; break;
-    case 1: greeting = 'una linda noche 💤'; break;
-    case 2: greeting = 'una linda noche 🦉'; break;
-    case 3: greeting = 'una linda mañana ✨'; break;
-    case 4: greeting = 'una linda mañana 💫'; break;
-    case 5: greeting = 'una linda mañana 🌅'; break;
-    case 6: greeting = 'una linda mañana 🌄'; break;
-    case 7: greeting = 'una linda mañana 🌅'; break;
-    case 8: greeting = 'una linda mañana 💫'; break;
-    case 9: greeting = 'una linda mañana ✨'; break;
-    case 10: greeting = 'un lindo dia 🌞'; break;
-    case 11: greeting = 'un lindo dia 🌨'; break;
-    case 12: greeting = 'un lindo dia ❄'; break;
-    case 13: greeting = 'un lindo dia 🌤'; break;
-    case 14: greeting = 'una linda tarde 🌇'; break;
-    case 15: greeting = 'una linda tarde 🥀'; break;
-    case 16: greeting = 'una linda tarde 🌹'; break;
-    case 17: greeting = 'una linda tarde 🌆'; break;
-    case 18: greeting = 'una linda noche 🌙'; break;
-    case 19: greeting = 'una linda noche 🌃'; break;
-    case 20: greeting = 'una linda noche 🌌'; break;
-    case 21: greeting = 'una linda noche 🌃'; break;
-    case 22: greeting = 'una linda noche 🌙'; break;
-    case 23: greeting = 'una linda noche 🌃'; break;
-    default: greeting = 'un lindo día'; break;
-  }
-  
-  return "espero que tengas " + greeting;
+var ase = new Date();
+var hour = ase.getHours();
+switch(hour){
+  case 0: hour = 'una linda noche 🌙'; break;
+  case 1: hour = 'una linda noche 💤'; break;
+  case 2: hour = 'una linda noche 🦉'; break;
+  case 3: hour = 'una linda mañana ✨'; break;
+  case 4: hour = 'una linda mañana 💫'; break;
+  case 5: hour = 'una linda mañana 🌅'; break;
+  case 6: hour = 'una linda mañana 🌄'; break;
+  case 7: hour = 'una linda mañana 🌅'; break;
+  case 8: hour = 'una linda mañana 💫'; break;
+  case 9: hour = 'una linda mañana ✨'; break;
+  case 10: hour = 'un lindo dia 🌞'; break;
+  case 11: hour = 'un lindo dia 🌨'; break;
+  case 12: hour = 'un lindo dia ❄'; break;
+  case 13: hour = 'un lindo dia 🌤'; break;
+  case 14: hour = 'una linda tarde 🌇'; break;
+  case 15: hour = 'una linda tarde 🥀'; break;
+  case 16: hour = 'una linda tarde 🌹'; break;
+  case 17: hour = 'una linda tarde 🌆'; break;
+  case 18: hour = 'una linda noche 🌙'; break;
+  case 19: hour = 'una linda noche 🌃'; break;
+  case 20: hour = 'una linda noche 🌌'; break;
+  case 21: hour = 'una linda noche 🌃'; break;
+  case 22: hour = 'una linda noche 🌙'; break;
+  case 23: hour = 'una linda noche 🌃'; break;
 }
+var greeting = "espero que tengas " + hour;
