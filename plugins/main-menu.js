@@ -60,13 +60,13 @@ let handler = async (m, { conn, usedPrefix, __dirname }) => {
 ╭┈❊🔆⃘🔥۬۫◌⃘⃪◌۬۫🔥̸ٜ࣭🔶❊❊❊ׅ┈╮  
 ◈🄸🄽🄳🄴🄿🄴🄽🄳🄸🄴🄽🅃🄴◈       
 .⌊…………………………………………………⌋
-├ׁ̟̇❍✎ .menu
-├ׁ̟̇❍✎ .runtime
-├ׁ̟̇❍✎ .script
-├ׁ̟̇❍✎ .grupos
-├ׁ̟̇❍✎ .infobot
-├ׁ̟̇❍✎ .menu
-├ׁ̟̇❍✎ .speedtest
+█✹➤ .menu
+█✹➤.runtime
+█✹➤ .script
+█✹➤ .grupos
+█✹➤ .infobot
+█✹➤ .menu
+█✹➤ .speedtest
 ╚▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬▭╝
 
 ╭┈❊🔆⃘🔥۬۫◌⃘⃪◌۬۫🔥̸ٜ࣭🔶❊❊❊ׅ┈╮  
