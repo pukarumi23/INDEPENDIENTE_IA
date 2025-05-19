@@ -36,7 +36,7 @@ let handler = async (m, { conn, usedPrefix, __dirname }) => {
 Ⅱ🔥 𝕴ℕ𝖉𝖊𝖕𝖊𝖓𝖉𝖎𝖊𝖓𝖙𝖊_𝕭𝖔𝖙 🔥Ⅱ 
 ⅡⅡ∑☁︎｡⋆｡˚☽✧｡⋆｡˚☁︎｡⋆｡˚ⅡⅡⅡⅡ  
 
-"Hola *${taguser}* soy *Hatsune Miku*, ${saludo}"
+"Hola *${taguser}* soy *INDEPENDIENTE*, ${saludo}"
 `
 
     let botInfo = `
@@ -58,7 +58,7 @@ let handler = async (m, { conn, usedPrefix, __dirname }) => {
 *L I S T A - D E - C O M A N D O S* 
 
 ╭┈❊🔆⃘🔥۬۫◌⃘⃪◌۬۫🔥̸ٜ࣭🔶❊❊❊ׅ┈╮  
-◈…🄸🄽🄳🄴🄿🄴🄽🄳🄸🄴🄽🅃🄴…◈       
+◈🄸🄽🄳🄴🄿🄴🄽🄳🄸🄴🄽🅃🄴◈       
 ⌊……………………………………………………⌋
 ├ׁ̟̇❍✎ .menu
 ├ׁ̟̇❍✎ .runtime
