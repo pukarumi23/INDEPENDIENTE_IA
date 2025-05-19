@@ -40,22 +40,22 @@ let handler = async (m, { conn, usedPrefix, __dirname }) => {
 `
 
     let botInfo = `
- ▰▰▰▰▰▰▰▰▰▰▰▰▰
+ ▰▰▰▰▰▰▰▰▰▰▰▰▰▰
 ■╭┈❊🔆⃘🔥۬۫◌⃘⃪◌۬۫🔥̸ٜ࣭🔶❊❊❊ׅ┈╮  
 ■  🄸🄽🄳🄴🄿🄴🄽🄳🄸🄴🄽🅃🄴       
 ■╰┈❊🔆⃘🔥۬۫◌⃘⃪◌۬۫🔥̸ٜ࣭🔶❊❊❊ׅ┈╯  
-▰▰▰▰▰▰▰▰▰▰▰▰▰
-├ׁ̟̇❍✎ *🅅ᴏᴄᴀʟᴏɪᴅ:*INDEPENDIENTE
-├ׁ̟̇❍✎ *Creador:* CHASKI
-├ׁ̟̇❍✎ *🄼ᴏᴅᴏ:* Digital
-├ׁ̟̇❍✎ *🄻ɪʙʀᴇʀɪᴀ:* Crypton
-├ׁ̟̇❍✎ *🄱ᴏᴛ:* ${conn.user.jid == global.conn.user.jid ? 'Principal' : 'MikuBot'}
-├ׁ̟̇❍✎ *🅃ɪᴇᴍᴘᴏ ᴀᴄᴛɪᴠᴏ:* ${uptime}
-├ׁ̟̇❍✎ *🅄sᴜᴀʀɪᴏs:* ${totalreg}
+▰▰▰▰▰▰▰▰▰▰▰▰▰▰
+├ׁ̟̇❍⫸ *🅅ᴏᴄᴀʟᴏɪᴅ:*INDEPENDIENTE
+├ׁ̟̇❍⫸ *Creador:* CHASKI
+├ׁ̟̇❍⫸ *🄼ᴏᴅᴏ:* Digital
+├ׁ̟̇❍⫸ *🄻ɪʙʀᴇʀɪᴀ:* Crypton
+├ׁ̟̇❍⫸ *🄱ᴏᴛ:* ${conn.user.jid == global.conn.user.jid ? 'Principal' : 'MikuBot'}
+├ׁ̟̇❍⫸ *🅃ɪᴇᴍᴘᴏ ᴀᴄᴛɪᴠᴏ:* ${uptime}
+├ׁ̟̇❍⫸ *🅄sᴜᴀʀɪᴏs:* ${totalreg}
 ╚▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬▭╝
 *─ׄ─ׄ─⭒─ׄ─ׅ─ׄ⭒─ׄ─ׄ─⭒─ׄ─ׄ─⭒─ׄ─ׅ─*
 
-        *L I S T A  -  D E  -  C O M A N D O S* 
+*L I S T A - D E - C O M A N D O S* 
 
 .    ╭─ׅ─ׅ┈ ─๋︩︪─🎵⃘̸࣭ٜ࣪࣪࣪۬◌⃘⃪۪֟፝֯۫۫۫۬◌⃘࣭ٜ࣪🎵︎︎︎̸─ׅ─ׅ┈ ─๋︩︪─╮
 ╭╼🎧⬪࣪ꥈ𑁍⃪࣭۪ٜ݊݊݊݊݊໑ٜ࣪ 🄼🄸🄺🅄-🄱🄾🅃໑⃪࣭۪ٜ݊݊݊݊𑁍ꥈ࣪⬪🎧
