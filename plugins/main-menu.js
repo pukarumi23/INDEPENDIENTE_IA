@@ -68,11 +68,6 @@ let handler = async (m, { conn, usedPrefix, __dirname }) => {
 .    ╭─ׅ─ׅ┈ ─๋︩︪─🎵⃘̸࣭ٜ࣪࣪࣪۬◌⃘⃪۪֟፝֯۫۫۫۬◌⃘࣭ٜ࣪🎵︎︎︎̸─ׅ─ׅ┈ ─๋︩︪─╮
 ╭╼🎧⬪࣪ꥈ𑁍⃪࣭۪ٜ݊݊݊݊݊໑ٜ࣪ 🄼🄸🄺🅄-🄱🄾🅃໑⃪࣭۪ٜ݊݊݊݊𑁍ꥈ࣪⬪🎧
 ┃֪࣪  ╰─ׅ─ׅ┈ ─๋︩︪─🎵⃘̸࣭ٜ࣪࣪࣪۬◌⃘۪֟፝֯۫۫︎⃪𐇽۫۬💙⃘⃪۪🎵︎︎︎̸─ׅ─ׅ┈ ─๋︩︪─╯   
-├ׁ̟̇❍✎ .githubsearch
-├ׁ̟̇❍✎ .google <búsqueda>
-├ׁ̟̇❍✎ .mercadolibre <búsqueda>
-├ׁ̟̇❍✎ .imagen <query>
-├ׁ̟̇❍✎ .pinterest
 ├ׁ̟̇❍✎ .tiktoksearch <txt>
 ╚▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬▭╝
 
@@ -82,22 +77,6 @@ let handler = async (m, { conn, usedPrefix, __dirname }) => {
 ├ׁ̟̇❍✎ .69 @tag
 ├ׁ̟̇❍✎ .abrazar <@usuario>
 ├ׁ̟̇❍✎ .acertijo
-├ׁ̟̇❍✎ .agarrar @tag
-├ׁ̟̇❍✎ .anal @tag
-├ׁ̟̇❍✎ .sonrojarse @tag
-├ׁ̟̇❍✎ .gay <@tag> | <nombre>
-├ׁ̟̇❍✎ .lesbiana <@tag> | <nombre>
-├ׁ̟̇❍✎ .pajero <@tag> | <nombre>
-├ׁ̟̇❍✎ .pajera <@tag> | <nombre>
-├ׁ̟̇❍✎ .puto <@tag> | <nombre>
-├ׁ̟̇❍✎ .puta <@tag> | <nombre>
-├ׁ̟̇❍✎ .manco <@tag> | <nombre>
-├ׁ̟̇❍✎ .manca <@tag> | <nombre>
-├ׁ̟̇❍✎ .rata <@tag> | <nombre>
-├ׁ̟̇❍✎ .prostituta <@tag> | <nombre>
-├ׁ̟̇❍✎ .prostituto <@tag> | <nombre>
-├ׁ̟̇❍✎ .apostar *<cantidad>*
-├ׁ̟̇❍✎ .chupartetas @tag
 ├ׁ̟̇❍✎ .consejo
 ├ׁ̟̇❍✎ .cum @tag
 ├ׁ̟̇❍✎ .dance *<@user>*
