@@ -17,7 +17,8 @@ let tags = {
   'premium': 'Premium',
   'downloader': 'Download',
   'tools': 'Tools',
-  'fun': 'Fun', 
+  'fun': 'Fun',
+  'nsfw': 'Nsfw', 
   'cmd': 'Database',
   'owner': 'Creador', 
   'audio': 'Audios', 
@@ -26,14 +27,14 @@ let tags = {
 
 const defaultMenu = {
   before: `
-  *🔥♾️⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯♾️🔥*
+  *💮💙🥢⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯🥢💙💮*
 
-“ Hola *%name* soy *🔶INDEPENDIENTE_BOT🔶*, %greeting ”
+“ Hola *%name* soy *💙HATSUNE MIKU💙*, %greeting ”
 
 ╭── ︿︿︿︿︿ *⭒   ⭒   ⭒   ⭒   ⭒   ⭒*
 ┊ ‹‹ *Hello* :: *%name*
-┊01 *🔶INDEPENDIENTE CHANEL🔶*
-╰─── 🔶 INDEPENDIENTE_BOT 🔶
+┊01 *💙HATSUNE MIKU CHANNEL💙*
+╰─── 💙 Hatsune Miku 💙
 ┊B [ *Modo* :: *Público*
 ┊V [ *Baileys* :: *Multi Device*
 ┊H [ *Tiempo Activo* :: *%muptime*
@@ -42,10 +43,10 @@ const defaultMenu = {
 %readmore
 *─ׄ─ׅ─ׄ─⭒ L I S T A  -  M E N Ú S ⭒─ׄ─ׅ─ׄ─*
 `.trimStart(),
-  header: '╔═══◇◆🔥【 𝑴𝑬𝑵Ú メ %category 】🔥◆◇═══╗\n║╔───────────────────────',
-    body: '║🔆┊%cmd %islimit %isPremium\n',
+  header: '╔═══◇◆🥬【 𝑴𝑬𝑵Ú メ %category 】🥬◆◇═══╗\n║╔───────────────────────',
+    body: '║🌱┊%cmd %islimit %isPremium\n',
    footer: '║───────────────────────────\n╚═════════◆◇◆═════════╝\n',
-    after: `> 🔶 ${textbot}`,
+    after: `> 💙 ${textbot}`,
 }
 
 let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
@@ -146,10 +147,23 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
     
-    let pp = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1N2ysfAnHDOn09rUQY9Ma_WAZbeGJKbTpQg&s'
-
-    let img = `./storage/img/teto1`
-    await m.react('🔶')
+    let pp = 'https://telegra.ph/file/5e7042bf17cde23989e71.jpg'
+    let pp2 = 'https://telegra.ph/file/5e7042bf17cde23989e71.jpg'
+    let pp3 = 'https://telegra.ph/file/5e7042bf17cde23989e71.jpg'
+    let pp4 = 'https://telegra.ph/file/5e7042bf17cde23989e71.jpg'
+    let pp5 = 'https://telegra.ph/file/5e7042bf17cde23989e71.jpg'
+    let pp6 = 'https://telegra.ph/file/5e7042bf17cde23989e71.jpg'
+    let pp7 = 'https://telegra.ph/file/5e7042bf17cde23989e71.jpg'
+    let pp8 = 'https://telegra.ph/file/5e7042bf17cde23989e71.jpg'
+    let pp9 = 'https://telegra.ph/file/5e7042bf17cde23989e71.jpg'
+    let pp10 = 'https://telegra.ph/file/5e7042bf17cde23989e71.jpg'
+    let pp11 = 'https://telegra.ph/file/5e7042bf17cde23989e71.jpg'
+    let pp12 = 'https://telegra.ph/file/5e7042bf17cde23989e71.jpg'
+    let pp13 = 'https://telegra.ph/file/5e7042bf17cde23989e71.jpg'
+    let pp14 = 'https://telegra.ph/file/5e7042bf17cde23989e71.jpg'
+    let pp15 = 'https://telegra.ph/file/5e7042bf17cde23989e71.jpg'
+    let img = `./storage/img/menu.jpg`
+    await m.react('💙')
    // await conn.sendMessage(m.chat, { video: { url: [pp, pp2, pp3, pp4, pp5, pp6, pp7, pp8, pp9, pp10, pp11, pp12, pp13, pp14, pp15].getRandom() }, gifPlayback: true, caption: text.trim(), mentions: [m.sender] }, { quoted: estilo })
     await conn.sendFile(m.chat, img, 'thumbnail.jpg', text.trim(), m, null, rcanal)
    //await conn.sendAi(m.chat, botname, textbot, text.trim(), img, img, canal, estilo)
