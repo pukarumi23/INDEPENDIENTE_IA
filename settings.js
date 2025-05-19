@@ -21,9 +21,9 @@ global.prems = []
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
 global.packname = ``
-global.author = '{\n "bot": {\n   "name": "INDEPENDIENTE AI",\n     "author": "rafael",\n   "status_bot": "active"\n }\n}'
+global.author = '{\n "bot": {\n   "name": "INDEPENDIENTE BOT",\n     "author": "Ⅱ◁RAFAEL▷Ⅱ",\n   "status_bot": "active"\n }\n}'
 global.wait = '🐢 *Aɢᴜᴀʀᴅᴇ ᴜɴ ᴍᴏᴍᴇɴᴛᴏ, sᴏʏ ʟᴇɴᴛo... (^人^)*'
-global.botname = 'INDEPENDIENTE'
+global.botname = 'INDEPENDIENTE_BOT'
 global.textbot = `Powered By chaski`
 global.listo = '*Aqui tiene ฅ^•ﻌ•^ฅ*'
 global.namechannel = '🐈==alfeñique=='
@@ -35,9 +35,9 @@ global.miniurl = fs.readFileSync('./storage/img/teto2.webp')
 
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
-global.group = 'https://chat.whatsapp.com/BEPs8oHgBQY0T6RC5zuuZu'
-global.group2 = 'https://chat.whatsapp.com/BEPs8oHgBQY0T6RC5zuuZu'
-global.group3 = 'https://chat.whatsapp.com/BEPs8oHgBQY0T6RC5zuuZu'
+global.group = 'https://chat.whatsapp.com/FwtE0kKhDf076Ar1LYDlyI'
+global.group2 = 'https://chat.whatsapp.com/FwtE0kKhDf076Ar1LYDlyI'
+global.group3 = 'https://chat.whatsapp.com/FwtE0kKhDf076Ar1LYDlyI'
 global.canal = 'https://whatsapp.com/channel/0029Vb5rzPf3rZZXl2DI830G'
 
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
