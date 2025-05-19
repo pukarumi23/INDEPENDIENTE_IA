@@ -69,6 +69,6 @@
 <div align="center">
   <h1 align="center">Editor y Propietario de la Bot</h1>
 
-<a href="https://github.com/IrokzDal"><img src="https://github.com/IrokzDal.png" width="300" height="300" alt="Irokz Dal ダーク"/></a>
+<a href="[https://github.com/pukarumi23]"><img src="https://github.com/pukarumi23.png" width="300" height="300" alt="CHASKI-KUN"/></a>
 
 `🔥 INDEPENDIENTE_BOT / POWER BY CHASKI-KUN Ͱ`
