@@ -100,8 +100,7 @@ export async function handler(chatUpdate) {
                     isBanned: false,
                     bienvenida: true,
                     antiLink: false,
-                    onlyLatinos: false,
-                    nsfw: false, 
+                    onlyLatinos: false, 
                     expired: 0, 
                 }
             var settings = global.db.data.settings[this.user.jid]
