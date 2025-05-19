@@ -18,9 +18,9 @@ let handler = async (m, { conn, usedPrefix, __dirname }) => {
    
     let perfil = await conn.profilePictureUrl(m.sender, 'image').catch(_ => 'https://telegra.ph/file/5e7042bf17cde23989e71.jpg')
     const vid = [
-      'https://i.ytimg.com/vi/AufydOsiD6M/maxresdefault.jpg',
-      'https://i.ytimg.com/vi/jsQXgDZIIrY/maxresdefault.jpg',
-      'https://revulsionmx.com/wp-content/uploads/2025/03/Hatsune-Miku-pelicula-Colorful-Stage.jpg'
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1N2ysfAnHDOn09rUQY9Ma_WAZbeGJKbTpQg&s',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1N2ysfAnHDOn09rUQY9Ma_WAZbeGJKbTpQg&s',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1N2ysfAnHDOn09rUQY9Ma_WAZbeGJKbTpQg&s'
     ]
     
    
