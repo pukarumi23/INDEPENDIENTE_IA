@@ -32,9 +32,9 @@ let handler = async (m, { conn, usedPrefix, __dirname }) => {
 
   
     let menuHeader = `
- ⋆｡˚☁︎｡⋆｡˚☽✧｡⋆｡˚☁︎｡⋆｡˚  
-🔥 𝕴ℕ𝖉𝖊𝖕𝖊𝖓𝖉𝖎𝖊𝖓𝖙𝖊_𝕭𝖔𝖙 🔥  
- ⋆｡˚☁︎｡⋆｡˚☽✧｡⋆｡˚☁︎｡⋆｡˚  
+       ⋆｡˚☁︎｡⋆｡˚☽✧｡⋆｡˚☁︎｡⋆｡˚  
+      🔥 𝕴ℕ𝖉𝖊𝖕𝖊𝖓𝖉𝖎𝖊𝖓𝖙𝖊_𝕭𝖔𝖙 🔥  
+       ⋆｡˚☁︎｡⋆｡˚☽✧｡⋆｡˚☁︎｡⋆｡˚  
 
 "Hola *${taguser}* soy *Hatsune Miku*, ${saludo}"
 `
