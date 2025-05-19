@@ -1,4 +1,4 @@
-<h1 align="center">【 ✯ Ai Hoshino - MD ✰ 】</p>
+<h1 align="center">【 🔶INDEPENDIENTE_BOT🔶 】</p>
 <p>
         <img src= "https://i.ibb.co/C5DNBRH/file.jpg">
     </p>
@@ -6,7 +6,7 @@
         <a href="#"><img title="simple-whatsapp-bot" src="https://img.shields.io/badge/-SIMPLE--WHATSAPP--BOT-green?colorA=%23ff0000&colorB=%23017e40&style=for-the-badge"></a>
     </p>
     <p>
-        <a href="https://github.com/StarlightsTeam"><img title="Author"    src="https://img.shields.io/badge/Author-おDaniel-purple.svg?style=for-the-badge&logo=github"></a>
+        <a href="[https://github.com/pukarumi23]"><img title="Author"    src="https://img.shields.io/badge/Author-r⫸RAFAEL-purple.svg?style=for-the-badge&logo=github"></a>
     </p>
     <p>
         <a href="https://github.com/StarlightsTeamollowers"><img title="Followers" src="https://img.shields.io/github/followers/StarlightsTeam?color=blue&style=flat-square"></a>
@@ -69,6 +69,6 @@
 <div align="center">
   <h1 align="center">Editor y Propietario de la Bot</h1>
 
-<a href="https://github.com/IrokzDal"><img src="https://github.com/IrokzDal.png" width="300" height="300" alt="Irokz Dal ダーク"/></a>
+<a href="https://github.com/pukarumi23"><img src="https://github.com/pukarumi23.png" width="300" height="300" alt="Irokz Dal ダーク"/></a>
 
-`© Ai Hoshino - MD / Starlights Team _ By Irokz Dal ダーク`
+`INDEPENDIENTE_BOT / ◁Ⅱ POWER BY CHASKI-KUN Ⅱ▷`
