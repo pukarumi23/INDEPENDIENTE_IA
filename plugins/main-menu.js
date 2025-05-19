@@ -3,6 +3,13 @@ import { join } from 'path'
 import fetch from 'node-fetch'
 import { xpRange } from '../lib/levelling.js'
 
+// Variables globales que deben estar definidas o importadas
+const textbot = process.env.TEXTBOT || 'Bot Name'
+const botname = process.env.BOTNAME || 'Bot'
+const canal = process.env.CANAL || ''
+const rcanal = process.env.RCANAL || null
+const estilo = process.env.ESTILO || null
+
 let tags = {
   'main': 'Information',
   'search': 'Search',
@@ -29,9 +36,9 @@ const defaultMenu = {
   before: `
   *💮💙🥢⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯🥢💙💮*
 
-“ Hola *%name* soy *💙HATSUNE MIKU💙*, %greeting ”
+" Hola *%name* soy *💙HATSUNE MIKU💙*, %greeting "
 
-╭── ︿︿︿︿︿ *⭒   ⭒   ⭒   ⭒   ⭒   ⭒*
+╭── ︿︿︿︿︿ *⭒   ⭒   ⭒   ⭒   ⭒   ⭒*
 ┊ ‹‹ *Hello* :: *%name*
 ┊01 *💙HATSUNE MIKU CHANNEL💙*
 ╰─── 💙 Hatsune Miku 💙
@@ -44,9 +51,46 @@ const defaultMenu = {
 *─ׄ─ׅ─ׄ─⭒ L I S T A  -  M E N Ú S ⭒─ׄ─ׅ─ׄ─*
 `.trimStart(),
   header: '╔═══◇◆🥬【 𝑴𝑬𝑵Ú メ %category 】🥬◆◇═══╗\n║╔───────────────────────',
-    body: '║🌱┊%cmd %islimit %isPremium\n',
-   footer: '║───────────────────────────\n╚═════════◆◇◆═════════╝\n',
-    after: `> 💙 ${textbot}`,
+  body: '║🌱┊%cmd %islimit %isPremium\n',
+  footer: '║───────────────────────────\n╚═════════◆◇◆═════════╝\n',
+  after: `> 💙 ${textbot}`,
+}
+
+// Función para obtener saludo según la hora
+function getGreeting() {
+  const ase = new Date();
+  const hour = ase.getHours();
+  let timeOfDay;
+  
+  switch(hour){
+    case 0: timeOfDay = 'una linda noche 🌙'; break;
+    case 1: timeOfDay = 'una linda noche 💤'; break;
+    case 2: timeOfDay = 'una linda noche 🦉'; break;
+    case 3: timeOfDay = 'una linda mañana ✨'; break;
+    case 4: timeOfDay = 'una linda mañana 💫'; break;
+    case 5: timeOfDay = 'una linda mañana 🌅'; break;
+    case 6: timeOfDay = 'una linda mañana 🌄'; break;
+    case 7: timeOfDay = 'una linda mañana 🌅'; break;
+    case 8: timeOfDay = 'una linda mañana 💫'; break;
+    case 9: timeOfDay = 'una linda mañana ✨'; break;
+    case 10: timeOfDay = 'un lindo dia 🌞'; break;
+    case 11: timeOfDay = 'un lindo dia 🌨'; break;
+    case 12: timeOfDay = 'un lindo dia ❄'; break;
+    case 13: timeOfDay = 'un lindo dia 🌤'; break;
+    case 14: timeOfDay = 'una linda tarde 🌇'; break;
+    case 15: timeOfDay = 'una linda tarde 🥀'; break;
+    case 16: timeOfDay = 'una linda tarde 🌹'; break;
+    case 17: timeOfDay = 'una linda tarde 🌆'; break;
+    case 18: timeOfDay = 'una linda noche 🌙'; break;
+    case 19: timeOfDay = 'una linda noche 🌃'; break;
+    case 20: timeOfDay = 'una linda noche 🌌'; break;
+    case 21: timeOfDay = 'una linda noche 🌃'; break;
+    case 22: timeOfDay = 'una linda noche 🌙'; break;
+    case 23: timeOfDay = 'una linda noche 🌃'; break;
+    default: timeOfDay = 'un lindo día'; break;
+  }
+  
+  return "espero que tengas " + timeOfDay;
 }
 
 let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
@@ -87,9 +131,13 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
     let uptime = clockString(_uptime)
     let totalreg = Object.keys(global.db.data.users).length
     let rtotalreg = Object.values(global.db.data.users).filter(user => user.registered == true).length
+    
+    // Obtener el saludo
+    let greeting = getGreeting()
+    
     let help = Object.values(global.plugins).filter(plugin => !plugin.disabled).map(plugin => {
       return {
-        help: Array.isArray(plugin.tags) ? plugin.help : [plugin.help],
+        help: Array.isArray(plugin.help) ? plugin.help : [plugin.help],
         tags: Array.isArray(plugin.tags) ? plugin.tags : [plugin.tags],
         prefix: 'customPrefix' in plugin,
         limit: plugin.limit,
@@ -97,16 +145,19 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
         enabled: !plugin.disabled,
       }
     })
+    
     for (let plugin of help)
       if (plugin && 'tags' in plugin)
         for (let tag of plugin.tags)
           if (!(tag in tags) && tag) tags[tag] = tag
+    
     conn.menu = conn.menu ? conn.menu : {}
     let before = conn.menu.before || defaultMenu.before
     let header = conn.menu.header || defaultMenu.header
     let body = conn.menu.body || defaultMenu.body
     let footer = conn.menu.footer || defaultMenu.footer
     let after = conn.menu.after || (conn.user.jid == global.conn.user.jid ? '' : ``) + defaultMenu.after
+    
     let _text = [
       before,
       ...Object.keys(tags).map(tag => {
@@ -124,10 +175,13 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
       }),
       after
     ].join('\n')
+    
     let text = typeof conn.menu == 'string' ? conn.menu : typeof conn.menu == 'object' ? _text : ''
     let replace = {
       '%': '%',
-      p: _p, uptime, muptime,
+      p: _p, 
+      uptime, 
+      muptime,
       taguser: '@' + m.sender.split("@s.whatsapp.net")[0],
       wasp: '@0',
       me: conn.getName(conn.user.jid),
@@ -135,40 +189,51 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
       version: _package.version,
       npmdesc: _package.description,
       npmmain: _package.main,
-      author: _package.author.name,
+      author: _package.author?.name || 'Unknown',
       license: _package.license,
       exp: exp - min,
       maxexp: xp,
       totalexp: exp,
       xp4levelup: max - exp,
       github: _package.homepage ? _package.homepage.url || _package.homepage : '[unknown github url]',
-      greeting, level, limit, name, weton, week, date, dateIslamic, time, totalreg, rtotalreg,
+      greeting, 
+      level, 
+      limit, 
+      name, 
+      weton, 
+      week, 
+      date, 
+      dateIslamic, 
+      time, 
+      totalreg, 
+      rtotalreg,
       readmore: readMore
     }
+    
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
     
-    let pp = 'https://telegra.ph/file/5e7042bf17cde23989e71.jpg'
-    let pp2 = 'https://telegra.ph/file/5e7042bf17cde23989e71.jpg'
-    let pp3 = 'https://telegra.ph/file/5e7042bf17cde23989e71.jpg'
-    let pp4 = 'https://telegra.ph/file/5e7042bf17cde23989e71.jpg'
-    let pp5 = 'https://telegra.ph/file/5e7042bf17cde23989e71.jpg'
-    let pp6 = 'https://telegra.ph/file/5e7042bf17cde23989e71.jpg'
-    let pp7 = 'https://telegra.ph/file/5e7042bf17cde23989e71.jpg'
-    let pp8 = 'https://telegra.ph/file/5e7042bf17cde23989e71.jpg'
-    let pp9 = 'https://telegra.ph/file/5e7042bf17cde23989e71.jpg'
-    let pp10 = 'https://telegra.ph/file/5e7042bf17cde23989e71.jpg'
-    let pp11 = 'https://telegra.ph/file/5e7042bf17cde23989e71.jpg'
-    let pp12 = 'https://telegra.ph/file/5e7042bf17cde23989e71.jpg'
-    let pp13 = 'https://telegra.ph/file/5e7042bf17cde23989e71.jpg'
-    let pp14 = 'https://telegra.ph/file/5e7042bf17cde23989e71.jpg'
-    let pp15 = 'https://telegra.ph/file/5e7042bf17cde23989e71.jpg'
+    // URLs de imágenes
+    let imageUrls = [
+      'https://telegra.ph/file/5e7042bf17cde23989e71.jpg',
+      'https://telegra.ph/file/5e7042bf17cde23989e71.jpg',
+      'https://telegra.ph/file/5e7042bf17cde23989e71.jpg',
+      'https://telegra.ph/file/5e7042bf17cde23989e71.jpg',
+      'https://telegra.ph/file/5e7042bf17cde23989e71.jpg'
+    ]
+    
+    // Función para seleccionar aleatoriamente (si no existe getRandom)
+    function getRandomElement(arr) {
+      return arr[Math.floor(Math.random() * arr.length)]
+    }
+    
     let img = `./storage/img/menu.jpg`
     await m.react('💙')
-   // await conn.sendMessage(m.chat, { video: { url: [pp, pp2, pp3, pp4, pp5, pp6, pp7, pp8, pp9, pp10, pp11, pp12, pp13, pp14, pp15].getRandom() }, gifPlayback: true, caption: text.trim(), mentions: [m.sender] }, { quoted: estilo })
+    
+    // Usar sendFile ya que está comentado el sendMessage con video
     await conn.sendFile(m.chat, img, 'thumbnail.jpg', text.trim(), m, null, rcanal)
-   //await conn.sendAi(m.chat, botname, textbot, text.trim(), img, img, canal, estilo)
 
   } catch (e) {
+    console.error('Error en el menú:', e)
     conn.reply(m.chat, '❎ Lo sentimos, el menú tiene un error.', m)
     throw e
   }
@@ -178,8 +243,8 @@ handler.help = ['menu']
 handler.tags = ['main']
 handler.command = ['menu', 'help', 'menú'] 
 handler.register = true 
-export default handler
 
+export default handler
 
 const more = String.fromCharCode(8206)
 const readMore = more.repeat(4001)
@@ -190,33 +255,3 @@ function clockString(ms) {
   let s = isNaN(ms) ? '--' : Math.floor(ms / 1000) % 60
   return [h, m, s].map(v => v.toString().padStart(2, 0)).join(':')
 }
-
-  var ase = new Date();
-  var hour = ase.getHours();
-switch(hour){
-  case 0: hour = 'una linda noche 🌙'; break;
-  case 1: hour = 'una linda noche 💤'; break;
-  case 2: hour = 'una linda noche 🦉'; break;
-  case 3: hour = 'una linda mañana ✨'; break;
-  case 4: hour = 'una linda mañana 💫'; break;
-  case 5: hour = 'una linda mañana 🌅'; break;
-  case 6: hour = 'una linda mañana 🌄'; break;
-  case 7: hour = 'una linda mañana 🌅'; break;
-  case 8: hour = 'una linda mañana 💫'; break;
-  case 9: hour = 'una linda mañana ✨'; break;
-  case 10: hour = 'un lindo dia 🌞'; break;
-  case 11: hour = 'un lindo dia 🌨'; break;
-  case 12: hour = 'un lindo dia ❄'; break;
-  case 13: hour = 'un lindo dia 🌤'; break;
-  case 14: hour = 'una linda tarde 🌇'; break;
-  case 15: hour = 'una linda tarde 🥀'; break;
-  case 16: hour = 'una linda tarde 🌹'; break;
-  case 17: hour = 'una linda tarde 🌆'; break;
-  case 18: hour = 'una linda noche 🌙'; break;
-  case 19: hour = 'una linda noche 🌃'; break;
-  case 20: hour = 'una linda noche 🌌'; break;
-  case 21: hour = 'una linda noche 🌃'; break;
-  case 22: hour = 'una linda noche 🌙'; break;
-  case 23: hour = 'una linda noche 🌃'; break;
-}
-  var greeting = "espero que tengas " + hour;
