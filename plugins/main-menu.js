@@ -40,9 +40,9 @@ let handler = async (m, { conn, usedPrefix, __dirname }) => {
 `
 
     let botInfo = `
-.╭─ׅ─ׅ┈ ❊ 🔆⃘🔥۬۫◌⃘⃪◌۬۫🔥̸ٜ࣭🔶 ❊ ─ׅ┈ ╮
+.╭┈ ❊🔆⃘🔥۬۫◌⃘⃪◌۬۫🔥̸ٜ࣭🔶 ❊ ׅ┈ ╮
 ╭╼🔆  🄸🄽🄳🄴🄿🄴🄽🄳🄸🄴🄽🅃🄴 🔶
-┃   ╰─ׅ─ׅ┈ ❊🔶⃘🔥ꗃꗃ🔆 ❊ ─ׅ─ׅ┈ ╯
+┃   ╰┈ ❊🔶⃘🔥ꗃꗃ🔆 ❊ ┈ ╯
 ├ׁ̟̇❍✎ *🅅ᴏᴄᴀʟᴏɪᴅ:* INDEPENDIENTE
 ├ׁ̟̇❍✎ *Creador:* DEPOOL
 ├ׁ̟̇❍✎ *🄼ᴏᴅᴏ:* Digital
