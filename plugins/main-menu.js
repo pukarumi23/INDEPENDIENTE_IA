@@ -329,7 +329,7 @@ let handler = async (m, { conn, usedPrefix, __dirname }) => {
       contextInfo: { 
         mentionedJid: [m.sender],
         externalAdReply: { 
-          title: '💙Hatsune Miku💙',
+          title: '🔶INDEPENDIENTE_BOT🔶',
           body: dev,
           thumbnailUrl: perfil,
           sourceUrl: redes
