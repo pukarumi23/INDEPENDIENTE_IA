@@ -49,7 +49,7 @@ let handler = async (m, { conn, usedPrefix, __dirname }) => {
 ├ׁ̟̇❍⫸ *Creador:* CHASKI
 ├ׁ̟̇❍⫸ *🄼ᴏᴅᴏ:* Digital
 ├ׁ̟̇❍⫸ *🄻ɪʙʀᴇʀɪᴀ:* Crypton
-├ׁ̟̇❍⫸ *🄱ᴏᴛ:* ${conn.user.jid == global.conn.user.jid ? 'Principal' : 'MikuBot'}
+├ׁ̟̇❍⫸ *🄱ᴏᴛ:* ${conn.user.jid == global.conn.user.jid ? 'Principal' : 'INDEPENDIENTE_BOT'}
 ├ׁ̟̇❍⫸ *🅃ɪᴇᴍᴘᴏ ᴀᴄᴛɪᴠᴏ:* ${uptime}
 ├ׁ̟̇❍⫸ *🅄sᴜᴀʀɪᴏs:* ${totalreg}
 ╚▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬▭╝
@@ -60,416 +60,283 @@ let handler = async (m, { conn, usedPrefix, __dirname }) => {
 ╭┈❊🔆⃘🔥۬۫◌⃘⃪◌۬۫🔥̸ٜ࣭🔶❊❊❊ׅ┈╮  
 ◈🄸🄽🄳🄴🄿🄴🄽🄳🄸🄴🄽🅃🄴◈       
 .⌊…………………………………………………⌋
-█✹➤ .menu
-█✹➤.runtime
-█✹➤ .script
+█✹➤ .owner
 █✹➤ .grupos
-█✹➤ .infobot
+█✹➤ .info
+█✹➤ .totalfunciones
 █✹➤ .menu
+█✹➤ .ping
+█✹➤ .runtime
+█✹➤ .script
 █✹➤ .speedtest
 ╚▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬▭╝
 
 ╭┈❊🔆⃘🔥۬۫◌⃘⃪◌۬۫🔥̸ٜ࣭🔶❊❊❊ׅ┈╮  
 ◈🄸🄽🄳🄴🄿🄴🄽🄳🄸🄴🄽🅃🄴◈       
 .⌊…………………………………………………⌋
-├ׁ̟̇❍✎ .tiktoksearch <txt>
+█✹➤ .tiktoksearch <txt>
+█✹➤ .aptoidesearch <busqueda>
+█✹➤ .spotifysearch <busqueda>
+█✹➤ .tweetpost <busqueda>
+█✹➤ .ytsearch <busqueda>
 ╚▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬▭╝
 
 ╭┈❊🔆⃘🔥۬۫◌⃘⃪◌۬۫🔥̸ٜ࣭🔶❊❊❊ׅ┈╮  
 ◈🄸🄽🄳🄴🄿🄴🄽🄳🄸🄴🄽🅃🄴◈       
 .⌊…………………………………………………⌋
-├ׁ̟̇❍✎ .69 @tag
-├ׁ̟̇❍✎ .abrazar <@usuario>
-├ׁ̟̇❍✎ .acertijo
-├ׁ̟̇❍✎ .consejo
-├ׁ̟̇❍✎ .cum @tag
-├ׁ̟̇❍✎ .dance *<@user>*
-├ׁ̟̇❍✎ .formarpareja5
-├ׁ̟̇❍✎ .abrazar @tag
-├ׁ̟̇❍✎ .violar @tag
-├ׁ̟̇❍✎ .dormir @tag
-├ׁ̟̇❍✎ .lamber @tag
-├ׁ̟̇❍✎ .enamorada @tag
-├ׁ̟̇❍✎ .mamada @tag
-├ׁ̟̇❍✎ .meme
-├ׁ̟̇❍✎ .violar @tag
-├ׁ̟̇❍✎ .nombreninja *<texto>*
-├ׁ̟̇❍✎ .acariciar @tag
-├ׁ̟̇❍✎ .penetrar @user
-├ׁ̟̇❍✎ .personalidad
-├ׁ̟̇❍✎ .piropo
-├ׁ̟̇❍✎ .pokedex *<pokemon>*
-├ׁ̟̇❍✎ .pucheros @tag
-├ׁ̟̇❍✎ .pregunta
-├ׁ̟̇❍✎ .golpear @tag
-├ׁ̟̇❍✎ .reto
-├ׁ̟̇❍✎ .ruleta *<cantidad> <color>*
-├ׁ̟̇❍✎ .rusa @tag
-├ׁ̟̇❍✎ .triste @tag
-├ׁ̟̇❍✎ .scared @tag
-├ׁ̟̇❍✎ .sexo @tag
-├ׁ̟̇❍✎ .ship
-├ׁ̟̇❍✎ .love
-├ׁ̟̇❍✎ .timida @tag
-├ׁ̟̇❍✎ .simi
-├ׁ̟̇❍✎ .bot
-├ׁ̟̇❍✎ .dormir @tag
-├ׁ̟̇❍✎ .dormir @tag
-├ׁ̟̇❍✎ .top *<texto>*
-├ׁ̟̇❍✎ .violar @tag
-├ׁ̟̇❍✎ .tijeras @tag
-├ׁ̟̇❍✎ .zodiac *2002 02 25*
-├ׁ̟̇❍✎ .cancion
-├ׁ̟̇❍✎ .math <mode>
-├ׁ̟̇❍✎ .ppt
-├ׁ̟̇❍✎ .slot <apuesta>
-╚▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬▭╝
-
-╭┈❊🔆⃘🔥۬۫◌⃘⃪◌۬۫🔥̸ٜ࣭🔶❊❊❊ׅ┈╮  
-◈🄸🄽🄳🄴🄿🄴🄽🄳🄸🄴🄽🅃🄴◈       
-.⌊…………………………………………………⌋ 
-├ׁ̟̇❍✎ .character
-├ׁ̟̇❍✎ .confirmar
-├ׁ̟̇❍✎ .darrw @usuario <personaje>
-├ׁ̟̇❍✎ .guardar <personaje>
-├ׁ̟̇❍✎ .sacar <personaje>
-├ׁ̟̇❍✎ .obtenidos
-├ׁ̟̇❍✎ .robarpersonaje
-├ׁ̟̇❍✎ .roll
-├ׁ̟̇❍✎ .toprw
+█✹➤ .iqtest
+█✹➤ .acertijo
+█✹➤ .coinflip
+█✹➤ .mates
+█✹➤ .ppt
+█✹➤ .ruleta <cantidad><color>
 ╚▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬▭╝
 
 ╭┈❊🔆⃘🔥۬۫◌⃘⃪◌۬۫🔥̸ٜ࣭🔶❊❊❊ׅ┈╮  
 ◈🄸🄽🄳🄴🄿🄴🄽🄳🄸🄴🄽🅃🄴◈       
 .⌊…………………………………………………⌋  
-├ׁ̟̇❍✎ .jadibot
-├ׁ̟̇❍✎ .serbot
-├ׁ̟̇❍✎ .bots
-├ׁ̟̇❍✎ .deletebot
-├ׁ̟̇❍✎ .pausarai
+█✹➤ .bank
+█✹➤ .crimen
+█✹➤ .darcebollines @user <cantidad>
+█✹➤ .darxp @user <cantidad>
+█✹➤ .depositar
+█✹➤ .intis
+█✹➤ .lb
+█✹➤ .levelup
+█✹➤ .minar
+█✹➤ .retirar
+█✹➤ .buycoins
+█✹➤ .buyall
+█✹➤ .work
 ╚▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬▭╝
 
 ╭┈❊🔆⃘🔥۬۫◌⃘⃪◌۬۫🔥̸ٜ࣭🔶❊❊❊ׅ┈╮  
 ◈🄸🄽🄳🄴🄿🄴🄽🄳🄸🄴🄽🅃🄴◈       
 .⌊…………………………………………………⌋
-├ׁ̟̇❍✎ .bank
-├ׁ̟̇❍✎ .cookies
-├ׁ̟̇❍✎ .crimen
-├ׁ̟̇❍✎ .daily
-├ׁ̟̇❍✎ .claim
-├ׁ̟̇❍✎ .depositar
-├ׁ̟̇❍✎ .lb
-├ׁ̟̇❍✎ .levelup
-├ׁ̟̇❍✎ .minar
-├ׁ̟̇❍✎ .retirar
-├ׁ̟̇❍✎ .rob2
-├ׁ̟̇❍✎ .rob
-├ׁ̟̇❍✎ .addprem [@user] <days>
-├ׁ̟̇❍✎ .slut
-├ׁ̟̇❍✎ .trabajar
-├ׁ̟̇❍✎ .transfer [tipo] [cantidad] [@tag]
+█✹➤ .sn
+█✹➤ .perfil
+█✹➤ .perfil @user
+█✹➤ .reg <nombre.edad>
+█✹➤ .unreg
 ╚▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬▭╝
 
 ╭┈❊🔆⃘🔥۬۫◌⃘⃪◌۬۫🔥̸ٜ࣭🔶❊❊❊ׅ┈╮  
 ◈🄸🄽🄳🄴🄿🄴🄽🄳🄸🄴🄽🅃🄴◈       
 .⌊…………………………………………………⌋ 
-├ׁ̟̇❍✎ .profile
-├ׁ̟̇❍✎ .unreg
-├ׁ̟̇❍✎ .reg
+█✹➤ .emojimix <emoji+emoji>
+█✹➤ .quotly <texto>
+█✹➤ .scat
+█✹➤ .stiker
+█✹➤ .wm <nombre>|<autor>
+█✹➤ .wm2
+█✹➤ .toimg <stiker>
+█✹➤ .tovid <stiker>
 ╚▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬▭╝
 
 ╭┈❊🔆⃘🔥۬۫◌⃘⃪◌۬۫🔥̸ٜ࣭🔶❊❊❊ׅ┈╮  
 ◈🄸🄽🄳🄴🄿🄴🄽🄳🄸🄴🄽🅃🄴◈       
 .⌊…………………………………………………⌋ 
-├ׁ̟̇❍✎ .bal
-├ׁ̟̇❍✎ .daily
-├ׁ̟̇❍✎ .Buy
-├ׁ̟̇❍✎ .Buyall
+█✹➤ .antibot <on/off>
+█✹➤ .banearbot 
+█✹➤ .chekexpired
+█✹➤ .delete
+█✹➤ .demote @tag
+█✹➤ .infogp
+█✹➤ .invite <521>
+█✹➤ .kick @user
+█✹➤ .link
+█✹➤ .encuesta <pregunta|opciones>
+█✹➤ .promote .@user
+█✹➤ .resetlink
+█✹➤ .setppgo
+█✹➤ .group abrir/cerrar
+█✹➤ .tagall <mensaje>
+█✹➤ .invocar <mensaje>
+█✹➤ .tag
+█✹➤ .desbanearbot
+█✹➤ .otag
+█✹➤ .getbio
+█✹➤ .getbio @tag
+█✹➤ .getname
+█✹➤ .getname @tag
 ╚▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬▭╝
 
 ╭┈❊🔆⃘🔥۬۫◌⃘⃪◌۬۫🔥̸ٜ࣭🔶❊❊❊ׅ┈╮  
 ◈🄸🄽🄳🄴🄿🄴🄽🄳🄸🄴🄽🅃🄴◈       
 .⌊…………………………………………………⌋ 
-├ׁ̟̇❍✎ .toimg (reply)
-├ׁ̟̇❍✎ .qc
-├ׁ̟̇❍✎ .stiker <img>
-├ׁ̟̇❍✎ .sticker <url>
-├ׁ̟̇❍✎ .wm <packname>|<author>
+█✹➤ .qc
+█✹➤ .stiker <img>
+█✹➤.sticker <url>
+█✹➤ .wm <packname>|<author>
+╚▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬▭╝
+
+╭┈❊🔆⃘🔥۬۫◌⃘⃪◌۬۫🔥̸ٜ࣭🔶❊❊❊ׅ┈╮  
+◈🄸🄽🄳🄴🄿🄴🄽🄳🄸🄴🄽🅃🄴◈       
+.⌊…………………………………………………⌋ 
+█✹➤ .delvn <text>
+█✹➤ .delmsg <text>
+█✹➤ .delimg <text>
+█✹➤ .delsticker <text>
 ╚▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬▭╝
 
 ╭┈❊🔆⃘🔥۬۫◌⃘⃪◌۬۫🔥̸ٜ࣭🔶❊❊❊ׅ┈╮  
 ◈🄸🄽🄳🄴🄿🄴🄽🄳🄸🄴🄽🅃🄴◈       
 .⌊…………………………………………………⌋
-├ׁ̟̇❍✎ .animelink
-├ׁ̟̇❍✎ .akira
-├ׁ̟̇❍✎ .akiyama
-├ׁ̟̇❍✎ .anna
-├ׁ̟̇❍✎ .asuna
-├ׁ̟̇❍✎ .ayuzawa
-├ׁ̟̇❍✎ .boruto
-├ׁ̟̇❍✎ .chiho
-├ׁ̟̇❍✎ .chitoge
-├ׁ̟̇❍✎ .deidara
-├ׁ̟̇❍✎ .erza
-├ׁ̟̇❍✎ .elaina
-├ׁ̟̇❍✎ .eba
-├ׁ̟̇❍✎ .emilia
-├ׁ̟̇❍✎ .hestia
-├ׁ̟̇❍✎ .hinata
-├ׁ̟̇❍✎ .inori
-├ׁ̟̇❍✎ .isuzu
-├ׁ̟̇❍✎ .itachi
-├ׁ̟̇❍✎ .itori
-├ׁ̟̇❍✎ .kaga
-├ׁ̟̇❍✎ .kagura
-├ׁ̟̇❍✎ .kaori
-├ׁ̟̇❍✎ .keneki
-├ׁ̟̇❍✎ .kotori
-├ׁ̟̇❍✎ .kurumi
-├ׁ̟̇❍✎ .madara
-├ׁ̟̇❍✎ .mikasa
-├ׁ̟̇❍✎ .miku
-├ׁ̟̇❍✎ .minato
-├ׁ̟̇❍✎ .naruto
-├ׁ̟̇❍✎ .nezuko
-├ׁ̟̇❍✎ .sagiri
-├ׁ̟̇❍✎ .sasuke
-├ׁ̟̇❍✎ .sakura
-├ׁ̟̇❍✎ .cosplay
-├ׁ̟̇❍✎ .infoanime
-├ׁ̟̇❍✎ .lolice
-├ׁ̟̇❍✎ .waifu
+█✹➤ .dsowner
 ╚▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬▭╝
 
 ╭┈❊🔆⃘🔥۬۫◌⃘⃪◌۬۫🔥̸ٜ࣭🔶❊❊❊ׅ┈╮  
 ◈🄸🄽🄳🄴🄿🄴🄽🄳🄸🄴🄽🅃🄴◈       
-.⌊…………………………………………………⌋ 
-├ׁ̟̇❍✎ .delvn <text>
-├ׁ̟̇❍✎ .delmsg <text>
-├ׁ̟̇❍✎ .delimg <text>
-├ׁ̟̇❍✎ .delsticker <text>
+.⌊…………………………………………………⌋   
+█✹➤ .group abrir / cerrar
+█✹➤ .delete
+█✹➤ .setppgroup
+█✹➤ .rentar2
+█✹➤ .setwelcome
+█✹➤ .demote
+█✹➤ .encuesta <text|text2>
+█✹➤ .hidetag
+█✹➤ .infogrupo
+█✹➤ .invite *<numero>*
+█✹➤ .kick
+█✹➤ .link
+█✹➤ .promote
+█✹➤ .rentar
+█✹➤ .tagall *<mesaje>*
+█✹➤ .invocar *<mesaje>*
+╚▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬▭╝
+
+╭┈❊🔆⃘🔥۬۫◌⃘⃪◌۬۫🔥̸ٜ࣭🔶❊❊❊ׅ┈╮  
+◈🄸🄽🄳🄴🄿🄴🄽🄳🄸🄴🄽🅃🄴◈       
+.⌊…………………………………………………⌋   
+█✹➤ .enable <option>
+█✹➤ .disable <option>
+╚▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬▭╝
+
+╭┈❊🔆⃘🔥۬۫◌⃘⃪◌۬۫🔥̸ٜ࣭🔶❊❊❊ׅ┈╮  
+◈🄸🄽🄳🄴🄿🄴🄽🄳🄸🄴🄽🅃🄴◈       
+.⌊…………………………………………………⌋   
+█✹➤ .facebook
+█✹➤ .fb
+█✹➤ .play
+█✹➤ .playvid
+█✹➤ .gitclone *<url git>*
+█✹➤ .instagram
+█✹➤ .ig
+█✹➤ .imagen <query>
+█✹➤ .mediafire <url>
+█✹➤ .apkmod
+█✹➤ .ytmp3doc
+█✹➤ .ytmp4doc
+█✹➤ .spotify
+█✹➤ .tiktok
+█✹➤ .tw
+█✹➤ .ytmp4 *<url youtube>*
+╚▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬▭╝
+
+╭┈❊🔆⃘🔥۬۫◌⃘⃪◌۬۫🔥̸ٜ࣭🔶❊❊❊ׅ┈╮  
+◈🄸🄽🄳🄴🄿🄴🄽🄳🄸🄴🄽🅃🄴◈       
+.⌊…………………………………………………⌋   
+█✹➤ .toanime
+█✹➤ .tts <lang> <teks>
+█✹➤ .imagen <query>
+█✹➤ .remini
+█✹➤ .hd
+█✹➤ .enhance
+█✹➤ .nuevafotochannel
+█✹➤ .nosilenciarcanal
+█✹➤ .silenciarcanal
+█✹➤ .noseguircanal
+█✹➤ .seguircanal
+█✹➤ .avisoschannel
+█✹➤ .resiviravisos
+█✹➤ .inspect
+█✹➤ .inspeccionar
+█✹➤ .eliminarfotochannel
+█✹➤ .reactioneschannel
+█✹➤ .reaccioneschannel
+█✹➤ .nuevonombrecanal
+█✹➤ .nuevadescchannel
+█✹➤ .readvo
+█✹➤ .infobot
+█✹➤ .speed
 ╚▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬▭╝
 
 ╭┈❊🔆⃘🔥۬۫◌⃘⃪◌۬۫🔥̸ٜ࣭🔶❊❊❊ׅ┈╮  
 ◈🄸🄽🄳🄴🄿🄴🄽🄳🄸🄴🄽🅃🄴◈       
 .⌊…………………………………………………⌋
-├ׁ̟̇❍✎ .dsowner
-╚▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬▭╝
-
-╭┈❊🔆⃘🔥۬۫◌⃘⃪◌۬۫🔥̸ٜ࣭🔶❊❊❊ׅ┈╮  
-◈🄸🄽🄳🄴🄿🄴🄽🄳🄸🄴🄽🅃🄴◈       
-.⌊…………………………………………………⌋   
-├ׁ̟̇❍✎ .group abrir / cerrar
-├ׁ̟̇❍✎ .delete
-├ׁ̟̇❍✎ .setppgroup
-├ׁ̟̇❍✎ .rentar2
-├ׁ̟̇❍✎ .setwelcome
-├ׁ̟̇❍✎ .demote
-├ׁ̟̇❍✎ .encuesta <text|text2>
-├ׁ̟̇❍✎ .hidetag
-├ׁ̟̇❍✎ .infogrupo
-├ׁ̟̇❍✎ .invite *<numero>*
-├ׁ̟̇❍✎ .kick
-├ׁ̟̇❍✎ .link
-├ׁ̟̇❍✎ .promote
-├ׁ̟̇❍✎ .rentar
-├ׁ̟̇❍✎ .tagall *<mesaje>*
-├ׁ̟̇❍✎ .invocar *<mesaje>*
-╚▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬▭╝
-
-╭┈❊🔆⃘🔥۬۫◌⃘⃪◌۬۫🔥̸ٜ࣭🔶❊❊❊ׅ┈╮  
-◈🄸🄽🄳🄴🄿🄴🄽🄳🄸🄴🄽🅃🄴◈       
-.⌊…………………………………………………⌋   
-├ׁ̟̇❍✎ .enable <option>
-├ׁ̟̇❍✎ .disable <option>
-╚▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬▭╝
-
-╭┈❊🔆⃘🔥۬۫◌⃘⃪◌۬۫🔥̸ٜ࣭🔶❊❊❊ׅ┈╮  
-◈🄸🄽🄳🄴🄿🄴🄽🄳🄸🄴🄽🅃🄴◈       
-.⌊…………………………………………………⌋   
-├ׁ̟̇❍✎ .facebook
-├ׁ̟̇❍✎ .fb
-├ׁ̟̇❍✎ .play
-├ׁ̟̇❍✎ .playvid
-├ׁ̟̇❍✎ .gitclone *<url git>*
-├ׁ̟̇❍✎ .instagram
-├ׁ̟̇❍✎ .ig
-├ׁ̟̇❍✎ .imagen <query>
-├ׁ̟̇❍✎ .mediafire <url>
-├ׁ̟̇❍✎ .apkmod
-├ׁ̟̇❍✎ .ytmp3doc
-├ׁ̟̇❍✎ .ytmp4doc
-├ׁ̟̇❍✎ .spotify
-├ׁ̟̇❍✎ .tiktok
-├ׁ̟̇❍✎ .tw
-├ׁ̟̇❍✎ .ytmp4 *<url youtube>*
-╚▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬▭╝
-
-╭┈❊🔆⃘🔥۬۫◌⃘⃪◌۬۫🔥̸ٜ࣭🔶❊❊❊ׅ┈╮  
-◈🄸🄽🄳🄴🄿🄴🄽🄳🄸🄴🄽🅃🄴◈       
-.⌊…………………………………………………⌋   
-├ׁ̟̇❍✎ .toanime
-├ׁ̟̇❍✎ .tts <lang> <teks>
-├ׁ̟̇❍✎ .imagen <query>
-├ׁ̟̇❍✎ .remini
-├ׁ̟̇❍✎ .hd
-├ׁ̟̇❍✎ .enhance
-├ׁ̟̇❍✎ .nuevafotochannel
-├ׁ̟̇❍✎ .nosilenciarcanal
-├ׁ̟̇❍✎ .silenciarcanal
-├ׁ̟̇❍✎ .noseguircanal
-├ׁ̟̇❍✎ .seguircanal
-├ׁ̟̇❍✎ .avisoschannel
-├ׁ̟̇❍✎ .resiviravisos
-├ׁ̟̇❍✎ .inspect
-├ׁ̟̇❍✎ .inspeccionar
-├ׁ̟̇❍✎ .eliminarfotochannel
-├ׁ̟̇❍✎ .reactioneschannel
-├ׁ̟̇❍✎ .reaccioneschannel
-├ׁ̟̇❍✎ .nuevonombrecanal
-├ׁ̟̇❍✎ .nuevadescchannel
-├ׁ̟̇❍✎ .readvo
-├ׁ̟̇❍✎ .infobot
-├ׁ̟̇❍✎ .speed
-╚▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬▭╝
-
-╭┈❊🔆⃘🔥۬۫◌⃘⃪◌۬۫🔥̸ٜ࣭🔶❊❊❊ׅ┈╮  
-◈🄸🄽🄳🄴🄿🄴🄽🄳🄸🄴🄽🅃🄴◈       
-.⌊…………………………………………………⌋
-├ׁ̟̇❍✎ .creador
-├ׁ̟̇❍✎ .owner
-├ׁ̟̇❍✎ .dash
-├ׁ̟̇❍✎ .dashboard
-├ׁ̟̇❍✎ .views
-├ׁ̟̇❍✎ .database
-├ׁ̟̇❍✎ .usuarios
-├ׁ̟̇❍✎ .user
-├ׁ̟̇❍✎ .ds
-├ׁ̟̇❍✎ .fixmsgespera
-├ׁ̟̇❍✎ .infobot
-├ׁ̟̇❍✎ .speed
-├ׁ̟̇❍✎ .ping
-├ׁ̟̇❍✎ .sistema
-├ׁ̟̇❍✎ .speed
-├ׁ̟̇❍✎ .speedtest
-├ׁ̟̇❍✎ .groups
-├ׁ̟̇❍✎ .grouplist
-├ׁ̟̇❍✎ .reportar
-╚▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬▭╝
-
-╭┈❊🔆⃘🔥۬۫◌⃘⃪◌۬۫🔥̸ٜ࣭🔶❊❊❊ׅ┈╮  
-◈🄸🄽🄳🄴🄿🄴🄽🄳🄸🄴🄽🅃🄴◈       
-.⌊…………………………………………………⌋   
-├ׁ̟̇❍✎ .nsfwloli
-├ׁ̟̇❍✎ .nsfwfoot
-├ׁ̟̇❍✎ .nsfwass
-├ׁ̟̇❍✎ .nsfwbdsm
-├ׁ̟̇❍✎ .nsfwcum
-├ׁ̟̇❍✎ .nsfwero
-├ׁ̟̇❍✎ .nsfwfemdom
-├ׁ̟̇❍✎ .nsfwfoot
-├ׁ̟̇❍✎ .nsfwglass
-├ׁ̟̇❍✎ .nsfworgy
-├ׁ̟̇❍✎ .yuri
-├ׁ̟̇❍✎ .yuri2
-├ׁ̟̇❍✎ .yaoi
-├ׁ̟̇❍✎ .yaoi2
-├ׁ̟̇❍✎ .panties
-├ׁ̟̇❍✎ .tetas
-├ׁ̟̇❍✎ .booty
-├ׁ̟̇❍✎ .ecchi
-├ׁ̟̇❍✎ .furro
-├ׁ̟̇❍✎ .hentai
-├ׁ̟̇❍✎ .trapito
-├ׁ̟̇❍✎ .imagenlesbians
-├ׁ̟̇❍✎ .pene
-├ׁ̟̇❍✎ .porno
-├ׁ̟̇❍✎ .randomxxx
-├ׁ̟̇❍✎ .pechos
+█✹➤ .creador
+█✹➤ .owner
+█✹➤ .dash
+█✹➤ .dashboard
+█✹➤ .views
+█✹➤ .database
+█✹➤ .usuarios
+█✹➤ .user
+█✹➤ .ds
+█✹➤ .fixmsgespera
+█✹➤ .infobot
+█✹➤ .speed
+█✹➤ .ping
+█✹➤ .sistema
+█✹➤ .speed
+█✹➤ .speedtest
+█✹➤ .groups
+█✹➤ .grouplist
+█✹➤ .reportar
 ╚▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬▭╝
 
 ╭┈❊🔆⃘🔥۬۫◌⃘⃪◌۬۫🔥̸ٜ࣭🔶❊❊❊ׅ┈╮  
 ◈🄸🄽🄳🄴🄿🄴🄽🄳🄸🄴🄽🅃🄴◈       
 .⌊…………………………………………………⌋  
-├ׁ̟̇❍✎ .enable <option>
-├ׁ̟̇❍✎ .disable <option>
-├ׁ̟̇❍✎ .addprem [@user] <days>
-├ׁ̟̇❍✎ >
-├ׁ̟̇❍✎ =>
-├ׁ̟̇❍✎ .copia
-├ׁ̟̇❍✎ .broadcastgroup <teks>
-├ׁ̟̇❍✎ .bcgc <teks>
-├ׁ̟̇❍✎ .bcgc2
-├ׁ̟̇❍✎ .broadcast <teks>
-├ׁ̟̇❍✎ .bc <teks>
-├ׁ̟̇❍✎ .cheat
-├ׁ̟̇❍✎ .cleartmp
-├ׁ̟̇❍✎ .delprem <@user>
-├ׁ̟̇❍✎ .dsowner
-├ׁ̟̇❍✎ $
-├ׁ̟̇❍✎ .fetch
-├ׁ̟̇❍✎ .get
-├ׁ̟̇❍✎ .getplugin *<nombre>*
-├ׁ̟̇❍✎ .nuevabiobot <teks>
-├ׁ̟̇❍✎ .nuevafotobot *<imagen>*
-├ׁ̟̇❍✎ .nuevonombrebot <teks>
-├ׁ̟̇❍✎ .prefix [prefix]
-├ׁ̟̇❍✎ .resetprefix
-├ׁ̟̇❍✎ .restart
-├ׁ̟̇❍✎ .saveplugin nombre
-├ׁ̟̇❍✎ .update
-├ׁ̟̇❍✎ .actualizar
-├ׁ̟̇❍✎ >
-├ׁ̟̇❍✎ =>
-├ׁ̟̇❍✎ .resetpersonajes
+█✹➤ .enable <option>
+█✹➤ .disable <option>
+█✹➤ .addprem [@user] <days>
+█✹➤ >
+█✹➤ =>
+█✹➤ .copia
+█✹➤ .broadcastgroup <teks>
+█✹➤ .bcgc <teks>
+█✹➤ .bcgc2
+█✹➤ .broadcast <teks>
+█✹➤ .bc <teks>
+█✹➤ .cheat
+█✹➤ .cleartmp
+█✹➤ .delprem <@user>
+█✹➤ .dsowner
+█✹➤ $
+█✹➤ .fetch
+█✹➤ .get
+█✹➤ .getplugin *<nombre>*
+█✹➤ .nuevabiobot <teks>
+█✹➤ .nuevafotobot *<imagen>*
+█✹➤ .nuevonombrebot <teks>
+█✹➤ .prefix [prefix]
+█✹➤ .resetprefix
+█✹➤ .restart
+█✹➤ .saveplugin nombre
+█✹➤ .update
+█✹➤ .actualizar
+█✹➤ .resetpersonajes
 ╚▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬▭╝
 
 ╭┈❊🔆⃘🔥۬۫◌⃘⃪◌۬۫🔥̸ٜ࣭🔶❊❊❊ׅ┈╮  
 ◈🄸🄽🄳🄴🄿🄴🄽🄳🄸🄴🄽🅃🄴◈       
 .⌊…………………………………………………⌋  
-├ׁ̟̇❍✎ .autoadmin
-├ׁ̟̇❍✎ .banchat
-├ׁ̟̇❍✎ .banuser <@tag> <razón>
-├ׁ̟̇❍✎ .grupocrear <nombre>
-├ׁ̟̇❍✎ .ip <alamat ip>
-├ׁ̟̇❍✎ .join <link>
-├ׁ̟̇❍✎ .unbanchat
-├ׁ̟̇❍✎ .unbanuser <@tag>
+█✹➤ .autoadmin
+█✹➤ .banchat
+█✹➤ .banuser <@tag> <razón>
+█✹➤ .join <link>
+█✹➤ .unbanchat
+█✹➤ .unbanuser <@tag>
 ╚▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬▭╝
 
 ╭┈❊🔆⃘🔥۬۫◌⃘⃪◌۬۫🔥̸ٜ࣭🔶❊❊❊ׅ┈╮  
 ◈🄸🄽🄳🄴🄿🄴🄽🄳🄸🄴🄽🅃🄴◈       
 .⌊…………………………………………………⌋
-├ׁ̟̇❍✎ .bass [vn]
-├ׁ̟̇❍✎ .blown [vn]
-├ׁ̟̇❍✎ .deep [vn]
-├ׁ̟̇❍✎ .earrape [vn]
-├ׁ̟̇❍✎ .fast [vn]
-├ׁ̟̇❍✎ .fat [vn]
-├ׁ̟̇❍✎ .nightcore [vn]
-├ׁ̟̇❍✎ .reverse [vn]
-├ׁ̟̇❍✎ .robot [vn]
-├ׁ̟̇❍✎ .slow [vn]
-├ׁ̟̇❍✎ .smooth [vn]
-├ׁ̟̇❍✎ .tupai [vn]
-╚▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬▭╝
-
-╭┈❊🔆⃘🔥۬۫◌⃘⃪◌۬۫🔥̸ٜ࣭🔶❊❊❊ׅ┈╮  
-◈🄸🄽🄳🄴🄿🄴🄽🄳🄸🄴🄽🅃🄴◈       
-.⌊…………………………………………………⌋
-├ׁ̟̇❍✎ .bard
-├ׁ̟̇❍✎ .chatgpt <texto>
-├ׁ̟̇❍✎ .ia <texto>
-├ׁ̟̇❍✎ .dalle
-├ׁ̟̇❍✎ .remini
-╚▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬▭╝
-
-╭┈❊🔆⃘🔥۬۫◌⃘⃪◌۬۫🔥̸ٜ࣭🔶❊❊❊ׅ┈╮  
-◈🄸🄽🄳🄴🄿🄴🄽🄳🄸🄴🄽🅃🄴◈       
-.⌊…………………………………………………⌋
-├ׁ̟̇❍✎ .togifaud
-├ׁ̟̇❍✎ .tourl
-├ׁ̟̇❍✎ .tovideo
+█✹➤ .chatgpt <texto>
+█✹➤ .ia <texto>
+█✹➤ .remini
 ╚▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬▭╝
 `
 
