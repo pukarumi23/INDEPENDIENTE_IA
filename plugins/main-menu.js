@@ -16,7 +16,7 @@ let handler = async (m, { conn, usedPrefix, __dirname }) => {
     let totalreg = Object.keys(global.db.data.users).length
     
    
-    let perfil = await conn.profilePictureUrl(m.sender, 'image').catch(_ => 'https://telegra.ph/file/5e7042bf17cde23989e71.jpg')
+    let perfil = await conn.profilePictureUrl(m.sender, 'image').catch(_ => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1N2ysfAnHDOn09rUQY9Ma_WAZbeGJKbTpQg&s')
     const vid = [
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1N2ysfAnHDOn09rUQY9Ma_WAZbeGJKbTpQg&s',
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1N2ysfAnHDOn09rUQY9Ma_WAZbeGJKbTpQg&s',
