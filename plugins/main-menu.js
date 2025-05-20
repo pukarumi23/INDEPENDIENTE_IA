@@ -329,7 +329,7 @@ let handler = async (m, { conn, usedPrefix, __dirname }) => {
       contextInfo: { 
         mentionedJid: [m.sender],
         externalAdReply: { 
-          title: '🔶INDEPENDIENTE'/P,'BOT🔶',
+          title: '🔶INDEPENDIENTE'/N 'BOT🔶',
           body: dev,
           thumbnailUrl: perfil,
           sourceUrl: redes
