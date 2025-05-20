@@ -164,179 +164,156 @@ let handler = async (m, { conn, usedPrefix, __dirname }) => {
 ╭┈❊🔆⃘🔥۬۫◌⃘⃪◌۬۫🔥̸ٜ࣭🔶❊❊❊ׅ┈╮  
 ◈🄸🄽🄳🄴🄿🄴🄽🄳🄸🄴🄽🅃🄴◈       
 .⌊…………………………………………………⌋ 
-█✹➤ .qc
-█✹➤ .stiker <img>
-█✹➤.sticker <url>
-█✹➤ .wm <packname>|<author>
+█✹➤ .enable
+█✹➤ .disable
+█✹➤ .antiprivado <on/of>
 ╚▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬▭╝
 
 ╭┈❊🔆⃘🔥۬۫◌⃘⃪◌۬۫🔥̸ٜ࣭🔶❊❊❊ׅ┈╮  
 ◈🄸🄽🄳🄴🄿🄴🄽🄳🄸🄴🄽🅃🄴◈       
 .⌊…………………………………………………⌋ 
-█✹➤ .delvn <text>
-█✹➤ .delmsg <text>
-█✹➤ .delimg <text>
-█✹➤ .delsticker <text>
-╚▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬▭╝
-
-╭┈❊🔆⃘🔥۬۫◌⃘⃪◌۬۫🔥̸ٜ࣭🔶❊❊❊ׅ┈╮  
-◈🄸🄽🄳🄴🄿🄴🄽🄳🄸🄴🄽🅃🄴◈       
-.⌊…………………………………………………⌋
-█✹➤ .dsowner
-╚▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬▭╝
-
-╭┈❊🔆⃘🔥۬۫◌⃘⃪◌۬۫🔥̸ٜ࣭🔶❊❊❊ׅ┈╮  
-◈🄸🄽🄳🄴🄿🄴🄽🄳🄸🄴🄽🅃🄴◈       
-.⌊…………………………………………………⌋   
-█✹➤ .group abrir / cerrar
-█✹➤ .delete
-█✹➤ .setppgroup
-█✹➤ .rentar2
-█✹➤ .setwelcome
-█✹➤ .demote
-█✹➤ .encuesta <text|text2>
-█✹➤ .hidetag
-█✹➤ .infogrupo
-█✹➤ .invite *<numero>*
-█✹➤ .kick
-█✹➤ .link
-█✹➤ .promote
-█✹➤ .rentar
-█✹➤ .tagall *<mesaje>*
-█✹➤ .invocar *<mesaje>*
-╚▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬▭╝
-
-╭┈❊🔆⃘🔥۬۫◌⃘⃪◌۬۫🔥̸ٜ࣭🔶❊❊❊ׅ┈╮  
-◈🄸🄽🄳🄴🄿🄴🄽🄳🄸🄴🄽🅃🄴◈       
-.⌊…………………………………………………⌋   
-█✹➤ .enable <option>
-█✹➤ .disable <option>
-╚▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬▭╝
-
-╭┈❊🔆⃘🔥۬۫◌⃘⃪◌۬۫🔥̸ٜ࣭🔶❊❊❊ׅ┈╮  
-◈🄸🄽🄳🄴🄿🄴🄽🄳🄸🄴🄽🅃🄴◈       
-.⌊…………………………………………………⌋   
-█✹➤ .facebook
-█✹➤ .fb
-█✹➤ .play
-█✹➤ .playvid
-█✹➤ .gitclone *<url git>*
-█✹➤ .instagram
-█✹➤ .ig
-█✹➤ .imagen <query>
 █✹➤ .mediafire <url>
-█✹➤ .apkmod
-█✹➤ .ytmp3doc
-█✹➤ .ytmp4doc
+█✹➤ .ytdl <link yt>
+╚▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬▭╝
+
+╭┈❊🔆⃘🔥۬۫◌⃘⃪◌۬۫🔥̸ٜ࣭🔶❊❊❊ׅ┈╮  
+◈🄸🄽🄳🄴🄿🄴🄽🄳🄸🄴🄽🅃🄴◈       
+.⌊…………………………………………………⌋
+█✹➤ .audio
+█✹➤ .video
+█✹➤ .aptoide <busqueda>
+█✹➤ .danbooru <url>
+█✹➤ .fb <link fb>
+█✹➤ .gitclone <url git>
+█✹➤ .instagram <link ig>
+█✹➤ .likeedl <url>
+█✹➤ .mediafire <url>
+█✹➤ .pinterestdl <url pin>
+█✹➤ .soundcloud <busqueda>
 █✹➤ .spotify
-█✹➤ .tiktok
-█✹➤ .tw
-█✹➤ .ytmp4 *<url youtube>*
+█✹➤ .spotifydl
+█✹➤ .tiktok <url tt>
+█✹➤ .tiktokimg <url tt>
+█✹➤ .tiktokuser <usuario>
+█✹➤ .tiktokvid <busqueda>
+█✹➤ .play <cancion>
+█✹➤ .ytdl <link yt>
+█✹➤ .ytmp3 <link yt>
+█✹➤ .ytmp3doc <link yt>
+█✹➤ .ytmp4 <link yt>
+█✹➤ .ytmp4doc <link yt>
 ╚▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬▭╝
 
 ╭┈❊🔆⃘🔥۬۫◌⃘⃪◌۬۫🔥̸ٜ࣭🔶❊❊❊ׅ┈╮  
 ◈🄸🄽🄳🄴🄿🄴🄽🄳🄸🄴🄽🅃🄴◈       
 .⌊…………………………………………………⌋   
-█✹➤ .toanime
-█✹➤ .tts <lang> <teks>
-█✹➤ .imagen <query>
-█✹➤ .remini
+█✹➤ .ai <texto>
+█✹➤ .acordar <url>
+█✹➤ .alfeñique <petición>
+█✹➤ .blackbox <petición>
+█✹➤ .cal <ecuación>
+█✹➤ .chazam <audio/video>
+█✹➤ .describe
+█✹➤ .detectface
+█✹➤ .fake <texto/@tag/texto>
+█✹➤ .gemini <petición>
+█✹➤ .remini <petion>
+█✹➤ .getpp
 █✹➤ .hd
-█✹➤ .enhance
-█✹➤ .nuevafotochannel
-█✹➤ .nosilenciarcanal
-█✹➤ .silenciarcanal
-█✹➤ .noseguircanal
-█✹➤ .seguircanal
-█✹➤ .avisoschannel
-█✹➤ .resiviravisos
-█✹➤ .inspect
-█✹➤ .inspeccionar
-█✹➤ .eliminarfotochannel
-█✹➤ .reactioneschannel
-█✹➤ .reaccioneschannel
-█✹➤ .nuevonombrecanal
-█✹➤ .nuevadescchannel
-█✹➤ .readvo
-█✹➤ .infobot
-█✹➤ .speed
+█✹➤ .ibb
+█✹➤ .igstalk <usuario>
+█✹➤ .morse <encode|decode>
+█✹➤ .qrcode <texto>
+█✹➤ .rect <emoji>
+█✹➤ .readmore <teks>|<teks>
+█✹➤ .ver
+█✹➤ .similarface
+█✹➤ .ss <url>
+█✹➤ .ssweb <url>
+█✹➤ .style <texto>
+█✹➤ .tamaño <cantidad>
+█✹➤ .tiktokstalk <usuario>
+█✹➤ .document <audio|video>
+█✹➤ .togifaud
+█✹➤ .toimg <stiker>
+█✹➤ .tomp3
+█✹➤ .tourl
+█✹➤ .tovid <stiker>
+█✹➤ .trad <leg> <texto>
+█✹➤ .transcripyt <url>
+█✹➤ .tts <texto>
+█✹➤ .tweestalk <usuario>
+█✹➤ .vcard @tag
+█✹➤ .zodiac 2002 02 25
 ╚▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬▭╝
 
 ╭┈❊🔆⃘🔥۬۫◌⃘⃪◌۬۫🔥̸ٜ࣭🔶❊❊❊ׅ┈╮  
 ◈🄸🄽🄳🄴🄿🄴🄽🄳🄸🄴🄽🅃🄴◈       
-.⌊…………………………………………………⌋
-█✹➤ .creador
-█✹➤ .owner
-█✹➤ .dash
-█✹➤ .dashboard
-█✹➤ .views
-█✹➤ .database
-█✹➤ .usuarios
-█✹➤ .user
-█✹➤ .ds
-█✹➤ .fixmsgespera
-█✹➤ .infobot
-█✹➤ .speed
-█✹➤ .ping
-█✹➤ .sistema
-█✹➤ .speed
-█✹➤ .speedtest
-█✹➤ .groups
-█✹➤ .grouplist
-█✹➤ .reportar
+.⌊…………………………………………………⌋   
+█✹➤ .afk <razón>
+█✹➤ .dance <@user>
+█✹➤ .meme
+█✹➤ .memetk
+█✹➤ .personalidad <nombre>
+█✹➤ .pregunta <texto>
+█✹➤ .reto
+█✹➤ .simi
 ╚▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬▭╝
 
 ╭┈❊🔆⃘🔥۬۫◌⃘⃪◌۬۫🔥̸ٜ࣭🔶❊❊❊ׅ┈╮  
 ◈🄸🄽🄳🄴🄿🄴🄽🄳🄸🄴🄽🅃🄴◈       
-.⌊…………………………………………………⌋  
-█✹➤ .enable <option>
-█✹➤ .disable <option>
-█✹➤ .addprem [@user] <days>
-█✹➤ >
-█✹➤ =>
-█✹➤ .copia
-█✹➤ .broadcastgroup <teks>
-█✹➤ .bcgc <teks>
-█✹➤ .bcgc2
-█✹➤ .broadcast <teks>
-█✹➤ .bc <teks>
-█✹➤ .cheat
-█✹➤ .cleartmp
-█✹➤ .delprem <@user>
-█✹➤ .dsowner
-█✹➤ $
-█✹➤ .fetch
-█✹➤ .get
-█✹➤ .getplugin *<nombre>*
-█✹➤ .nuevabiobot <teks>
-█✹➤ .nuevafotobot *<imagen>*
-█✹➤ .nuevonombrebot <teks>
-█✹➤ .prefix [prefix]
-█✹➤ .resetprefix
-█✹➤ .restart
-█✹➤ .saveplugin nombre
-█✹➤ .update
-█✹➤ .actualizar
-█✹➤ .resetpersonajes
+.⌊…………………………………………………⌋   
+█✹➤ .delcmd <texto>
+█✹➤ .listcmd
+█✹➤ .setcmd <texto>
 ╚▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬▭╝
 
 ╭┈❊🔆⃘🔥۬۫◌⃘⃪◌۬۫🔥̸ٜ࣭🔶❊❊❊ׅ┈╮  
 ◈🄸🄽🄳🄴🄿🄴🄽🄳🄸🄴🄽🅃🄴◈       
-.⌊…………………………………………………⌋  
+.⌊…………………………………………………⌋   
+█✹➤ .expiered <dias>
+█✹➤ .addprem <@user>
 █✹➤ .autoadmin
-█✹➤ .banchat
-█✹➤ .banuser <@tag> <razón>
-█✹➤ .join <link>
-█✹➤ .unbanchat
-█✹➤ .unbanuser <@tag>
+█✹➤ .banlist
+█✹➤ .ban <@user>
+█✹➤ .clearsession
+█✹➤ .deletefile
+█✹➤ .delexpired
+█✹➤ .delprem <@user>
+█✹➤ .getdb
+█✹➤ .getsesion
+█✹➤ .join <link><dias>
+█✹➤ .resetuser <@user>
+█✹➤ .restart
+█✹➤ .salir
+█✹➤ .savefile
+█✹➤ .munban <@user>
+█✹➤ .update
 ╚▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬▭╝
 
 ╭┈❊🔆⃘🔥۬۫◌⃘⃪◌۬۫🔥̸ٜ࣭🔶❊❊❊ׅ┈╮  
 ◈🄸🄽🄳🄴🄿🄴🄽🄳🄸🄴🄽🅃🄴◈       
 .⌊…………………………………………………⌋
-█✹➤ .chatgpt <texto>
-█✹➤ .ia <texto>
-█✹➤ .remini
+█✹➤ .bass <mp3/vn>
+█✹➤ .blown <mp3/vn>
+█✹➤ .deep <mp3/vn>
+█✹➤ .earrape <mp3/vn>
+█✹➤ .fast <mp3/vn>
+█✹➤ .fat <mp3/vn>
+█✹➤ .nightcore <mp3/vn>
+█✹➤ .reverse <mp3/vn>
+█✹➤ .robot <mp3/vn>
+█✹➤ .slow <mp3/vn>
+█✹➤ .smooth <mp3/vn>
+█✹➤ .tupai <mp3/vn>
+█✹➤ .reberb <mp3/vn>
+█✹➤ .chorus <mp3/vn>
+█✹➤ .flanger <mp3/vn>
+█✹➤ .distortion <mp3/vn>
+█✹➤ .pitch <mp3/vn>
+█✹➤ .highpass <mp3/vn>
+█✹➤ .lowpass <mp3/vn>
+█✹➤ .underwater <mp3/vn>
 ╚▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬▭╝
 `
 
