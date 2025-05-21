@@ -7,8 +7,8 @@ if (!args || !args[0]) return conn.reply(m.chat, '🔶 Ingresa un enlace del ví
 try {
 let { title, author, duration, views, likes, comment, share, published, downloads, dl_url } = await Starlights.tiktokdl(args[0])
 let txt = '`乂  T I K T O K  -  D O W N L O A D`\n\n'
-    txt += `🔶difruta tu video🔶`\n\n'
-    txt += `> 🚩 *${textbot}*`
+    txt = '`🔶disfrute su video🔶`\n\n'
+    txt += `> 🔥 *${textbot}*`
 await conn.sendFile(m.chat, dl_url, 'tiktok.mp4', txt, m, null, rcanal)
 await m.react('✅')
 } catch {
