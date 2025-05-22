@@ -24,10 +24,13 @@ await conn.sendFile(m.chat, img, 'thumbnail.jpg', txt, m, null, rcanal)
     while (canLevelUp(user.level, user.exp, global.multiplier)) user.level++
     if (before !== user.level) {
        let txt = ` –  *⫷ 𝕃 𝔼 𝕍 𝔼 𝕃 𝕌 ℙ⫸-⫷𝕌 𝕊 𝔼 ℝ ⫸*\n\n`
-	   txt += `▮▰▰▰▰▰▰▰▰\n`
+	   txt += `⋉🔆▰▰▰🔥▰▰▰🔆⫸\n`
+	   txt += `▮▿◇▿◇▿◇▿◇▿◇▿◇▿◇▿◇▿◇▿◇▿◇▿◇\n`
            txt += `▮🔶 *Nombre* : ${conn.getName(m.sender)}\n`
            txt += `▮🔶 *Nivel Anterior* : ${before}\n`
-           txt += `▮🔶 *Nivel Actual* : ${user.level}\n\n`
+           txt += `▮🔶 *Nivel Actual* : ${user.level}\n`
+	   txt += `▮▵◇▵◇▵◇▵◇▵◇▵◇▵◇▵◇▵◇▵◇▵◇▵◇\n`
+	   txt += `⋉🔆▰▰▰🔥▰▰▰🔆⫸\n`
            txt += `🔥 Cuanto más interactúes con *independiente*, mayor será tu Nivel`
 
 await conn.sendFile(m.chat, img, 'thumbnail.jpg', txt, m, null, rcanal)
