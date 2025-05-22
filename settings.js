@@ -9,7 +9,7 @@ import axios from 'axios'
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
 global.owner = [
-  ['51939508653', 'RAFAEL', true]
+  ['51939508653', 'CHASKI', true]
   
 ]
 
@@ -21,12 +21,12 @@ global.prems = []
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
 global.packname = ``
-global.author = '{\n "bot": {\n   "name": "INDEPENDIENTE BOT",\n     "author": "Ⅱ◁RAFAEL▷Ⅱ",\n   "status_bot": "active"\n }\n}'
+global.author = '{\n "bot": {\n   "name": "INDEPENDIENTE BOT",\n     "author": "Ⅱ◁CHASKI▷Ⅱ",\n   "status_bot": "active"\n }\n}'
 global.wait = '🐢 *Aɢᴜᴀʀᴅᴇ ᴜɴ ᴍᴏᴍᴇɴᴛᴏ, sᴏʏ ʟᴇɴᴛo... (^人^)*'
 global.botname = 'INDEPENDIENTE_BOT'
-global.textbot = `Powered By chaski`
+global.textbot = `Power By chaski`
 global.listo = '*Aqui tiene ฅ^•ﻌ•^ฅ*'
-global.namechannel = '🐈==alfeñique=='
+global.namechannel = '🐈==INDEPENDIENTE=='
 
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
