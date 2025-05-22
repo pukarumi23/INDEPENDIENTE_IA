@@ -107,6 +107,7 @@ let handler = async (m, { conn, usedPrefix, __dirname }) => {
 █✹➤ .buycoins
 █✹➤ .buyall
 █✹➤ .work
+█✹➤ .daily
 ╚▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬▭╝
 
 ╭┈❊🔆⃘🔥۬۫◌⃘⃪◌۬۫🔥̸ٜ࣭🔶❊❊❊ׅ┈╮  
