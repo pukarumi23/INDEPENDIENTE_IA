@@ -37,7 +37,7 @@ let handler = async (message, { conn, text, usedPrefix, command }) => {
           mediaType: 1, 
           showAdAttribution: true,
           title: '◈INDEPENDIENTE◈',
-          body: '( ˘︹˘ ) INDEPENDIENTE♾️🔶',
+          body: '(◠‿◠) 𝕀ℕ𝔻𝔼ℙ𝔼ℕ𝔻𝕀𝔼ℕ𝕋𝔼♾️🔶',
           previewType: 0, 
           thumbnail: Buffer.alloc(0),
           sourceUrl: redes 
@@ -73,7 +73,7 @@ let handler = async (message, { conn, text, usedPrefix, command }) => {
               text: "✨️ RESULTADO DE: " + text
             }),
             footer: proto.Message.InteractiveMessage.Footer.create({
-              text: "( ˘︹˘ ) INDEPENDIENTE♾️🔶"
+              text: "(◠‿◠) 𝕀ℕ𝔻𝔼ℙ𝔼ℕ𝔻𝕀𝔼ℕ𝕋𝔼♾️🔶"
             }),
             header: proto.Message.InteractiveMessage.Header.create({
               hasMediaAttachment: false
