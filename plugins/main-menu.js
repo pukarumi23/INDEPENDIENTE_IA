@@ -96,7 +96,7 @@ let handler = async (m, { conn, usedPrefix, __dirname }) => {
 .⌊…………………………………………………⌋  
 █✹➤ .bank
 █✹➤ .crimen
-█✹➤ .darcebollines @user <cantidad>
+█✹➤ .darintis @user <cantidad>
 █✹➤ .darxp @user <cantidad>
 █✹➤ .depositar
 █✹➤ .intis
