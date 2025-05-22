@@ -8,14 +8,16 @@ let handler = async (m, { conn }) => {
     if (!canLevelUp(user.level, user.exp, global.multiplier)) {
         let { min, xp, max } = xpRange(user.level, global.multiplier)
         let txt = ` –  *⫷ 𝕃 𝔼 𝕍 𝔼 𝕃 𝕌 ℙ⫸-⫷𝕌 𝕊 𝔼 ℝ ⫸*\n\n`
-	    txt += `⋉▰▰🔥▰▰🔆⫸\n`
+	    txt += `⋉🔆▰▰▰🔥▰▰▰🔆⫸\n`
+	    txt += `▮                    \n`
             txt += `▮🔶 *Nombre* : ${name}\n`
             txt += `▮🔶 *Nivel* : ${user.level}\n`
             txt += `▮🔶 *XP* : ${user.exp - min}/${xp}\n`
-	    txt += `▮🔆▰▰🔥▰▰🔆⫸\n`
+	    txt += `▮                    \n`
+	    txt += `▮▰▰▰▰▰▰▰▰▰⫸\n`
             txt += `▮◈Te falta *${max - user.exp}* de *💫 XP* para \n` 
 	    txt += `▮         subir de nivel \n`
-	    txt += `⋉▰▰🔥▰▰🔆⫸`
+	    txt += `⋉🔆▰▰▰🔥▰▰▰🔆⫸`
 await conn.sendFile(m.chat, img, 'thumbnail.jpg', txt, m, null, rcanal)
     }
     let before = user.level * 1
