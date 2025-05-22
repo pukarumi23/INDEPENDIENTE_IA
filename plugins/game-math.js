@@ -8,6 +8,7 @@ ${Object.keys(modes).join(' | ')}
 
 _📌Ejemplo : ${usedPrefix+command} normal_
 `.trim()
+  
   let mode = args[0].toLowerCase()
   if (!(mode in modes)) throw `
   🧮 Dificultades disponibles : 
@@ -29,21 +30,22 @@ _📌Ejemplo : ${usedPrefix+command} normal_
         }, math.time)
     ]
 }
+
+// Ayuda y comandos
 handler.help = ['mates']
 handler.tags = ['game']
 handler.command = ['mates', 'mate', 'matemáticas', 'math'] 
 
-
+// Modos de dificultad
 let modes = {
-    noob: [-3, 3,-3, 3, '+-', 15000, 100],
-  fácil: [-10, 10, -10, 10, '*/+-', 20000, 400],
-  normal: [-40, 40, -20, 20, '*/+-', 40000, 700],
-  difícil: [-100, 100, -70, 70, '*/+-', 30000, 800],
-  extremo: [-999999, 999999, -999999, 999999, '*/', 99999, 4500]
-//  imposible: [-99999999999, 99999999999, -99999999999, 999999999999, '*/', 30000, 10000],
-//  imposible2: [-999999999999999, 999999999999999, -999, 999, '/', 10000, 50000]
+    noob: [-3, 3, -3, 3, '+-', 15000, 100],
+    fácil: [-10, 10, -10, 10, '*/+-', 20000, 400],
+    normal: [-40, 40, -20, 20, '*/+-', 40000, 700],
+    difícil: [-100, 100, -70, 70, '*/+-', 30000, 800],
+    extremo: [-999999, 999999, -999999, 999999, '*/', 99999, 4500]
 }
 
+// Operadores para mostrar
 let operators = {
     '+': '+',
     '-': '-',
@@ -51,6 +53,7 @@ let operators = {
     '/': '÷'
 }
 
+// Generador de problemas matemáticos
 function genMath(mode) {
     let [a1, a2, b1, b2, ops, time, bonus] = modes[mode]
     let a = randomInt(a1, a2)
@@ -67,6 +70,7 @@ function genMath(mode) {
     }
 }
 
+// Función para número aleatorio
 function randomInt(from, to) {
     if (from > to) [from, to] = [to, from]
     from = Math.floor(from)
@@ -74,10 +78,10 @@ function randomInt(from, to) {
     return Math.floor((to - from) * Math.random() + from)
 }
 
+// Función para selección aleatoria
 function pickRandom(list) {
     return list[Math.floor(Math.random() * list.length)]
 }
 
-handler.modes = modes
-
+// Exportar handler
 export default handler
