@@ -10,9 +10,9 @@ let handler = async (m, { conn, command, args, text, usedPrefix }) => {
     
     for (let i = 0; i < res.length; i++) {
       txt += `\n\n`
-      txt += `  *🔶  Nro* : ${res[i].nro}\n`
-      txt += `  *🔶  Nombre* : ${res[i].name}\n`
-      txt += `  *🔶  ID* : ${res[i].id}`
+      txt += `  *🔆  Nro* : ${res[i].nro}\n`
+      txt += `  *🔥  Nombre* : ${res[i].name}\n`
+      txt += `  *🔆  ID* : ${res[i].id}`
     }
     
     await conn.sendFile(m.chat, img, 'thumbnail.jpg', txt, m, null, rcanal)
