@@ -9,24 +9,24 @@ let usersLim = sortedLim.map(enumGetKey)
 let usersLevel = sortedLevel.map(enumGetKey)
 let len = args[0] && args[0].length > 0 ? Math.min(5, Math.max(parseInt(args[0]), 5)) : Math.min(5, sortedExp.length)
 let text = `
-╭───═[ *Top ${len} Estrellas ⭐* ]═────⋆
+▮▰▰▰[ 🔶 *Top ${len} 🪙 Intis* 🔶 ]▰▰▰◇▶
+▮╭───────────────···
+⓵│ Tú eres el *${usersLim.indexOf(m.sender) + 1}* de *${usersLim.length}*
+⓺│ ${sortedLim.slice(0, len).map(({ jid, limit }, i) => `${i + 1}. ${participants.some(p => jid === p.jid) ? `(${conn.getName(jid)}) wa.me/` : '@'}${jid.split`@`[0]} *${limit} 🔆*`).join`\n🔶│ `}
+▮╰────────────────···
+▮▰▰▰▰▰▰▰▰▰▰◇▶
+
+╭───═[ 🔶 *TOP ${len} XP 💫* 🔶 ]═────⋆
 │╭───────────────···
-✩│ Tú eres el *${usersLim.indexOf(m.sender) + 1}* de *${usersLim.length}*
-✩│ ${sortedLim.slice(0, len).map(({ jid, limit }, i) => `${i + 1}. ${participants.some(p => jid === p.jid) ? `(${conn.getName(jid)}) wa.me/` : '@'}${jid.split`@`[0]} *${limit} ⭐*`).join`\n✩│ `}
+0│ Tú eres el *${usersLim.indexOf(m.sender) + 1}* de *${usersLim.length}*
+1│ ${sortedExp.slice(0, len).map(({ jid, exp }, i) => `${i + 1}. ${participants.some(p => jid === p.jid) ? `(${conn.getName(jid)}) wa.me/` : '@'}${jid.split`@`[0]} *${exp} 💫*`).join`\n💙│ `}
 │╰────────────────···
 ╰───────────═┅═──────────
 
-╭───═[ *TOP ${len} XP 💫* ]═────⋆
+╭───═[ 🔶 *Top ${len} Nivel 📈* 🔶 ]═────⋆
 │╭───────────────···
-✩│ Tú eres el *${usersLim.indexOf(m.sender) + 1}* de *${usersLim.length}*
-✩│ ${sortedExp.slice(0, len).map(({ jid, exp }, i) => `${i + 1}. ${participants.some(p => jid === p.jid) ? `(${conn.getName(jid)}) wa.me/` : '@'}${jid.split`@`[0]} *${exp} 💫*`).join`\n✩│ `}
-│╰────────────────···
-╰───────────═┅═──────────
-
-╭───═[ *Top ${len} Nivel 📈* ]═────⋆
-│╭───────────────···
-✩│ Tú eres el *${usersLim.indexOf(m.sender) + 1}* de *${usersLim.length}*
-✩│ ${sortedLevel.slice(0, len).map(({ jid, level }, i) => `${i + 1}. ${participants.some(p => jid === p.jid) ? `(${conn.getName(jid)}) wa.me/` : '@'}${jid.split`@`[0]} *Nivel ${level} 📈*`).join`\n✩│ `}
+0│ Tú eres el *${usersLim.indexOf(m.sender) + 1}* de *${usersLim.length}*
+1│ ${sortedLevel.slice(0, len).map(({ jid, level }, i) => `${i + 1}. ${participants.some(p => jid === p.jid) ? `(${conn.getName(jid)}) wa.me/` : '@'}${jid.split`@`[0]} *Nivel ${level} 📈*`).join`\n💙│ `}
 │╰────────────────···
 ╰───────────═┅═──────────`.trim()
   m.reply(text, null, { mentions: conn.parseMention(text) })
