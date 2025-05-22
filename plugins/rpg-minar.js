@@ -8,12 +8,12 @@ let handler = async (m, { conn }) => {
   let tiempoEspera = 5 * 60
   if (cooldowns[m.sender] && Date.now() - cooldowns[m.sender] < tiempoEspera * 1000) {
     let tiempoRestante = segundosAHMS(Math.ceil((cooldowns[m.sender] + tiempoEspera * 1000 - Date.now()) / 1000))
-    conn.reply(m.chat, `🚩 Hola ${name}, Ya has minado recientemente, espera ⏱ *${tiempoRestante}* para regresar a la Mina.`, m, rcanal)
+    conn.reply(m.chat, `🔶 Hola ${name}, Ya has minado recientemente, espera ⏱ *${tiempoRestante}* para regresar a la Mina.`, m, rcanal)
     return
   }
   
   global.db.data.users[m.sender].exp += hasil
-  let txt = `🚩 Genial! minaste *${hasil} 💫 XP.*`
+  let txt = `🔶 Genial! minaste *${hasil} 💫 XP.*`
   await m.react('⛏')
   await conn.reply(m.chat, txt, m, rcanal)
   
