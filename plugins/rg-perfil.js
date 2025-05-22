@@ -40,16 +40,16 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 
     let txt = `⩤ 𝗣 𝗘 𝗥 𝗙 𝗜 𝗟 - 𝗨 𝗦 𝗘 𝗥 ⩥*\n\n`;
     txt += `⋉▭▰▭▰▭▰▭▰▭⫸\n`
-    txt += `▮  🔶  *Nombre* : ${name}\n`;
-    txt += `▮  🔶  *Edad* : ${registered ? `${age} años` : '×'}\n`;
-    txt += `▮  🔶  *Número* : ${phoneFormatted}\n`;
-    txt += `▮  🔶  *Nacionalidad* : ${userNationality}\n`;
-    txt += `▮  🔶  *Link* : wa.me/${who.split`@`[0]}\n`;
-    txt += `▮  🔶  *Cebollines* : ${limit}\n`;
-    txt += `▮  🔶  *Nivel* : ${level}\n`;
-    txt += `▮  🔶  *XP* : Total ${exp} (${exp - min}/${xp})\n`;
-    txt += `▮  🔶  *Premium* : ${prem ? '✅ Sí' : '❌ No'}\n`;
-    txt += `▮  🔶  *Registrado* : ${registered ? '✅ Sí' : '❌ No'}\n`;
+    txt += `▮ 🔶 *Nombre* : ${name}\n`;
+    txt += `▮ 🔶 *Edad* : ${registered ? `${age} años` : '×'}\n`;
+    txt += `▮ 🔶 *Número* : ${phoneFormatted}\n`;
+    txt += `▮ 🔶 *Nacionalidad* : ${userNationality}\n`;
+    txt += `▮ 🔶 *Link* : wa.me/${who.split`@`[0]}\n`;
+    txt += `▮ 🔶 *Cebollines* : ${limit}\n`;
+    txt += `▮ 🔶 *Nivel* : ${level}\n`;
+    txt += `▮ 🔶 *XP* : Total ${exp} (${exp - min}/${xp})\n`;
+    txt += `▮ 🔶 *Premium* : ${prem ? '✅ Sí' : '❌ No'}\n`;
+    txt += `▮ 🔶 *Registrado* : ${registered ? '✅ Sí' : '❌ No'}\n`;
     txt += `⋉▭▰▭▰▭▰▭▰▭⫸`
 
     let img = await (await fetch(pp)).buffer();
