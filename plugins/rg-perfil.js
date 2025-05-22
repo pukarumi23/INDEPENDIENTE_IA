@@ -38,7 +38,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
       console.error('Error al obtener la nacionalidad:', err);
     }
 
-    let txt = `🔶 *P E R F I L  -  U S E R 🔶*\n\n`;
+    let txt = `⩤ 𝗣 𝗘 𝗥 𝗙 𝗜 𝗟 - 𝗨 𝗦 𝗘 𝗥 ⩥*\n\n`;
     txt += `⋉▭▰▭▰▭▰▭▰▭⫸\n`
     txt += `▮  🔶  *Nombre* : ${name}\n`;
     txt += `▮  🔶  *Edad* : ${registered ? `${age} años` : '×'}\n`;
