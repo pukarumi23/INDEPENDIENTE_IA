@@ -1,56 +1,53 @@
-const handler = async (m, {conn, text, command, usedPrefix, args}) => {
-  const pp = 'https://telegra.ph/file/c7924bf0e0d839290cc51.jpg';
+let cooldowns = {}
 
-  // 60000 = 1 minuto // 30000 = 30 segundos // 15000 = 15 segundos // 10000 = 10 segundos
-  const time = global.db.data.users[m.sender].wait + 10000;
-  if (new Date - global.db.data.users[m.sender].wait < 10000) throw `*🕓 Tendrás que esperar ${Math.floor((time - new Date()) / 1000)} segundos antes de poder volver a jugar*`;
+let handler = async (m, { conn, text, usedPrefix, command }) => {
+    let poin = 300
+    let tiempoEspera = 5 * 1000
+    let user = global.db.data.users[m.sender]
+ 
+    if (cooldowns[m.sender] && Date.now() - cooldowns[m.sender] < tiempoEspera) {
+        let tiempoRestante = segundosAHMS(Math.ceil((cooldowns[m.sender] + tiempoEspera - Date.now()) / 1000))
+        return conn.reply(m.chat, `💙 Ya has iniciado una apuesta recientemente, espera *⏱ ${tiempoRestante}* para apostar nuevamente.`, m, rcanal)
+    }
 
-  if (!args[0]) return conn.sendButton(m.chat, `*𝐏𝐢𝐞𝐝𝐫𝐚 🗿, 𝐏𝐚𝐩𝐞𝐥 📄 𝐨 𝐓𝐢𝐣𝐞𝐫𝐚 ✂️*\n\n*—◉  𝙿𝚎𝚍𝚎𝚜 𝚞𝚜𝚊𝚛 𝚕𝚘𝚜 𝚋𝚘𝚝𝚘𝚗𝚎𝚜 𝚙𝚊𝚛𝚊 𝚓𝚞𝚐𝚊𝚛 𝚘 𝚝𝚊𝚖𝚋𝚒𝚎𝚗 𝚙𝚞𝚎𝚍𝚎𝚜 𝚞𝚜𝚊𝚛 𝚎𝚜𝚝𝚘𝚜 𝚌𝚘𝚖𝚊𝚗𝚍𝚘𝚜:*\n*◉ ${usedPrefix + command} piedra*\n*◉ ${usedPrefix + command} papel*\n*◉ ${usedPrefix + command} tijera*`, wm, pp, [['Piedra 🗿', `${usedPrefix + command} piedra`], ['Papel 📄', `${usedPrefix + command} papel`], ['Tijera ✂️', `${usedPrefix + command} tijera`]], m)
-  
-  let astro = Math.random();
-  if (astro < 0.34) {
-    astro = 'piedra';
-  } else if (astro > 0.34 && astro < 0.67) {
-    astro = 'tijera';
-  } else {
-    astro = 'papel';
-  }
-  
-  const textm = text.toLowerCase();
-  if (textm == astro) {
-    global.db.data.users[m.sender].cookies += 10;
-    m.reply(`*🔰 Empate!*\n\n*👉🏻 Tu: ${textm}*\n*👉🏻 El Bot: ${astro}*\n*🎁 Premio +10 Cookies*`);
-  } else if (textm == 'papel') {
-    if (astro == 'piedra') {
-      global.db.data.users[m.sender].cookies += 50;
-      m.reply(`*🥳 Tú ganas! 🎉*\n\n*👉🏻 Tu: ${textm}*\n*👉🏻 El Bot: ${astro}*\n*🎁 Premio +50 Cookies*`);
-    } else {
-      global.db.data.users[m.sender].cookies -= 30;
-      m.reply(`*☠️ Tú pierdes! ❌*\n\n*👉🏻 Tu: ${textm}*\n*👉🏻 El Bot: ${astro}*\n*❌ Premio -30 Cookies*`);
-    }
-  } else if (textm == 'tijera') {
-    if (astro == 'papel') {
-      global.db.data.users[m.sender].cookies += 50;
-      m.reply(`*🥳 Tú ganas! �*\n\n*👉🏻 Tu: ${textm}*\n*👉🏻 El Bot: ${astro}*\n*🎁 Premio +50 Cookies*`);
-    } else {
-      global.db.data.users[m.sender].cookies -= 30;
-      m.reply(`*☠️ Tú pierdes! ❌*\n\n*👉🏻 Tu: ${textm}*\n*👉🏻 El Bot: ${astro}*\n*❌ Premio -30 Cookies*`);
-    }
-  } else if (textm == 'piedra') {
-    if (astro == 'tijera') {
-      global.db.data.users[m.sender].cookies += 50;
-      m.reply(`*🥳 Tú ganas! 🎉*\n\n*👉🏻 Tu: ${textm}*\n*👉🏻 El Bot: ${astro}*\n*🎁 Premio +50 Cookies*`);
-    } else {
-      global.db.data.users[m.sender].cookies -= 30;
-      m.reply(`*☠️ Tú pierdes! ❌*\n\n*👉🏻 Tu: ${textm}*\n*👉🏻 El Bot: ${astro}*\n*❌ Premio -30 Cookies*`);
-    }
-  }
-  global.db.data.users[m.sender].wait = new Date * 1;
-};
+    cooldowns[m.sender] = Date.now()
 
-handler.help = ['ppt'];
-handler.tags = ['fun'];
-handler.command = /^(ppt)$/i;
-handler.group = true;
-handler.register = true;
-export default handler;
+    if (!text) return conn.reply(m.chat, '💙 Elige una opción ( *piedra/papel/tijera* ) para empezar el juego.\n\n`» Ejemplo :`\n' + `> *${usedPrefix + command}* piedra`, m, rcanal)
+
+    let opciones = ['piedra', 'papel', 'tijera']
+    let astro = opciones[Math.floor(Math.random() * opciones.length)]
+
+    if (!opciones.includes(text)) return conn.reply(m.chat, '💙 Elige una opción ( *piedra/papel/tijera* ) para empezar el juego.\n\n`» Ejemplo :`\n' + `> *${usedPrefix + command}* piedra`, m, rcanal)
+
+    let resultado = ''
+    let puntos = 0
+
+    if (text === astro) {
+        resultado = `💙 Fue un empate!! ten *100 🌱 Cebollines* como recompensa`
+        puntos = 100
+    } else if (
+        (text === 'piedra' && astro === 'tijera') ||
+        (text === 'tijera' && astro === 'papel') ||
+        (text === 'papel' && astro === 'piedra')
+    ) {
+        resultado = `💙 GANASTE!! acabas de ganar *300 🌱 Cebollines*`
+        puntos = poin
+    } else {
+        resultado = `💙 PERDISTE!! acabas de perder *300 🌱 Cebollines*`
+        puntos = -poin
+    }
+
+    user.limit += puntos
+    conn.reply(m.chat, `${resultado}`, m, rcanal)
+}
+
+handler.help = ['ppt']
+handler.tags = ['game']
+handler.command = ['ppt']
+//handler.group = true
+handler.register = true
+export default handler
+
+function segundosAHMS(segundos) {
+    return `${segundos % 60} segundos`
+}
