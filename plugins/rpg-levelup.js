@@ -9,11 +9,11 @@ let handler = async (m, { conn }) => {
         let { min, xp, max } = xpRange(user.level, global.multiplier)
         let txt = ` –  *⫷ 𝕃 𝔼 𝕍 𝔼 𝕃 𝕌 ℙ⫸-⫷𝕌 𝕊 𝔼 ℝ ⫸*\n\n`
 	    txt += `⋉🔆▰▰▰🔥▰▰▰🔆⫸\n`
-	    txt += `▮ ▿▿▿▿▿▿▿▿▿▿▿▿▿\n`
+	    txt += `▮ ▿▿▿▿▿▿▿▿▿▿▿▿▿▿▿▿▿▿▿▿▿▿▿▿▿▿\n`
             txt += `▮🔶 *Nombre* : ${name}\n`
             txt += `▮🔶 *Nivel* : ${user.level}\n`
             txt += `▮🔶 *XP* : ${user.exp - min}/${xp}\n`
-	    txt += `▮▵▵▵▵▵▵▵▵▵▵▵▵▵▵▵\n`
+	    txt += `▮▵▵▵▵▵▵▵▵▵▵▵▵▵▵▵▵▵▵▵▵▵▵▵▵▵▵▵▵▵▵\n`
 	    txt += `▮▰▰▰▰▰▰▰▰▰⫸\n`
             txt += `▮◈Te falta *${max - user.exp}* de *💫 XP* para \n` 
 	    txt += `▮         subir de nivel \n`
