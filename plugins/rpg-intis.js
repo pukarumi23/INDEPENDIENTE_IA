@@ -6,8 +6,8 @@ let handler = async (m, {conn, usedPrefix}) => {
     let user = global.db.data.users[who]
     let name = conn.getName(who)
     if (!(who in global.db.data.users)) return conn.reply(m.chat, '🚩 El usuario no se encuentra en mi base de Datos.', m, rcanal).then(_ => m.react('✖️'))
-    let img = await (await fetch(`https://tinyurl.com/yrkgv3qm`)).buffer()
-    let txt = ` –  *S T A R S  -  U S E R*\n\n`
+    let img = await (await fetch(`https://sl.bing.net/ebAy443aU9s`)).buffer()
+    let txt = ` –  *⫷ I N T I S ⫸ - ⫷ U S E R ⫸*\n\n`
         txt += `┌  ✩  *Nombre* : ${user.name}\n`
         txt += `│  ✩  *Estrellas* : ${toNum(user.limit)} ( *${user.limit}* )\n`
         txt += `│  ✩  *Bank* : ${toNum(user.bank)} ( *${user.bank}* )\n`
@@ -16,9 +16,9 @@ let handler = async (m, {conn, usedPrefix}) => {
         
 await conn.sendFile(m.chat, img, 'thumbnail.jpg', txt, m, null, rcanal)
 }
-handler.help = ['estrellas']
+handler.help = ['intis']
 handler.tags = ['rpg']
-handler.command = ['coins', 'wallet', 'cartera', 'estrellas', 'stars', 'bal', 'balance']
+handler.command = ['coins', 'wallet', 'cartera', 'intis', 'soles', 'bal', 'balance']
 handler.register = true 
 export default handler
 
