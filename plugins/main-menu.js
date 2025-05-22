@@ -77,7 +77,6 @@ let handler = async (m, { conn, usedPrefix, __dirname }) => {
 █✹➤ .tiktoksearch <txt>
 █✹➤ .aptoidesearch <busqueda>
 █✹➤ .spotifysearch <busqueda>
-█✹➤ .tweetpost <busqueda>
 █✹➤ .ytsearch <busqueda>
 ╚▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬ִ▭࣪▬▭╝
 
