@@ -7,33 +7,33 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
  
     if (cooldowns[m.sender] && Date.now() - cooldowns[m.sender] < tiempoEspera) {
         let tiempoRestante = segundosAHMS(Math.ceil((cooldowns[m.sender] + tiempoEspera - Date.now()) / 1000))
-        return conn.reply(m.chat, `💙 Ya has iniciado una apuesta recientemente, espera *⏱ ${tiempoRestante}* para apostar nuevamente.`, m, rcanal)
+        return conn.reply(m.chat, `🔶 Ya has iniciado una apuesta recientemente, espera *⏱ ${tiempoRestante}* para apostar nuevamente.`, m, rcanal)
     }
 
     cooldowns[m.sender] = Date.now()
 
-    if (!text) return conn.reply(m.chat, '💙 Elige una opción ( *piedra/papel/tijera* ) para empezar el juego.\n\n`» Ejemplo :`\n' + `> *${usedPrefix + command}* piedra`, m, rcanal)
+    if (!text) return conn.reply(m.chat, '🔶 Elige una opción ( *piedra/papel/tijera* ) para empezar el juego.\n\n`» Ejemplo :`\n' + `> *${usedPrefix + command}* piedra`, m, rcanal)
 
     let opciones = ['piedra', 'papel', 'tijera']
     let astro = opciones[Math.floor(Math.random() * opciones.length)]
 
-    if (!opciones.includes(text)) return conn.reply(m.chat, '💙 Elige una opción ( *piedra/papel/tijera* ) para empezar el juego.\n\n`» Ejemplo :`\n' + `> *${usedPrefix + command}* piedra`, m, rcanal)
+    if (!opciones.includes(text)) return conn.reply(m.chat, '🔶 Elige una opción ( *piedra/papel/tijera* ) para empezar el juego.\n\n`» Ejemplo :`\n' + `> *${usedPrefix + command}* piedra`, m, rcanal)
 
     let resultado = ''
     let puntos = 0
 
     if (text === astro) {
-        resultado = `💙 Fue un empate!! ten *100 🌱 Cebollines* como recompensa`
+        resultado = `🔶 Fue un empate!! ten *100 🪙 Intis* como recompensa`
         puntos = 100
     } else if (
         (text === 'piedra' && astro === 'tijera') ||
         (text === 'tijera' && astro === 'papel') ||
         (text === 'papel' && astro === 'piedra')
     ) {
-        resultado = `💙 GANASTE!! acabas de ganar *300 🌱 Cebollines*`
+        resultado = `🔶 GANASTE!! acabas de ganar *300 🪙 Intis*`
         puntos = poin
     } else {
-        resultado = `💙 PERDISTE!! acabas de perder *300 🌱 Cebollines*`
+        resultado = `🔶 PERDISTE!! acabas de perder *300 🪙 Intis*`
         puntos = -poin
     }
 
