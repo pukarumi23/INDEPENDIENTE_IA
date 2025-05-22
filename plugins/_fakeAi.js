@@ -14,18 +14,18 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
           "groupJid": "6285240750713-1610340626@g.us",
           "inviteCode": "mememteeeekkeke",
           "groupName": "P",
-          "caption": "Hello, I'm el alfeñique",
+          "caption": "Hello, I'm independiente",
           "jpegThumbnail": await (await fetch(pp)).buffer()
         }
       }
     }
     
-    conn.sendMessage(m.chat, { text: 'Hola soy el alfeñique, ¿Cómo puedo ayudarte?' }, { quoted: anu })
+    conn.sendMessage(m.chat, { text: 'Hola soy independiente_bot, ¿Cómo puedo ayudarte?' }, { quoted: anu })
   } catch (error) {
-    conn.sendMessage(m.chat, 'Hola soy el alfeñique, ¿Cómo puedo ayudarte?', 'conversation', { quoted: m })
+    conn.sendMessage(m.chat, 'Hola soy independiente_bot, ¿Cómo puedo ayudarte?', 'conversation', { quoted: m })
   }
 }
 
-handler.customPrefix = /^(alfeñique)$/i
+handler.customPrefix = /^(INDEPENDIENTE_BOT)$/i
 handler.command = new RegExp
 export default handler
