@@ -77,10 +77,10 @@ let handler = async (m, { conn, usedPrefix }) => {
    
    let txt = '`*⭒─ׄ─ׅ─ׄ─⭒ Info Bot ⭒─ׄ─ׅ─ׄ─⭒*`\n\n'
        txt += `╭── ︿︿︿︿︿ *⭒   ⭒   ⭒   ⭒   ⭒   ⭒*\n`
-       txt += `┊ ‹‹ *Status De* :: *💙HATSUNE MIKU💙*\n`
-       txt += `┊•*💙HATSUNE MIKU CHANNEL💙*\n`
-       txt += `╰─── 💙  ⌇ DEPOOL   ˚̩̥̩̥*̩̩͙🌱\n`
-       txt += `┊🪴 [ *Moneda* :: *🌱 Cebollines*\n`
+       txt += `┊ ‹‹ *Status De* :: *🔶INDEPENDIENTE🔶*\n`
+       txt += `┊•*🔶INDEPENDIENTE CHANNEL🔶*\n`
+       txt += `╰─── 🔶  ⌇ CHASKI   ˚̩̥̩̥*̩̩͙🔥\n`
+       txt += `┊🪴 [ *Moneda* :: *🪙 Iintis*\n`
        txt += `┊🍟 [ *Prefijo* :: *【  ${usedPrefix}  】*\n`
        txt += `┊✨ [ *Plugins* :: *${totalf}*\n`
        txt += `┊☁️ [ *Sub-Bots* :: *${totalUsers || '0'}*\n`
@@ -92,7 +92,7 @@ let handler = async (m, { conn, usedPrefix }) => {
        txt += `┊🌴 [ *Grupos Registrados* :: *${formatNumber(totalchats)}*\n`
        txt += `┊🌺 [ *Registrados* :: *${formatNumber(totalreg)} Usuarios*\n`
        txt += `╰─────────\n\n`
-       txt += `> 💙 ${textbot}`
+       txt += `> 🔶 ${textbot}`
 
    // Fix for the mimetype error: Check if the file exists or use a different approach
    try {
