@@ -30,8 +30,8 @@ global.namechannel = '🐈==INDEPENDIENTE=='
 
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
-global.catalogo = fs.readFileSync('./storage/img/teto1.jpeg')
-global.miniurl = fs.readFileSync('./storage/img/teto2.webp')
+global.catalogo = fs.readFileSync('./storage/img/inti.jpeg')
+global.miniurl = fs.readFileSync('./storage/img/chaski-kun 1.jpeg')
 
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
