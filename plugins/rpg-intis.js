@@ -6,7 +6,7 @@ let handler = async (m, {conn, usedPrefix}) => {
     let user = global.db.data.users[who]
     let name = conn.getName(who)
     if (!(who in global.db.data.users)) return conn.reply(m.chat, '💙 El usuario no se encuentra en mi base de Datos.', m, rcanal).then(_ => m.react('✖️'))
-    let img = await (await fetch(`https://sl.bing.net/kV8ahiwMMZE`)).buffer()
+    let img = await (await fetch(`https://www.instagram.com/ratuqcha/p/DJ8uSfuggh9FKwc70oDR_MNRyBM2feDhMbEbdo0/`)).buffer()
     let txt = ` –  *⫷ I N T I S ⫸ - ⫷ U S E R ⫸*\n\n`
 	txt += `🔆▰▰▰⩥🔥⩤▰▰▰🔆\n`
         txt += `▮  🔶  *Nombre* : ${user.name}\n`
