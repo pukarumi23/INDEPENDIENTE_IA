@@ -1,7 +1,7 @@
 import Starlights from "@StarlightsTeam/Scraper"
 
 let handler = async (m, { conn, usedPrefix, command, text }) => {
-    if (!text) return m.reply('💙 Ingresa el título de un video o canción de *YouTube*.\n\n`Ejemplo:`\n' + `> *${usedPrefix + command}* Hatsune Miku World is mine`)
+    if (!text) return m.reply('🔶 Ingresa el título de un video o canción de *YouTube*.\n\n`Ejemplo:`\n' + `> *${usedPrefix + command}* FESTTRONI-K `)
     await m.react('🕓')
     try {
     let results = await Starlights.ytsearch(text)
@@ -10,12 +10,12 @@ let handler = async (m, { conn, usedPrefix, command, text }) => {
     let txt = '`🔶  ⫷ 𝙔𝙏 - 𝙎𝙀𝘼𝙍𝘾𝙃 ⫸  🔶`'
     results.forEach((video, index) => {
         txt += `\n\n`
-        txt += `	🎤  *Nro* : ${index + 1}\n`
-        txt += `	🎤  *Titulo* : ${video.title}\n`
-        txt += `	🎤  *Duración* : ${video.duration}\n`
-        txt += `	🎤  *Publicado* : ${video.published}\n`
-        txt += `	🎤  *Autor* : ${video.author}\n`
-        txt += `	🎤  *Url* : ${video.url}`
+        txt += `🔥▷  *Nro* : ${index + 1}\n`
+        txt += `🔥▷  *Titulo* : ${video.title}\n`
+        txt += `🔥▷  *Duración* : ${video.duration}\n`
+        txt += `🔥▷  *Publicado* : ${video.published}\n`
+        txt += `🔥▷  *Autor* : ${video.author}\n`
+        txt += `🔥▷  *Url* : ${video.url}`
     })
 await conn.sendFile(m.chat, img, 'thumbnail.jpg', txt, m, null, rcanal)
 await m.react('✅')
