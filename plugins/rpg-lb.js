@@ -15,14 +15,14 @@ let text = `
 ▮│ ${sortedLim.slice(0, len).map(({ jid, limit }, i) => `${i + 1}. ${participants.some(p => jid === p.jid) ? `(${conn.getName(jid)}) wa.me/` : '@'}${jid.split`@`[0]} *${limit} 🪙*`).join`\n▮│ `}
 ▮╰────────────────···
 🔥■◇■◇■◇■🔶🔆🔶■◇■◇■◇⩥
-▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰
+▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰
 🔥■◇[ 🔶 *TOP ${len} XP 💫* 🔶 ]■◇⩥
 ▮╭───────────────···
 ▮│ Tú eres el *${usersLim.indexOf(m.sender) + 1}* de *${usersLim.length}*
 ▮│ ${sortedExp.slice(0, len).map(({ jid, exp }, i) => `${i + 1}. ${participants.some(p => jid === p.jid) ? `(${conn.getName(jid)}) wa.me/` : '@'}${jid.split`@`[0]} *${exp} 💫*`).join`\n▮│ `}
 ▮╰────────────────···
 🔥■◇■◇■◇■🔶🔆🔶■◇■◇■◇⩥
-▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰
+▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰
 🔥■◇[ 🔶 *Top ${len} Nivel 📈* 🔶 ]■◇⩥
 ▮╭───────────────···
 ▮│ Tú eres el *${usersLim.indexOf(m.sender) + 1}* de *${usersLim.length}*
