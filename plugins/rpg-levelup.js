@@ -13,8 +13,8 @@ let handler = async (m, { conn }) => {
             txt += `▮  🔶  *Nivel* : ${user.level}\n`
             txt += `▮  🔶  *XP* : ${user.exp - min}/${xp}\n`
 	    txt += `▮▰▰▰▰▰▰▰▰\n`
-            txt += `▮ Te falta *${max - user.exp}* de *💫 XP* para 
-	    txt += `▮           subir de nivel\n`
+            txt += `▮ Te falta *${max - user.exp}* de *💫 XP* para \n` 
+	    txt += `▮           subir de nivel \n`
 	    txt += `▮▰▰▰▰▰▰▰▰`
 await conn.sendFile(m.chat, img, 'thumbnail.jpg', txt, m, null, rcanal)
     }
