@@ -12,7 +12,7 @@ let handler = async (m, {conn, usedPrefix}) => {
         txt += `■  🔶  *Nombre* : ${user.name}\n`
         txt += `■  🔶  *Estrellas* : ${toNum(user.limit)} ( *${user.limit}* )\n`
         txt += `■  🔶  *Bank* : ${toNum(user.bank)} ( *${user.bank}* )\n`
-        txt += `■  🔶  *XP* : ${toNum(user.exp)} ( *${user.exp}* \n)`
+        txt += `■  🔶  *XP* : ${toNum(user.exp)} ( *${user.exp}* )\n`
 	txt += `■▭■▭■▭■▭■▷`
     let mentionedJid = [who]
         
