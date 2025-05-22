@@ -5,18 +5,18 @@ let user = global.db.data.users[m.sender]
   let tiempoEspera = 5 * 60
   if (cooldowns[m.sender] && Date.now() - cooldowns[m.sender] < tiempoEspera * 1000) {
     const tiempoRestante = segundosAHMS(Math.ceil((cooldowns[m.sender] + tiempoEspera * 1000 - Date.now()) / 1000))
-    conn.reply(m.chat, `🚩 Espera ⏱ *${tiempoRestante}* para volver a Trabajar.`, m, rcanal)
+    conn.reply(m.chat, `🔶 Espera ⏱ *${tiempoRestante}* para volver a Trabajar.`, m, rcanal)
     return
   }
   let resultado = Math.floor(Math.random() * 5000)
   cooldowns[m.sender] = Date.now()
-  await conn.reply(m.chat, `🚩 ${pickRandom(works)} *${toNum(resultado)}* ( *${resultado}* ) XP 💫.`, m, rcanal)
+  await conn.reply(m.chat, `🔶 ${pickRandom(works)} *${toNum(resultado)}* ( *${resultado}* ) XP 💫.`, m, rcanal)
   user.exp += resultado
 }
 
 handler.help = ['work']
 handler.tags = ['rpg']
-handler.command = ['w','work', 'trabajar']
+handler.command = ['w','work','chambear', 'trabajar']
 handler.register = true 
 export default handler
 
@@ -52,6 +52,7 @@ const works = [
    "Limpias la chimenea y encuentras",
    "Desarrollas juegos para ganarte la vida y ganas",
    "Trabajaste en la oficina horas extras por",
+   "Trabajas como secuestrador de novias y ganas",
    "Alguien vino y representó una obra de teatro. Por mirar te dieron",
    "Compraste y vendiste artículos y ganaste",
    "Trabajas en el restaurante de la abuela como cocinera y ganas",
@@ -78,6 +79,4 @@ const works = [
    "Trabajas como zoólogo y ganas",
    "Vendiste sándwiches de pescado y obtuviste",
    "Reparas las máquinas recreativas y recibes",
-   "trabajaste como recolector de chuños",
-   "te alquilaste como chaski en cusco",
 ] 
