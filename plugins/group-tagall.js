@@ -16,7 +16,7 @@
   }
   teks += `└───────⭓
 
-© Hatsune Miku| By (ㅎㅊDEPOOLㅊㅎ)`;
+🔶INDEPENDIENTE| ◇POWER BY CHASKI◇`;
   conn.sendMessage(m.chat, {text: teks, mentions: participants.map((a) => a.id)} );
 };
 handler.help = ['tagall <mesaje>', 'invocar <mesaje>'];
