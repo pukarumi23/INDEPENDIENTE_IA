@@ -10,13 +10,13 @@
   }
   const pesan = args.join` `;
   const oi = `${pesan}`;
-  let teks = `*independiente 🔶*\n\n *Integrantes :  ${participants.length}* ${oi}\n\n┌──⭓ Como tan muchachos?\n`;
+  let teks = `* 🔶  I N D E P E N D I E N T E  🔶 *\n\n *Integrantes :  ${participants.length}* ${oi}\n\n▰▰▰⫸ Como tan muchachos?\n`;
   for (const mem of participants) {
-    teks += `🔆⩥ @${mem.id.split('@')[0]}\n`;
+    teks += `▮⩥ @${mem.id.split('@')[0]}\n`;
   }
-  teks += `└───────⭓
+  teks += `▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰⫸
 
-🔶INDEPENDIENTE| ◇POWER BY CHASKI◇`;
+𝕴ℕ𝔻𝔼ℙ𝔼ℕ𝔻𝕀𝔼ℕ𝕋𝔼| ◇POWER BY CHASKI◇`;
   conn.sendMessage(m.chat, {text: teks, mentions: participants.map((a) => a.id)} );
 };
 handler.help = ['tagall <mesaje>', 'invocar <mesaje>'];
