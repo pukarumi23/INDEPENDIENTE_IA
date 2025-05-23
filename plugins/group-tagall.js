@@ -10,9 +10,9 @@
   }
   const pesan = args.join` `;
   const oi = `${pesan}`;
-  let teks = `*Hatsune Miku 💙*\n\n *Integrantes :  ${participants.length}* ${oi}\n\n┌──⭓ Como tan muchachos?\n`;
+  let teks = `*independiente 🔶*\n\n *Integrantes :  ${participants.length}* ${oi}\n\n┌──⭓ Como tan muchachos?\n`;
   for (const mem of participants) {
-    teks += `🌱 @${mem.id.split('@')[0]}\n`;
+    teks += `🔆⩥ @${mem.id.split('@')[0]}\n`;
   }
   teks += `└───────⭓
 
