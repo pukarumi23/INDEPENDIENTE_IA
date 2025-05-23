@@ -21,10 +21,7 @@ global.prems = []
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
 global.packname = ``
-global.author = '\n "bot":'
-                '\n   "name": "INDEPENDIENTE BOT",'
-                '\n "author": "◇CHASKI",'
-                '\n "status_bot": "active"\n \n'
+global.author = '\n bot:\n   name: INDEPENDIENTE,\n author: CHASKI,\n status_bot: active\n \n'
 global.wait = '🐢 *Aɢᴜᴀʀᴅᴇ ᴜɴ ᴍᴏᴍᴇɴᴛᴏ, sᴏʏ ʟᴇɴᴛo... (^人^)*'
 global.botname = 'INDEPENDIENTE_BOT'
 global.textbot = `Power By chaski`
