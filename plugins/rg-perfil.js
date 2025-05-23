@@ -20,7 +20,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
     let prem = global.prems.includes(who.split`@`[0]);
     let bio = await conn.fetchStatus(who).catch(_ => ({ status: 'Sin Info' }));
     let biot = bio.status;
-    let pp = await conn.profilePictureUrl(who, 'image').catch(_ => 'https://i.ibb.co/tqWV67y/file.jpg');
+    let pp = await conn.profilePictureUrl(who, 'image').catch(_ => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQepVxFYCcW7aUwO4segobYmMIRB_Exfom2fQ&s');
 
   
     let phoneNum = new PhoneNumber('+' + who.replace('@s.whatsapp.net', ''));
