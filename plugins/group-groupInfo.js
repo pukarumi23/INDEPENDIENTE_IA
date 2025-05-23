@@ -19,10 +19,10 @@ ${listAdmin}
 🔥▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰⫸🔥
 ▮🔶 *Configuración de grupo:*
 ▮ • ${isBanned ? '✅' : '❎'} Baneado
-▮🔶 • ${welcome ? '✅' : '❎'} Bienvenida
-▮🔶 • ${detect ? '✅' : '❎'} Detector
-▮🔶 • ${del ? '❎' : '✅'} Anti Delete
-▮🔶 • ${antiLink ? '✅' : '❎'} Anti Link WhatsApp
+▮ • ${welcome ? '✅' : '❎'} Bienvenida
+▮ • ${detect ? '✅' : '❎'} Detector
+▮ • ${del ? '❎' : '✅'} Anti Delete
+▮ • ${antiLink ? '✅' : '❎'} Anti Link WhatsApp
 🔥▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰⫸🔥
 ▮🔶*Configuración de mensajes:*
 ▮• Bienvenida: ${sWelcome}
