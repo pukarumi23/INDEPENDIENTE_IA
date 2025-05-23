@@ -7,19 +7,19 @@ let handler = async (m, { conn, participants, groupMetadata }) => {
     const listAdmin = groupAdmins.map((v, i) => `${i + 1}. @${v.id.split('@')[0]}`).join('\n')
     const owner = groupMetadata.owner || groupAdmins.find(p => p.admin === 'superadmin')?.id || m.chat.split`-`[0] + '@s.whatsapp.net'
     let text = `
-╭─「 *INFO DE GRUPO* 」
-║❥ *ID:* ${groupMetadata.id}
-║❥ *Nombre:* ${groupMetadata.subject}
-║❥ *Miembros:* ${participants.length}
-║❥ *Dueño de Grupo:* @${owner.split('@')[0]}
-║❥ *Admins:* 
+╭─「 *🔥 INFO DE GRUPO 🔆* 」
+║🔶 *ID:* ${groupMetadata.id}
+║🔶 *Nombre:* ${groupMetadata.subject}
+║🔶 *Miembros:* ${participants.length}
+║🔶 *Dueño de Grupo:* @${owner.split('@')[0]}
+║🔶 *Admins:* 
 ${listAdmin}
-║❥ *Configuración de grupo:*
-║❥ • ${isBanned ? '✅' : '❎'} Baneado
-║❥ • ${welcome ? '✅' : '❎'} Bienvenida
-║❥ • ${detect ? '✅' : '❎'} Detector
-║❥ • ${del ? '❎' : '✅'} Anti Delete
-║❥ • ${antiLink ? '✅' : '❎'} Anti Link WhatsApp
+║🔶 *Configuración de grupo:*
+║🔶 • ${isBanned ? '✅' : '❎'} Baneado
+║🔶 • ${welcome ? '✅' : '❎'} Bienvenida
+║🔶 • ${detect ? '✅' : '❎'} Detector
+║🔶 • ${del ? '❎' : '✅'} Anti Delete
+║🔶 • ${antiLink ? '✅' : '❎'} Anti Link WhatsApp
 ╰────
 *Configuración de mensajes:*
 • Bienvenida: ${sWelcome}
