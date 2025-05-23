@@ -1,7 +1,7 @@
 import Starlights from "@StarlightsTeam/Scraper"
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
-  if (!text) return conn.reply(m.chat, '[ ✰ ] Qué le quieres decir a *el alfeñique*?.\n\n`» Ejemplo :`\n' + `> *${usedPrefix + command}* Holaa`, m, rcanal)
+  if (!text) return conn.reply(m.chat, '[ ✰ ] Qué le quieres decir a *independiente*?.\n\n`» Ejemplo :`\n' + `> *${usedPrefix + command}* Holaa`, m, rcanal)
   
   try {
     let character_id = "99ab5940-1ed9-4543-825b-056f32d0690b" //Consigue el ID de tu preferencia en https://spicychat.ai
@@ -15,6 +15,6 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 }
 handler.tags = ["tools"]
 handler.help = ["ai *<texto>*"]
-handler.command = ["ai", "hoshino"]
+handler.command = ["ai", "independiente"]
 handler.register = true 
 export default handler
