@@ -123,7 +123,6 @@ let handler = async (m, { conn, usedPrefix, __dirname }) => {
 ╭┈❊🔆⃘🔥۬۫◌⃘⃪◌۬۫🔥̸ٜ࣭🔶❊❊❊ׅ┈╮  
 ◈🄸🄽🄳🄴🄿🄴🄽🄳🄸🄴🄽🅃🄴◈       
 .⌊…………………………………………………⌋ 
-█✹➤ .emojimix <emoji+emoji>
 █✹➤ .quotly <texto>
 █✹➤ .scat
 █✹➤ .stiker
