@@ -24,11 +24,11 @@ let handler = async function (m, { conn, text, usedPrefix, command }) {
   let time = now.toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit', second: '2-digit' })
   
   let txt = '*`⫷ 🔶 𝓡 𝓔 𝓖 𝓘 𝓢 𝓣 𝓡 𝓞   𝓤 𝓢 𝓔 𝓡 🔶 ⫸`*\n\n'
-      txt += `\t\t*🔆 Tag* :: @${m.sender.split('@')[0]}\n`
-      txt += `\t\t*🔆 Nombre* :: ${name}\n`
-      txt += `\t\t*🔆 Edad* :: ${age} años\n\n`
-      txt += `\t\t*🔆 Fecha* :: ${date}\n`
-      txt += `\t\t*🔆 Hora* :: ${time}\n\n`
+      txt += `\t*🔆 Tag* :: @${m.sender.split('@')[0]}\n`
+      txt += `\t*🔆 Nombre* :: ${name}\n`
+      txt += `\t*🔆 Edad* :: ${age} años\n\n`
+      txt += `\t*🔆 Fecha* :: ${date}\n`
+      txt += `\t*🔆 Hora* :: ${time}\n\n`
       txt += `> Escribe *${usedPrefix}profile* para ver tu perfil.`
       
   await conn.sendFile(m.chat, img, 'perfil.jpg', txt, m, false, { mentions: [m.sender] })
