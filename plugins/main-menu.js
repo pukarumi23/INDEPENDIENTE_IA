@@ -135,6 +135,7 @@ let handler = async (m, { conn, usedPrefix, __dirname }) => {
 ╭┈❊🔆⃘🔥۬۫◌⃘⃪◌۬۫🔥̸ٜ࣭🔶❊❊❊ׅ┈╮  
 ◈🄸🄽🄳🄴🄿🄴🄽🄳🄸🄴🄽🅃🄴◈       
 .⌊…………………………………………………⌋ 
+█✹➤ .invocar
 █✹➤ .antibot <on/off>
 █✹➤ .banearbot 
 █✹➤ .chekexpired
