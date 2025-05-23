@@ -21,7 +21,7 @@ global.prems = []
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
 global.packname = ``
-global.author = '\n bot:\n   name: INDEPENDIENTE,\n author: CHASKI,\n status_bot: active\n \n'
+global.author = '\n ══🔶🔥 [ 𝘽𝙊𝙏 𝘿𝘼𝙏𝘼 𝙋𝘼𝙉𝙀𝙇 ] 🔥🔶══\n┇ BOT ................... :\n┇ PROPIETARIO .......... :\n══🔶🔥 ▰▰▰▰▰▰▰▰ 🔥🔶══\n\n⟶ 𝑰𝑵𝑫𝑬𝑷𝑬𝑵𝑫𝑰𝑬𝑵𝑻𝑬 𝑩𝑶𝑻 𝑺𝒀𝑺𝑻𝑬𝑴\n⟶ CREADOR : CHASKI\n\n══🔶🔥 ▰▰▰▰▰▰▰▰ 🔥🔶══\nSTICKER BY: INDEPENDIENTE_BOT\n'
 global.wait = '🐢 *Aɢᴜᴀʀᴅᴇ ᴜɴ ᴍᴏᴍᴇɴᴛᴏ, sᴏʏ ʟᴇɴᴛo... (^人^)*'
 global.botname = 'INDEPENDIENTE_BOT'
 global.textbot = `Power By chaski`
