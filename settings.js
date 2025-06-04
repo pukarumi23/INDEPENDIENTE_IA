@@ -9,7 +9,6 @@ import axios from 'axios'
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
 global.owner = [
-  ['51988514570', '(ㅎㅊDEPOOLㅊㅎ)', true],
   ['51939508653', 'Rafael', true]
 ]
 
@@ -21,12 +20,12 @@ global.prems = []
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
 global.packname = ``
-global.author = '{\n "bot": {\n   "name": "💙Hatsune Miku💙",\n     "author": "(ㅎㅊDEPOOLㅊㅎ)",\n   "status_bot": "active"\n }\n}'
+global.author = '{\n "bot": {\n   "name": "CHASKI",\n     "author": "CHASKI",\n   "status_bot": "active"\n }\n}'
 global.wait = '🐢 *Aɢᴜᴀʀᴅᴇ ᴜɴ ᴍᴏᴍᴇɴᴛᴏ, sᴏʏ ʟᴇɴᴛᴀ... ฅ^•ﻌ•^ฅ*'
 global.botname = '💙Hatsune Miku💙'
-global.textbot = `Powered By BVH3 INDUSTRIES`
+global.textbot = `Powered By INDEPENDIENTES`
 global.listo = '*Aqui tiene ฅ^•ﻌ•^ฅ*'
-global.namechannel = '💙HATSUNE MIKU CHANNEL💙'
+global.namechannel = '💙 CHANNEL💙'
 
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
