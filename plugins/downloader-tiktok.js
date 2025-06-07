@@ -6,7 +6,7 @@ if (!args || !args[0]) return conn.reply(m.chat, '💙 Ingresa un enlace del ví
   await m.react('🕓')
 try {
 let { title, author, duration, views, likes, comment, share, published, downloads, dl_url } = await Starlights.tiktokdl(args[0])
-let txt = '`💙  T I K T O K  -  D O W N L O A D  💙`\n\n'
+let txt = '`💙 D O W N L O A D 💙`\n\n'
     txt += `🔶disfruta tu video 🔶\n`
         
     txt += `> 🌱 *${textbot}*`
