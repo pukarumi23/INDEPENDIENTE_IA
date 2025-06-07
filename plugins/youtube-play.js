@@ -12,7 +12,6 @@ const pipeline = promisify(stream.pipeline);
 const downloadFolder = './descargas'; 
 const MAX_SIZE_MB = 100; 
 
-
 const FORCE_DOCUMENT = false;
 
 if (!fs.existsSync(downloadFolder)) {
@@ -158,7 +157,6 @@ const fetchAPI = async (url, type) => {
   return { download: null };
 };
 
-
 const sendAsAudio = async (conn, chatId, url, title, replyMsg) => {
   try {
     const sanitizedTitle = sanitizeFilename(title);
@@ -178,7 +176,6 @@ const sendAsAudio = async (conn, chatId, url, title, replyMsg) => {
     return false;
   }
 };
-
 
 const sendAsVideo = async (conn, chatId, url, title, replyMsg) => {
   try {
@@ -277,17 +274,13 @@ const downloadAndSend = async (conn, chatId, replyMsg, videoId, option, title) =
       return false;
     }
 
-    
     let success = false;
     
     if (option === 1) {
-      
       success = await sendAsAudio(conn, chatId, downloadUrl, title, replyMsg);
     } else if (option === 2) {
-      
       success = await sendAsVideo(conn, chatId, downloadUrl, title, replyMsg);
     } else if (option === 3 || option === 4) {
-      
       success = await sendAsDocument(conn, chatId, downloadUrl, isAudio, title, replyMsg);
     }
     
@@ -298,6 +291,9 @@ const downloadAndSend = async (conn, chatId, replyMsg, videoId, option, title) =
     return false;
   }
 };
+
+// Objeto para almacenar los listeners activos
+const activeListeners = new Map();
 
 let handler = async (m, { conn, text }) => {
   if (!text) return conn.reply(m.chat, '💙 Ingresa el nombre de la canción o video que deseas buscar.', m);
@@ -324,8 +320,9 @@ let handler = async (m, { conn, text }) => {
     await conn.sendMessage(m.chat, { react: { text: '🎤', key: SM.key } });
 
     const handleOnce = new Set();
-
-    conn.ev.on("messages.upsert", async (upsertedMessage) => {
+    
+    // Crear un listener específico para este mensaje
+    const messageListener = async (upsertedMessage) => {
       let RM = upsertedMessage.messages[0];
       if (!RM.message) return;
 
@@ -333,6 +330,7 @@ let handler = async (m, { conn, text }) => {
       let UC = RM.key.remoteJid;
       const msgId = RM.key.id;
 
+      // Verificar que la respuesta sea al mensaje correcto
       if (RM.message.extendedTextMessage?.contextInfo?.stanzaId === SM.key.id && !handleOnce.has(msgId)) {
         handleOnce.add(msgId);
         
@@ -356,7 +354,6 @@ let handler = async (m, { conn, text }) => {
         
         success = await downloadAndSend(conn, UC, RM, videoId, option, title);
         
-        
         let reactionEmoji = '❌';
         if (success) {
           if (option === 1) reactionEmoji = '🎵';
@@ -366,8 +363,25 @@ let handler = async (m, { conn, text }) => {
         }
         
         await conn.sendMessage(UC, { react: { text: reactionEmoji, key: RM.key } });
+        
+        // Remover el listener una vez que se ha procesado la respuesta
+        conn.ev.off("messages.upsert", messageListener);
+        activeListeners.delete(SM.key.id);
       }
-    });
+    };
+
+    // Agregar el listener y guardarlo en el mapa
+    conn.ev.on("messages.upsert", messageListener);
+    activeListeners.set(SM.key.id, messageListener);
+
+    // Timeout para remover el listener después de 5 minutos
+    setTimeout(() => {
+      if (activeListeners.has(SM.key.id)) {
+        conn.ev.off("messages.upsert", activeListeners.get(SM.key.id));
+        activeListeners.delete(SM.key.id);
+      }
+    }, 300000); // 5 minutos
+
   } catch (error) {
     console.error(error);
     conn.reply(m.chat, '💙 Ocurrió un error al procesar tu solicitud.', m);
