@@ -12,13 +12,13 @@ let handler = async (m, { conn, args }) => {
   try {
     if (/image|video/g.test(mime) && q.download) {
       if (/video/.test(mime) && (q.msg || q).seconds > 11)
-        return conn.reply(m.chat, '💙 El video no puede durar más de *10 segundos*', m, rcanal)
+        return conn.reply(m.chat, '💙 El video no puede durar más de *10 segundos*', m)
       buffer = await q.download()
     } else if (args[0] && isUrl(args[0])) {
       const res = await fetch(args[0])
       buffer = await res.buffer()
     } else {
-      return conn.reply(m.chat,'💙 Responde a una *imagen o video*.', m, rcanal)
+      return conn.reply(m.chat, '💙 Responde a una *imagen o video*.', m)
     }
     await m.react('🕓')
 
@@ -27,7 +27,9 @@ let handler = async (m, { conn, args }) => {
     await conn.sendFile(m.chat, stickers, 'sticker.webp', '', m)
     await m.react('✅')
   } catch (e) {
+    console.error(e) // Agregado para depuración
     await m.react('✖️')
+    conn.reply(m.chat, '❌ Ocurrió un error al crear el sticker', m)
   }
 }
 
@@ -40,11 +42,17 @@ export default handler
 
 async function toWebp(buffer, opts = {}) {
   const { name = '', author = '', emojis = [] } = opts
-  const { ext } = await fromBuffer(buffer)
+  const type = await fromBuffer(buffer)
+  if (!type) throw 'No se pudo determinar el tipo de archivo'
+  
+  const { ext } = type
   if (!/(png|jpg|jpeg|mp4|mkv|m4p|gif|webp)/i.test(ext)) throw 'Media no compatible.'
 
-  const input = path.join(global.tempDir || './tmp', `${Date.now()}.${ext}`)
-  const output = path.join(global.tempDir || './tmp', `${Date.now()}.webp`)
+  const tempDir = global.tempDir || './tmp'
+  if (!fs.existsSync(tempDir)) fs.mkdirSync(tempDir, { recursive: true })
+  
+  const input = path.join(tempDir, `${Date.now()}.${ext}`)
+  const output = path.join(tempDir, `${Date.now()}.webp`)
   fs.writeFileSync(input, buffer)
 
   let aspectRatio = opts.isFull
@@ -61,22 +69,26 @@ async function toWebp(buffer, opts = {}) {
     fluent(input)
       .addOutputOptions(options)
       .toFormat('webp')
-      .save(output)
-      .on('end', () => {
-        const result = fs.readFileSync(output)
-        fs.unlinkSync(input)
-        fs.unlinkSync(output)
-        resolve(result)
-      })
       .on('error', (err) => {
         fs.unlinkSync(input)
         reject(err)
       })
+      .on('end', () => {
+        try {
+          const result = fs.readFileSync(output)
+          fs.unlinkSync(input)
+          fs.unlinkSync(output)
+          resolve(result)
+        } catch (e) {
+          reject(e)
+        }
+      })
+      .save(output)
   })
 }
 
 function isUrl(text) {
   return text.match(
-    new RegExp(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&/=]*)(jpe?g|gif|png)/, 'gi')
+    /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&/=]*)(jpe?g|gif|png|mp4|webp)/i
   )
 }
