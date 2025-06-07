@@ -85,14 +85,6 @@ const fetchAPI = async (url, type) => {
         return data;
       },
       extract: (data) => data.result?.dl_url
-    },
-    {
-      url: async () => {
-        const response = await fetch(`https://api.lolhuman.xyz/api/ytaudio2?apikey=${global.lolkey || 'tu_api_key'}&url=${url}`);
-        const data = await response.json();
-        return data;
-      },
-      extract: (data) => data.result?.audio
     }
   ];
 
@@ -120,6 +112,30 @@ const fetchAPI = async (url, type) => {
         return data;
       },
       extract: (data) => data.result?.media?.mp4
+    },
+    {
+      url: async () => {
+        const response = await fetch(`https://api.vreden.my.id/api/ytmp4?url=${url}`);
+        const data = await response.json();
+        return data;
+      },
+      extract: (data) => data.result?.download?.url
+    },
+    {
+      url: async () => {
+        const response = await fetch(`https://api.siputzx.my.id/api/d/ytmp4?url=${url}`);
+        const data = await response.json();
+        return data;
+      },
+      extract: (data) => data.dl
+    },
+    {
+      url: async () => {
+        const response = await fetch(`${global.APIs?.apis || 'https://api.boxmine.xyz'}/download/ytmp4?url=${url}`);
+        const data = await response.json();
+        return data;
+      },
+      extract: (data) => data.status ? data.data?.download?.url : null
     }
   ];
 
@@ -134,7 +150,7 @@ const fetchAPI = async (url, type) => {
         return { download: downloadUrl };
       }
     } catch (error) {
-      console.error(`Error con endpoint ${endpoint.url.toString()}:`, error);
+      console.error(`Error con endpoint:`, error);
     }
   }
   
@@ -146,12 +162,6 @@ const sendAsAudio = async (conn, chatId, url, title, replyMsg) => {
     const sanitizedTitle = sanitizeFilename(title);
     const fileName = `${sanitizedTitle}.mp3`;
     
-    // Verificar si la URL es válida
-    const sizeMB = await getFileSize(url);
-    if (sizeMB === 0 || sizeMB > MAX_SIZE_MB) {
-      throw new Error(`Tamaño de archivo no válido (${sizeMB}MB)`);
-    }
-
     await conn.sendMessage(chatId, {
       audio: { url },
       mimetype: 'audio/mpeg',
@@ -162,9 +172,8 @@ const sendAsAudio = async (conn, chatId, url, title, replyMsg) => {
     return true;
   } catch (error) {
     console.error("Error enviando audio:", error);
-    
-    // Intentar como documento si falla el envío directo
-    return await sendAsDocument(conn, chatId, url, true, title, replyMsg);
+    await conn.reply(chatId, `💙 Hubo un problema enviando el audio. Intenta más tarde.`, replyMsg);
+    return false;
   }
 };
 
@@ -173,11 +182,6 @@ const sendAsVideo = async (conn, chatId, url, title, replyMsg) => {
     const sanitizedTitle = sanitizeFilename(title);
     const fileName = `${sanitizedTitle}.mp4`;
     
-    const sizeMB = await getFileSize(url);
-    if (sizeMB === 0 || sizeMB > MAX_SIZE_MB) {
-      throw new Error(`Tamaño de archivo no válido (${sizeMB}MB)`);
-    }
-
     await conn.sendMessage(chatId, {
       video: { url },
       mimetype: 'video/mp4',
@@ -188,7 +192,8 @@ const sendAsVideo = async (conn, chatId, url, title, replyMsg) => {
     return true;
   } catch (error) {
     console.error("Error enviando video:", error);
-    return await sendAsDocument(conn, chatId, url, false, title, replyMsg);
+    await conn.reply(chatId, `💙 Hubo un problema enviando el video. Intenta más tarde.`, replyMsg);
+    return false;
   }
 };
 
@@ -202,13 +207,8 @@ const sendAsDocument = async (conn, chatId, url, isAudio, title, replyMsg) => {
     
     await downloadFileToLocal(url, filePath);
     
-    if (!fs.existsSync(filePath) {
-      throw new Error("No se pudo descargar el archivo");
-    }
-
-    const fileSize = fs.statSync(filePath).size;
-    if (fileSize === 0) {
-      throw new Error("Archivo descargado vacío");
+    if (!fs.existsSync(filePath) || fs.statSync(filePath).size === 0) {
+      throw new Error("Archivo descargado vacío o corrupto");
     }
     
     await conn.sendMessage(chatId, {
@@ -231,18 +231,17 @@ const sendAsDocument = async (conn, chatId, url, isAudio, title, replyMsg) => {
         fs.unlinkSync(filePath);
       }
       
-      // Último intento: enviar directamente la URL como documento
       await conn.sendMessage(chatId, {
         document: { url },
         mimetype: isAudio ? 'audio/mpeg' : 'video/mp4',
         fileName,
-        caption: `💙 ${isAudio ? 'Audio' : 'Video'} (enviado directamente)`
+        caption: `💙 ${isAudio ? 'Audio' : 'Video'} descargado como documento`
       }, { quoted: replyMsg });
       
       return true;
     } catch (directError) {
       console.error("Error en envío directo:", directError);
-      await conn.reply(chatId, `💙 No se pudo enviar el archivo. Error: ${directError.message}`, replyMsg);
+      await conn.reply(chatId, `💙 No se pudo enviar el archivo. Intenta más tarde.`, replyMsg);
       return false;
     }
   }
@@ -264,14 +263,14 @@ const downloadAndSend = async (conn, chatId, replyMsg, videoId, option, title) =
     const downloadUrl = apiResponse.download;
 
     if (!downloadUrl) {
-      await conn.reply(chatId, `💙 No se pudo obtener el enlace de descarga. Intenta con otro video.`, replyMsg);
+      await conn.reply(chatId, `💙 No se pudo descargar el ${messageType}. Intenta más tarde.`, replyMsg);
       return false;
     }
 
     const fileSizeMB = await getFileSize(downloadUrl);
 
     if (fileSizeMB > MAX_SIZE_MB) {
-      await conn.reply(chatId, `💙 El archivo es demasiado grande (${fileSizeMB.toFixed(2)}MB). Límite: ${MAX_SIZE_MB}MB.`, replyMsg);
+      await conn.reply(chatId, `💙 El archivo es demasiado grande (${fileSizeMB.toFixed(2)}MB). No se puede descargar.`, replyMsg);
       return false;
     }
 
@@ -285,14 +284,10 @@ const downloadAndSend = async (conn, chatId, replyMsg, videoId, option, title) =
       success = await sendAsDocument(conn, chatId, downloadUrl, isAudio, title, replyMsg);
     }
     
-    if (!success) {
-      await conn.reply(chatId, `💙 No se pudo enviar el ${messageType}. Intenta con otra opción.`, replyMsg);
-    }
-    
     return success;
   } catch (error) {
-    console.error('Error en downloadAndSend:', error);
-    await conn.reply(chatId, `💙 Error al procesar: ${error.message}`, replyMsg);
+    console.error('Error descargando con API:', error);
+    await conn.reply(chatId, `💙 Ocurrió un error al procesar tu solicitud. Intenta más tarde.`, replyMsg);
     return false;
   }
 };
@@ -304,10 +299,10 @@ let handler = async (m, { conn, text }) => {
   if (!text) return conn.reply(m.chat, '💙 Ingresa el nombre de la canción o video que deseas buscar.', m);
 
   try {
-    let res = await yts(text);
-    if (!res || res.videos.length === 0) return conn.reply(m.chat, '💙 No se encontraron resultados para tu búsqueda.', m);
+    let res = await search(text);
+    if (!res || res.length === 0) return conn.reply(m.chat, '💙 No se encontraron resultados para tu búsqueda.', m);
 
-    const { title, thumbnail, timestamp, views, ago, videoId } = res.videos[0];
+    const { title, thumbnail, timestamp, views, ago, videoId } = res[0];
 
     let txt = `💙 [ YOUTUBE - PLAY ] 💙\n\n`
             + `💙 *Título:* ${title}\n`
@@ -340,17 +335,33 @@ let handler = async (m, { conn, text }) => {
         handleOnce.add(msgId);
         
         await conn.sendMessage(UC, { react: { text: '⏳', key: RM.key } });
-        let option = parseInt(UR);
-        
-        if (![1, 2, 3, 4].includes(option)) {
+        let success = false;
+        let option = 0;
+
+        if (UR === '1') {
+          option = 1; // Audio MP3
+        } else if (UR === '2') {
+          option = 2; // Video MP4
+        } else if (UR === '3') {
+          option = 3; // Audio MP3 como documento
+        } else if (UR === '4') {
+          option = 4; // Video MP4 como documento
+        } else {
           await conn.sendMessage(UC, { text: "💙 Opción inválida. Responde con:\n1: Audio MP3\n2: Video MP4\n3: Audio MP3 como documento\n4: Video MP4 como documento" }, { quoted: RM });
           await conn.sendMessage(UC, { react: { text: '❌', key: RM.key } });
           return;
         }
         
-        const success = await downloadAndSend(conn, UC, RM, videoId, option, title);
+        success = await downloadAndSend(conn, UC, RM, videoId, option, title);
         
-        let reactionEmoji = success ? (option === 1 ? '🎵' : option === 2 ? '🎬' : option === 3 ? '📎' : '📁') : '❌';
+        let reactionEmoji = '❌';
+        if (success) {
+          if (option === 1) reactionEmoji = '🎵';
+          else if (option === 2) reactionEmoji = '🎬';
+          else if (option === 3) reactionEmoji = '📎';
+          else if (option === 4) reactionEmoji = '📁';
+        }
+        
         await conn.sendMessage(UC, { react: { text: reactionEmoji, key: RM.key } });
         
         // Remover el listener una vez que se ha procesado la respuesta
@@ -373,7 +384,7 @@ let handler = async (m, { conn, text }) => {
 
   } catch (error) {
     console.error(error);
-    conn.reply(m.chat, `💙 Error: ${error.message}`, m);
+    conn.reply(m.chat, '💙 Ocurrió un error al procesar tu solicitud.', m);
   }
 };
 
@@ -381,3 +392,8 @@ handler.command = ["play"];
 handler.help = ["play <canción>"];
 handler.tags = ["downloader"];
 export default handler;
+
+async function search(query, options = {}) {
+  let search = await yts.search({ query, hl: "es", gl: "ES", ...options });
+  return search.videos;
+}
