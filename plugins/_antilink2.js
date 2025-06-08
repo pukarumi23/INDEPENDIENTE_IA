@@ -36,7 +36,7 @@ export async function before(m, { isAdmin, isBotAdmin }) {
       // Expulsar al usuario inmediatamente
       await this.groupParticipantsUpdate(m.chat, [m.sender], 'remove'); // Expulsar al usuario.
     } else {
-      return m.reply('💙 El bot no tiene permisos de administrador para ejecutar esta acción.');
+      return m.reply('🔶 El bot no tiene permisos de administrador para ejecutar esta acción.');
     }
   }
 
