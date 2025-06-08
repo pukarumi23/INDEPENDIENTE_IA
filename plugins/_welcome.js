@@ -8,17 +8,17 @@ export async function before(m, {conn, participants, groupMetadata}) {
   let chat = global.db.data.chats[m.chat]
 
   if (chat.bienvenida && m.messageStubType == 27) {
-    let bienvenida = `💙━━⊱ *${botname}* ⊰━━💙 \n🌟 *¡Bienvenid@!* 🌟\n🎤 *Usuario:@${m.messageStubParameters[0].split`@`[0]} \n  🎶 *Grupo: ${groupMetadata.subject}\n💙 *¡Que la música te acompañe!* 🎵 \n   💙━━⊱【01】⊰━━💙`
+    let bienvenida = `🔶▰▰ *${botname}* ▰▰🔶 \n▮🔆 *¡Bienvenid@!* 🔆\n▮🎤 *Usuario:@${m.messageStubParameters[0].split`@`[0]} \n▮🎶 *Grupo: ${groupMetadata.subject}\n▮🔶 *¡El universo vibra* \n▮ *en cada pensamiento!* 🎵 \n🔶▰▰▰▰▰▰▰▰■🔶`
     
 await conn.sendAi(m.chat, botname, textbot, bienvenida, img, img, canal, estilo)
   }
   
   if (chat.bienvenida && m.messageStubType == 28) {
-    let bye = `💙━━⊱ *${botname}* ⊰━━💙 \n🚫 *Expulsión confirmada.\n🎤 *Usuario: @${m.messageStubParameters[0].split`@`[0]} \n  💔 *Fue removido del grupo.\n   💙 *Que el ritmo siga sin interrupciones.\n   💙━━⊱【01】⊰━━💙`
+    let bye = `🔶▰▰ *${botname}* ▰▰🔶 \n▮🚫 *Expulsión confirmada.\n▮🎤 *Usuario: @${m.messageStubParameters[0].split`@`[0]} \n▮ 💔 *Fue removido del grupo.\n▮  🌿 Que el flujo nunca se detenga.\n 🔶▰▰▰▰▰▰▰▰■🔶`
 await conn.sendAi(m.chat, botname, textbot, bye, img, img, canal, estilo)
   }
   
   if (chat.bienvenida && m.messageStubType == 32) {
-    let kick = `💙━━⊱ *${botname}* ⊰━━💙 \n😢 *Adiós, usuario.*\n🎤 *Usuario:「 @${m.messageStubParameters[0].split`@`[0]} \n   💔 *Se fue del grupo...\n   💙 *Nunca olvidaremos tu eco.* 🎶\n   💙━━⊱【01】⊰━━💙`
+    let kick = `🔶▰▰ *${botname}* ▰▰🔶 \n▮😢 *Adiós, usuario.*\n▮🎤 *Usuario:「 @${m.messageStubParameters[0].split`@`[0]} \n▮  💔 *Se fue del grupo...\n▮   🪐 *Tu eco perdura en el cosmos.* 🎶\n   🔶▰▰▰▰▰▰▰▰■🔶`
 await conn.sendAi(m.chat, botname, textbot, kick, img, img, canal, estilo)
 }}
