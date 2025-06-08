@@ -14,7 +14,7 @@ await conn.sendAi(m.chat, botname, textbot, bienvenida, img, img, canal, estilo)
   }
   
   if (chat.bienvenida && m.messageStubType == 28) {
-    let bye = `🔶▰▰ *${botname}* ▰▰🔶 \n▮🚫 *Expulsión confirmada.\n▮🎤 *Usuario: @${m.messageStubParameters[0].split`@`[0]} \n▮ 💔 *Fue removido del grupo.\n▮  🌿 Que el flujo nunca se detenga.\n 🔶▰▰▰▰▰▰▰▰■🔶`
+    let bye = `🔶▰ *${botname}* ▰🔶 \n▮🚫Expulsión confirmada.\n▮🎤 *Usuario:\n▮ @${m.messageStubParameters[0].split`@`[0]} \n▮💔Fue removido del grupo.\n▮🌿Que el flujo nunca \n▮se detenga.\n🔶▰▰▰▰▰▰▰▰■🔶`
 await conn.sendAi(m.chat, botname, textbot, bye, img, img, canal, estilo)
   }
   
