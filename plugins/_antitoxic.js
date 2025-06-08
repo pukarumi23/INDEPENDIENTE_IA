@@ -39,16 +39,16 @@ export default {
       
       if (regex.test(clean) || regex.test(spaced)) {
         const warningMsg = `
-╭─────❬ 💙 ❭─────╮
+╭─────❬ 🔶 ❭─────╮
 │ *¡Lenguaje Detectado!* 
 │ 
-│ 💠 @${m.sender.split('@')[0]}
-│ 💠 Por favor cuida tu
-│ 💠 vocabulario en el grupo
+│ 🔥 @${m.sender.split('@')[0]}
+│ 🔥 Por favor cuida tu
+│ 🔥 vocabulario en el grupo
 │ 
-│ 💙 Mantengamos un ambiente
-│ 💙 respetuoso para todos
-╰─────❬ 💙 ❭─────╯
+│ 🔶 Mantengamos un ambiente
+│ 🔶 respetuoso para todos
+╰─────❬ 🔶 ❭─────╯
 `.trim()
         
         await conn.reply(m.chat, warningMsg, m, {
@@ -68,16 +68,16 @@ export default {
           user.toxicWarns = 0
           
           const kickMsg = `
-╭─────❬ 💠 ❭─────╮
+╭─────❬ 🔥 ❭─────╮
 │ *Usuario Expulsado* 
 │ 
-│ 💙 @${m.sender.split('@')[0]} ha sido
-│ 💙 expulsado por exceder el
-│ 💙 límite de advertencias
+│ 🔶 @${m.sender.split('@')[0]} ha sido
+│ 🔶 expulsado por exceder el
+│ 🔶 límite de advertencias
 │ 
-│ 💠 Motivo: Lenguaje ofensivo
-│ 💠 Advertencias: ${chat.toxicLimit}/${chat.toxicLimit}
-╰─────❬ 💠 ❭─────╯
+│ 🔥 Motivo: Lenguaje ofensivo
+│ 🔥 Advertencias: ${chat.toxicLimit}/${chat.toxicLimit}
+╰─────❬ 🔥 ❭─────╯
 `.trim()
           
           await conn.reply(m.chat, kickMsg, null, {
