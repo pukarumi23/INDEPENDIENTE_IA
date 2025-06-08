@@ -8,13 +8,13 @@ export async function before(m, {conn, participants, groupMetadata}) {
   let chat = global.db.data.chats[m.chat]
 
   if (chat.bienvenida && m.messageStubType == 27) {
-    let bienvenida = `🔶▰ *${botname}* ▰🔶 \n█🔆 *¡Bienvenid@!* 🔆\n█⫸Usuario:\n█. @${m.messageStubParameters[0].split`@`[0]} \n█🔆Grupo:\n█.${groupMetadata.subject}\n█🔶 *¡El universo vibra* \n█.  *en cada pensamiento!* 🎵 \n🔶▰▰▰▰▰▰▰▰■🔶`
+    let bienvenida = `🔶▰ *${botname}* ▰🔶 \n█🔆 *¡Bienvenid@!* 🔆\n█⫸Usuario:\n█ @${m.messageStubParameters[0].split`@`[0]} \n█🔆Grupo:\n█${groupMetadata.subject}\n█☘️ *¡El universo vibra* \n█  *en cada pensamiento!*  \n🔶▰▰▰▰▰▰▰▰■🔶`
     
 await conn.sendAi(m.chat, botname, textbot, bienvenida, img, img, canal, estilo)
   }
   
   if (chat.bienvenida && m.messageStubType == 28) {
-    let bye = `🔶▰ *${botname}* ▰🔶 \n█🚫Expulsión confirmada.\n█⫸Usuario:\n█ @${m.messageStubParameters[0].split`@`[0]} \n█💔Fue removido\n█. del grupo.\n█🌿 *Que el flujo nunca* \n█.  *se detenga.* \n🔶▰▰▰▰▰▰▰▰■🔶`
+    let bye = `🔶▰ *${botname}* ▰🔶 \n█🚫Expulsión confirmada.\n█⫸Usuario:\n█ @${m.messageStubParameters[0].split`@`[0]} \n█💔Fue removido\n█ del grupo.\n█🌿 *Que el flujo nunca* \n█.  *se detenga.* \n🔶▰▰▰▰▰▰▰▰■🔶`
 await conn.sendAi(m.chat, botname, textbot, bye, img, img, canal, estilo)
   }
   
