@@ -10,7 +10,7 @@ import cfonts from 'cfonts'
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const require = createRequire(__dirname)
 
-cfonts.say('Hatsune\nMiku', {
+cfonts.say('independiente\nbot', {
   font: 'chrome',
   align: 'center',
   gradient: ['cyan', 'cyan']
