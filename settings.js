@@ -25,7 +25,7 @@ global.wait = '🐢 *Aɢᴜᴀʀᴅᴇ ᴜɴ ᴍᴏᴍᴇɴᴛᴏ, sᴏʏ ʟᴇ�
 global.botname = '🔶INDEPENDIENTE BOT🔶'
 global.textbot = `Powered By INDEPENDIENTE`
 global.listo = '*Aqui tiene ฅ^•ﻌ•^ฅ*'
-global.namechannel = '🔶 CHANNEL🔶'
+global.namechannel = '🔶INDEPENDIENTE🔶'
 
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
@@ -35,8 +35,8 @@ global.miniurl = fs.readFileSync('./storage/img/miniurl.mp4')
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
 global.group = 'https://chat.whatsapp.com/HEuy1hZCPmX1WaJ6zffQuV'
-global.group2 = 'https://chat.whatsapp.com/HEuy1hZCPmX1WaJ6zffQuV'
-global.group3 = 'https://chat.whatsapp.com/HEuy1hZCPmX1WaJ6zffQuV'
+global.group2 = 'https://chat.whatsapp.com/FwtE0kKhDf076Ar1LYDlyI'
+global.group3 = 'https://chat.whatsapp.com/FwtE0kKhDf076Ar1LYDlyI'
 global.canal = 'https://whatsapp.com/channel/0029Vb5rzPf3rZZXl2DI830G'
 
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
