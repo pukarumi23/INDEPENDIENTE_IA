@@ -1,5 +1,5 @@
 {
-	"name": "hatsune-miku",
+	"name": "independiente_bot",
 	"version": "6.0.0",
 	"description": "Simple WhatsApp Bot Multi Device",
 	"main": "index.js",
@@ -25,7 +25,7 @@
 	],
 	"homepage": "https://github.com/Brauliovh3",
 	"author": {
-		"name": "(ㅎㅊDEPOOLㅊㅎ)"
+		"name": "(CHASKI)"
 	},
 	"repository": {
 		"type": "git",
