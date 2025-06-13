@@ -6,11 +6,11 @@ let img = await (await fetch(`https://tinyurl.com/2898ndat`)).buffer()
   const canales = [
     {
       id: "120363418348675041@newsletter",
-      nombre: "🔶INDEPENDIENTE BOT🔶",
+      nombre: "🔶INDEPENDIENTE 🔶",
     },
     {
       id: "120363418348675041@newsletter",
-      nombre: "🔶INDEPENDIENTE BOT🔶",
+      nombre: "🔶INDEPENDIENTE 🔶",
     },
   ]
 
