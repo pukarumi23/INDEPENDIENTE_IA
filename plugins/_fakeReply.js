@@ -5,11 +5,11 @@ let img = await (await fetch(`https://tinyurl.com/2898ndat`)).buffer()
 
   const canales = [
     {
-      id: "124361163993209@newsletter",
+      id: "124361163993209@lid",
       nombre: "🔶INDEPENDIENTE BOT🔶",
     },
     {
-      id: "124361163993209@newsletter",
+      id: "124361163993209@lid",
       nombre: "🔶INDEPENDIENTE BOT🔶",
     },
   ]
