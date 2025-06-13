@@ -101,7 +101,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
     default:
       if (!/[01]/.test(command)) return m.reply(`
 ╭━━━━━━━━━━━━━━━━━━━━━━━╮
-│ 💙 *Hatsune Miku Configuración* 💙
+│ 🔶 *Independiente Configuración* 🔶
 ╰━━━━━━━━━━━━━━━━━━━━━━━╯
 📋 *LISTA DE OPCIONES DISPONIBLES*
 🔹 *${usedPrefix + command} welcome*  
@@ -135,7 +135,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
   }
 
   m.reply(`
-╭─────❬ 💙 *Hatsune Miku* 💙 ❭─────╮
+╭─────❬ 🔶 *INDEPENDIENTE* 🔶 ❭─────╮
 │ 
 │ 🔹 Función: *${type}*
 │ 🔹 Estado: *${isEnable ? 'ACTIVADA ✅' : 'DESACTIVADA ❌'}*
@@ -151,8 +151,8 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
   )) : 'N/A'}*
 │ ${isAll ? '🌐 Aplicado globalmente' : isUser ? '👤 Aplicado al usuario' : '👥 Aplicado al grupo'}
 │ 
-│ 💙 Gracias por usar Hatsune Miku Bot
-╰─────❬ 💙 *Hatsune Miku* 💙 ❭─────╯
+│ 🔶 Gracias por usar Independiente Bot
+╰─────❬ 🔶 *INDEPENDIENTE* 🔶 ❭─────╯
 `.trim())
 }
 handler.help = ['enable', 'disable']
