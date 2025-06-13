@@ -20,7 +20,7 @@ const handler = async (m, {text, command, args, usedPrefix}) => {
       const resu2 = await reis2.json();
       m.reply(resu2[0][0][0]);
     } catch {
-      throw `*Independiente Bot😺* | 「 *ERROR* 」\n\nOcurrió un *Error*`;
+      throw `*Independiente Bot 🔆* | 「 *ERROR* 」\n\nOcurrió un *Error*`;
     }
   }
 };
