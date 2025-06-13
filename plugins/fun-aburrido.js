@@ -3,7 +3,7 @@ import path from 'path';
 
 let handler = async (m, { conn }) => {
     let name2 = conn.getName(m.sender); // Obtener el nombre de quien usa el comando
-    m.react('🌱'); // Reacción al mensaje
+    m.react('🔥'); // Reacción al mensaje
 
     // Mensaje indicando que la persona está aburrida
     let str = `${name2} está aburrido/a🥱.`.trim();
