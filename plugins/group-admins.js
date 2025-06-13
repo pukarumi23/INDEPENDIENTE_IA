@@ -8,7 +8,7 @@ let text = `
 ≡ *Admis del grupo* _${groupMetadata.subject}_
 
 ┌─⊷ *ADMINISTRADORES*
-💙 ${listAdmin}
+🔶 ${listAdmin}
 └───────────
 `.trim()
 conn.sendFile(m.chat, pp, 'staff.png', text, m, false, { mentions: [...groupAdmins.map(v => v.id), owner] })
