@@ -153,7 +153,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
 │ 
 │ 🔶 Gracias por usar Independiente Bot
 ╰─────❬ 🔶 *INDEPENDIENTE* 🔶 ❭─────╯
-`,rcanal.trim())
+`.trim())
 }
 handler.help = ['enable', 'disable']
 handler.tags = ['nable']
