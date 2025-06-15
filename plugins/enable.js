@@ -16,12 +16,12 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
     case 'bv':
     case 'bienvenida':
       if (!m.isGroup) {
-        if (!isOwner) {
+        if (!isOwner,isOwner) {
           global.dfail('group', m, conn)
           throw false
         }
-      } else if (!isAdmin) {
-        global.dfail('admin', m, conn)
+      } else if (!isAdmin,isOwner) {
+        global.dfail('admin','Owner', m, conn)
         throw false
       }
       chat.bienvenida = isEnable
