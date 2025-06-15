@@ -16,7 +16,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
     case 'bv':
     case 'bienvenida':
       if (!m.isGroup) {
-       if (!(isAdmin || isOwner)) {
+       if (isAdmin) {
           global.dfail('group', m, conn)
           throw false
         }
@@ -153,7 +153,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
 │ 
 │ 🔶 Gracias por usar Independiente Bot
 ╰─────❬ 🔶 *INDEPENDIENTE* 🔶 ❭─────╯
-`.trim())
+`,rcanal.trim())
 }
 handler.help = ['enable', 'disable']
 handler.tags = ['nable']
