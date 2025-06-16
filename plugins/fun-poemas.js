@@ -1,66 +1,109 @@
 let handler = async (m, { conn }) => {
-    const poemasNegros = [
-        `🖤 *Sombras que Ríen* 🖤\n` +
-        `En el cementerio jugaban,\n` +
-        `los niños muertos a la ronda,\n` +
-        `con huesos de difuntos\n` +
-        `y risas que el viento esconde.\n\n` +
-        `※ La luna fue testigo ※\n` +
-        `de aquel baile sin perdón,\n` +
-        `donde hasta las lápidas\n` +
-        `contaron su propio chiste en el panteón.`,
+    const poemasFunables = [
+        `💀 *POEMA DEL HUÉRFANO* 💀\n` +
+        `Papá se fue por cigarros,\n` +
+        `mamá con el vecino,\n` +
+        `yo me quedo jugando\n` +
+        `con este cuchillo tan bonito.\n\n` +
+        `☠ MORALEJA ☠\n` +
+        `La familia es lo primero...\n` +
+        `¡pero lo segundo es más divertido!`,
 
-        `⚰ *Elegía Jocosa* ⚰\n` +
-        `La abuelita ya no tose,\n` +
-        `descansa en su ataúd blanco,\n` +
-        `los nietos juegan al escondite\n` +
-        `¿Quién la encontrará primero?\n\n` +
-        `✞ Moraleja ✞\n` +
-        `La muerte siempre gana,\n` +
-        `pero qué gracioso es ver\n` +
-        `cómo los vivos creen\n` +
-        `que esto no es un juego.`,
+        `🪦 *RONDA DE LOS CAIDOS* 🪦\n` +
+        `En el parque infantil\n` +
+        `los columpios crujen fuerte,\n` +
+        `son los niños del orfanato\n` +
+        `jugando a la silla eléctrica.`,
 
-        `☠ *Soneto del Asesino* ☠\n` +
-        `Con cuchillo de cocina\n` +
-        `y sonrisa de payaso,\n` +
-        `corté trozos de mi suegra\n` +
-        `para hacer un rico asado.\n\n` +
-        `✧ La policía preguntó ✧\n` +
-        `¿dónde está la difunta?\n` +
-        `Señalé mi estómago:\n` +
-        `"Aquí descansa... en mi panza".`,
+        `👻 *AMOR ESQUIZOFRÉNICO* 👻\n` +
+        `Ella me dijo "te amo",\n` +
+        `yo le dije "yo más",\n` +
+        `ahora compartimos pastilla\n` +
+        `en el psiquiátrico de allá.`,
 
-        `🕸 *Rima Fúnebre* 🕸\n` +
-        `El doctor me dijo:\n` +
-        `"Tienes cáncer terminal",\n` +
-        `le pedí segunda opinión\n` +
-        `y me dio un revólver.\n\n` +
-        `✫ Final feliz ✫\n` +
-        `Ahora en el cielo\n` +
-        `juego al ahorcado\n` +
-        `con el ángel de la muerte\n` +
-        `...perdí de nuevo.`
+        `🕷 *LA CUCARACHA ACTUALIZADA* 🕷\n` +
+        `La cucaracha ya no puede caminar\n` +
+        `porque le falta una pata,\n` +
+        `la aplasté con mi zapato\n` +
+        `¡problema solucionado!\n\n` +
+        `🐜 *Bonus* 🐜\n` +
+        `Y si revives, insecto,\n` +
+        `mi pie volverá a caer,\n` +
+        `porque en esta casa\n` +
+        `no hay lugar para usted.`,
+
+        `🧟 *ZOMBIE ROMÁNTICO* 🧟\n` +
+        `Eres como el covid,\n` +
+        `te quiero contagiar,\n` +
+        `pero a diferencia del virus,\n` +
+        `contigo sí me quiero vacunar.`,
+
+        `🔪 *CUENTO DE HADAS* 🔪\n` +
+        `Blancanieves envenenada,\n` +
+        `Cenicienta maltratada,\n` +
+        `la Bella Durmiente violada,\n` +
+        `¿y a mí por qué me toca la vida tan dura?`,
+
+        `☢ *ECOLOGÍA EXTREMA* ☢\n` +
+        `Reciclo latas, papel y cristal,\n` +
+        `pero lo que más reciclo\n` +
+        `son mis exnovias\n` +
+        `...en forma de jabón artesanal.`,
+
+        `🧠 *DEPRESIÓN POSITIVA* 🧠\n` +
+        `La vida es bella,\n` +
+        `el mundo es genial,\n` +
+        `por eso me ahorco\n` +
+        `con cable de luz positiva.`,
+
+        `🦴 *ABUELITA EJEMPLAR* 🦴\n` +
+        `Mi abuela decía siempre:\n` +
+        `"Nunca dejes para mañana\n` +
+        `lo que puedas hacer hoy",\n` +
+        `por eso se murió ayer.`,
+
+        `💉 *MEDICINA AVANZADA* 💉\n` +
+        `El doctor me recetó\n` +
+        `un cóctel de pastillas,\n` +
+        `pero yo soy más de vodka,\n` +
+        `así que las tragué sin agua.`,
+
+        `⚰ *EL MATRIMONIO PERFECTO* ⚰\n` +
+        `Prometiste amarme\n` +
+        `hasta que la muerte nos separara,\n` +
+        `así que te enterré viva\n` +
+        `...junto a mi suegra.`,
+
+        `🧪 *CIENCIA CASERA* 🧪\n` +
+        `Hice un experimento:\n` +
+        `mezclé cloro y amoniaco,\n` +
+        `ahora tengo la casa limpia\n` +
+        `...y el funeral pagado.`
     ]
 
-    // Selección aleatoria con estilo gótico
-    let randomPoema = poemasNegros[Math.floor(Math.random() * poemasNegros.length)]
+    // Selección aleatoria con estilo sarcástico
+    let poema = poemasFunables[Math.floor(Math.random() * poemasFunables.length)]
     
-    // Formato de presentación oscuro
-    let estilo = `*╭┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╮*\n` +
-                 `  *🦇 POEMA NEGRO 🦇*\n` +
-                 `*╰┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╯*\n\n` +
-                 `${randomPoema}\n\n` +
-                 `*✝ No apto para almas sensibles ✝*`
+    // Formato de presentación con toque "funable"
+    let estilo = `*╔═══💀 POEMA FUNABLE 💀═══╗*\n` +
+                 `\n` +
+                 `${poema}\n` +
+                 `\n` +
+                 `*╚═══😈 DISFRUTA EL TRAUMA 😈═══╝*\n` +
+                 `(⚠️ Este poema es 100% biodegradable\n` +
+                 `como tus expectativas de vida)`
 
-    await conn.sendMessage(m.chat, { 
-        text: estilo, 
+    // Envío con detalles estéticos
+    await conn.sendMessage(m.chat, {
+        text: estilo,
         contextInfo: {
+            mentionedJid: [m.sender],
+            forwardingScore: 999,
+            isForwarded: true,
             externalAdReply: {
-                title: 'Arte Oscuro by Hatsune Miku',
-                body: 'Poesía que duele... y hace reír',
+                title: `📜 ${['Poema del Día', 'Versos Crueles', 'Rima Traumática'][Math.floor(Math.random() * 3)]}`,
+                body: "By Hatsune Miku (División Oscura)",
                 thumbnailUrl: 'https://telegra.ph/file/5e7042bf17cde23989e71.jpg',
-                sourceUrl: '',
                 mediaType: 1,
                 renderLargerThumbnail: true
             }
@@ -68,9 +111,9 @@ let handler = async (m, { conn }) => {
     }, { quoted: m })
 }
 
-handler.help = ['poemanegro']
+handler.help = ['poemafunable']
 handler.tags = ['fun', 'premium']
-handler.command = ['poemanegro', 'humorpoetico', 'poemaoscuro']
+handler.command = ['poemafunable', 'versosnegros', 'rimamacabra']
 handler.limit = true
 handler.diamond = true
 
