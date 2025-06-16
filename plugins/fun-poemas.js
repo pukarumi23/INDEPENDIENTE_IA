@@ -113,7 +113,7 @@ let handler = async (m, { conn }) => {
 
 handler.help = ['poemafunable']
 handler.tags = ['fun', 'premium']
-handler.command = ['poemafunable', 'versosnegros','versos de Jaime', 'rimamacabra']
+handler.command = ['poemafunable', 'versosnegros','versosdejaime', 'rimamacabra']
 handler.limit = true
 handler.diamond = true
 
