@@ -59,4 +59,19 @@ let handler = async (m, { conn }) => {
             externalAdReply: {
                 title: 'Arte Oscuro by Hatsune Miku',
                 body: 'Poesía que duele... y hace reír',
-                thumbnailUrl: 'https://telegra.ph/file/5e7042bf17cde23989
+                thumbnailUrl: 'https://telegra.ph/file/5e7042bf17cde23989e71.jpg',
+                sourceUrl: '',
+                mediaType: 1,
+                renderLargerThumbnail: true
+            }
+        }
+    }, { quoted: m })
+}
+
+handler.help = ['poemanegro']
+handler.tags = ['fun', 'premium']
+handler.command = ['poemanegro', 'humorpoetico', 'poemaoscuro']
+handler.limit = true
+handler.diamond = true
+
+export default handler
