@@ -1,40 +1,62 @@
-import fetch from 'node-fetch'
+let handler = async (m, { conn }) => {
+    const poemasNegros = [
+        `🖤 *Sombras que Ríen* 🖤\n` +
+        `En el cementerio jugaban,\n` +
+        `los niños muertos a la ronda,\n` +
+        `con huesos de difuntos\n` +
+        `y risas que el viento esconde.\n\n` +
+        `※ La luna fue testigo ※\n` +
+        `de aquel baile sin perdón,\n` +
+        `donde hasta las lápidas\n` +
+        `contaron su propio chiste en el panteón.`,
 
-let handler = async (m, { conn, usedPrefix }) => {
-    try {
-        // API de chistes de humor negro (puedes alternar entre estas APIs)
-        let apiUrls = [
-            'https://v2.jokeapi.dev/joke/Dark?blacklistFlags=nsfw,religious,political,racist,sexist&type=single',
-            'https://official-joke-api.appspot.com/jokes/dark/random',
-            'https://sv443.net/jokeapi/v2/joke/Dark?type=single'
-        ]
-        
-        let apiUrl = apiUrls[Math.floor(Math.random() * apiUrls.length)]
-        
-        let response = await fetch(apiUrl)
-        let data = await response.json()
-        
-        let joke = ''
-        if (apiUrl.includes('jokeapi.dev') || apiUrl.includes('sv443.net')) {
-            joke = data.joke || data.setup + '\n' + data.delivery
-        } else if (apiUrl.includes('official-joke-api')) {
-            joke = data[0]?.setup + '\n' + data[0]?.punchline || 'No se pudo obtener el chiste'
-        }
-        
-        if (!joke) throw new Error('No se pudo obtener un chiste')
-        
-        await conn.reply(m.chat, `*Chiste de Humor Negro 🖤*\n\n${joke}\n\n*¿Quieres otro?* Usa *${usedPrefix}chisteoscuro*`, m)
-        
-    } catch (e) {
-        console.error(e)
-        await conn.reply(m.chat, `❌ Ocurrió un error al obtener el chiste. Intenta de nuevo más tarde.`, m)
-    }
-}
+        `⚰ *Elegía Jocosa* ⚰\n` +
+        `La abuelita ya no tose,\n` +
+        `descansa en su ataúd blanco,\n` +
+        `los nietos juegan al escondite\n` +
+        `¿Quién la encontrará primero?\n\n` +
+        `✞ Moraleja ✞\n` +
+        `La muerte siempre gana,\n` +
+        `pero qué gracioso es ver\n` +
+        `cómo los vivos creen\n` +
+        `que esto no es un juego.`,
 
-handler.help = ['chisteoscuro', 'humornegro']
-handler.tags = ['fun']
-handler.command = ['chisteoscuro', 'humornegro', 'darkjoke']
-handler.limit = true
-handler.register = true
+        `☠ *Soneto del Asesino* ☠\n` +
+        `Con cuchillo de cocina\n` +
+        `y sonrisa de payaso,\n` +
+        `corté trozos de mi suegra\n` +
+        `para hacer un rico asado.\n\n` +
+        `✧ La policía preguntó ✧\n` +
+        `¿dónde está la difunta?\n` +
+        `Señalé mi estómago:\n` +
+        `"Aquí descansa... en mi panza".`,
 
-export default handler
+        `🕸 *Rima Fúnebre* 🕸\n` +
+        `El doctor me dijo:\n` +
+        `"Tienes cáncer terminal",\n` +
+        `le pedí segunda opinión\n` +
+        `y me dio un revólver.\n\n` +
+        `✫ Final feliz ✫\n` +
+        `Ahora en el cielo\n` +
+        `juego al ahorcado\n` +
+        `con el ángel de la muerte\n` +
+        `...perdí de nuevo.`
+    ]
+
+    // Selección aleatoria con estilo gótico
+    let randomPoema = poemasNegros[Math.floor(Math.random() * poemasNegros.length)]
+    
+    // Formato de presentación oscuro
+    let estilo = `*╭┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╮*\n` +
+                 `  *🦇 POEMA NEGRO 🦇*\n` +
+                 `*╰┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╯*\n\n` +
+                 `${randomPoema}\n\n` +
+                 `*✝ No apto para almas sensibles ✝*`
+
+    await conn.sendMessage(m.chat, { 
+        text: estilo, 
+        contextInfo: {
+            externalAdReply: {
+                title: 'Arte Oscuro by Hatsune Miku',
+                body: 'Poesía que duele... y hace reír',
+                thumbnailUrl: 'https://telegra.ph/file/5e7042bf17cde23989
