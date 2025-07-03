@@ -6,7 +6,8 @@ let handler = async (m, { conn }) => {
     m.react('😋'); // Reacción al mensaje
 
     // Mensaje indicando que la persona está comiendo
-    let str = `${name2} Está comiendo🍗`.trim();
+        let text = "🔶"
+        let str = `${name2} Está comiendo🍗`.trim();
 
     // Si es un grupo, seleccionamos un video aleatorio y lo enviamos
     if (m.isGroup){
