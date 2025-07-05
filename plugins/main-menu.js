@@ -4,49 +4,48 @@ import fetch from 'node-fetch'
 import { xpRange } from '../lib/levelling.js'
 
 let tags = {
-  'main': 'Information',
-  'search': 'Search',
-  'game': 'Games',
-  'serbot': 'Sub-Bots',
-  'rpg': 'Rpg',
-  'rg': 'Registro',
-  'sticker': 'Sticker',
-  'img': 'Image',
-  'group': 'Groups',
-  'nable': 'On / Off', 
-  'premium': 'Premium',
-  'downloader': 'Download',
-  'tools': 'Tools',
-  'fun': 'Fun',
-  'nsfw': 'Nsfw', 
-  'cmd': 'Database',
-  'owner': 'Creador', 
-  'audio': 'Audios', 
-  'advanced': 'Avanzado',
+  'main': '■ Information ■',
+  'search': '■ Search ■',
+  'game': '■ Games ■',
+  'serbot': '■ Sub-Bots ■',
+  'rpg': '■ Rpg ■',
+  'rg': '■ Registro ■',
+  'sticker': '■ Sticker ■',
+  'img': '■ Image ■',
+  'group': '■ Groups ■',
+  'nable': '■ On/Off ■', 
+  'premium': '■ Premium ■',
+  'downloader': '■ Download ■',
+  'tools': '■ Tools ■',
+  'fun': '■ Fun ■',
+  'nsfw': '■ Nsfw ■', 
+  'cmd': '■ Database ■',
+  'owner': '■ Creador ■', 
+  'audio': '■ Audios ■', 
+  'advanced': '■ Avanzado ■',
 }
 
 const defaultMenu = {
   before: `
-  *💮🔶🥢⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯🥢🔶💮*
+▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰
 
-“ Hola *%name* soy *🔶Independiente🔶*, %greeting ”
+⫸⫸ *¡SALUDOS OSCUROS, %name!* ⫷⫷
+⫸ *Soy %me, tu guía en las sombras* 🔮
 
-╭── ︿︿︿︿︿ *⭒   ⭒   ⭒   ⭒   ⭒   ⭒*
-┊ ‹‹ *Hello* :: *%name*
-┊01 *🔶INDEPENDIENTE CHANEL🔶*
-╰─── 🔶Independiente🔶
-┊B [ *Modo* :: *Público*
-┊V [ *Baileys* :: *Multi Device*
-┊H [ *Tiempo Activo* :: *%muptime*
-┊3 [ *Usuarios* :: *%totalreg*
-╰─────────
+■ *Estado del Bot* ■
+⫸ 🔶 *Modo:* Público
+⫸ 🔥 *Versión:* Multi-Device
+⫸ ■ *Uptime:* %muptime
+⫸ 🔆 *Usuarios:* %totalreg
+
+▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰
 %readmore
-*─ׄ─ׅ─ׄ─⭒ L I S T A  -  M E N Ú S ⭒─ׄ─ׅ─ׄ─*
+■□■□■□■□■ *MENÚ GÓTICO* □■□■□■□■□■
 `.trimStart(),
-  header: '╔═══◇🔥【 𝑴𝑬𝑵Ú メ %category 】🔥◇═══╗\n║╔───────────────────────',
-    body: '║🔆┊%cmd %islimit %isPremium\n',
-   footer: '║───────────────────────────\n╚═════════◆◇◆═════════╝\n',
-    after: `> 🔶 ${textbot}`,
+  header: '▣▣▣▣▣▣▣【 %category 】▣▣▣▣▣▣▣\n',
+  body: '⫸ 🔶 %cmd %islimit %isPremium\n',
+  footer: '▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣\n',
+  after: `> 🔮 ${textbot}`,
 }
 
 let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
@@ -114,8 +113,8 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
           ...help.filter(menu => menu.tags && menu.tags.includes(tag) && menu.help).map(menu => {
             return menu.help.map(help => {
               return body.replace(/%cmd/g, menu.prefix ? help : '%p' + help)
-                .replace(/%islimit/g, menu.limit ? '◜⭐◞' : '')
-                .replace(/%isPremium/g, menu.premium ? '◜🪪◞' : '')
+                .replace(/%islimit/g, menu.limit ? '■🔶■' : '')
+                .replace(/%isPremium/g, menu.premium ? '■🔆■' : '')
                 .trim()
             }).join('\n')
           }),
@@ -147,25 +146,22 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
     
-    let pp = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1N2ysfAnHDOn09rUQY9Ma_WAZbeGJKbTpQg&s'
-    let img = `./storage/img/menu.jpeg`
-    await m.react('🔶')
-   // await conn.sendMessage(m.chat, { video: { url: [pp, pp2, pp3, pp4, pp5, pp6, pp7, pp8, pp9, pp10, pp11, pp12, pp13, pp14, pp15].getRandom() }, gifPlayback: true, caption: text.trim(), mentions: [m.sender] }, { quoted: estilo })
-    await conn.sendFile(m.chat, img, 'thumbnail.jpg', text.trim(), m, null, rcanal)
-   //await conn.sendAi(m.chat, botname, textbot, text.trim(), img, img, canal, estilo)
+    let pp = 'https://i.imgur.com/g5QZJ4E.jpg' // Gothic-themed image
+    let img = `./storage/img/gothic_menu.jpg`
+    await m.react('🔮')
+    await conn.sendFile(m.chat, img, 'gothic.jpg', text.trim(), m, null, rcanal)
 
   } catch (e) {
-    conn.reply(m.chat, '❎ Lo sentimos, el menú tiene un error.', m)
+    conn.reply(m.chat, '■ *Error en las sombras* ■', m)
     throw e
   }
 }
 
-handler.help = ['menu']
+handler.help = ['menu', 'menúgótico']
 handler.tags = ['main']
-handler.command = ['menu', 'help', 'menú'] 
+handler.command = ['menu', 'help', 'menú', 'gothicmenu'] 
 handler.register = true 
 export default handler
-
 
 const more = String.fromCharCode(8206)
 const readMore = more.repeat(4001)
@@ -177,32 +173,32 @@ function clockString(ms) {
   return [h, m, s].map(v => v.toString().padStart(2, 0)).join(':')
 }
 
-  var ase = new Date();
-  var hour = ase.getHours();
+var ase = new Date();
+var hour = ase.getHours();
 switch(hour){
-  case 0: hour = 'una linda noche 🌙'; break;
-  case 1: hour = 'una linda noche 💤'; break;
-  case 2: hour = 'una linda noche 🦉'; break;
-  case 3: hour = 'una linda mañana ✨'; break;
-  case 4: hour = 'una linda mañana 💫'; break;
-  case 5: hour = 'una linda mañana 🌅'; break;
-  case 6: hour = 'una linda mañana 🌄'; break;
-  case 7: hour = 'una linda mañana 🌅'; break;
-  case 8: hour = 'una linda mañana 💫'; break;
-  case 9: hour = 'una linda mañana ✨'; break;
-  case 10: hour = 'un lindo dia 🌞'; break;
-  case 11: hour = 'un lindo dia 🌨'; break;
-  case 12: hour = 'un lindo dia ❄'; break;
-  case 13: hour = 'un lindo dia 🌤'; break;
-  case 14: hour = 'una linda tarde 🌇'; break;
-  case 15: hour = 'una linda tarde 🥀'; break;
-  case 16: hour = 'una linda tarde 🌹'; break;
-  case 17: hour = 'una linda tarde 🌆'; break;
-  case 18: hour = 'una linda noche 🌙'; break;
-  case 19: hour = 'una linda noche 🌃'; break;
-  case 20: hour = 'una linda noche 🌌'; break;
-  case 21: hour = 'una linda noche 🌃'; break;
-  case 22: hour = 'una linda noche 🌙'; break;
-  case 23: hour = 'una linda noche 🌃'; break;
+  case 0: hour = 'una noche de sombras eternas 🌑'; break;
+  case 1: hour = 'la hora del vampiro 🦇'; break;
+  case 2: hour = 'la hora del lobo 🐺'; break;
+  case 3: hour = 'el alba de los condenados 🌘'; break;
+  case 4: hour = 'el amanecer oscuro 🌒'; break;
+  case 5: hour = 'la hora del espectro 👻'; break;
+  case 6: hour = 'el despertar de las brujas 🔮'; break;
+  case 7: hour = 'el alba sangrienta 🌅'; break;
+  case 8: hour = 'la mañana oscura ☁'; break;
+  case 9: hour = 'la hora del cuervo 🐦⬛'; break;
+  case 10: hour = 'el día de los muertos 💀'; break;
+  case 11: hour = 'la hora del aquelarre ⚡'; break;
+  case 12: hour = 'el mediodía sombrío ☠'; break;
+  case 13: hour = 'la hora del eclipse 🌑'; break;
+  case 14: hour = 'la tarde de los condenados 🕯'; break;
+  case 15: hour = 'la hora del fantasma 👻'; break;
+  case 16: hour = 'el ocaso de las brujas 🧙'; break;
+  case 17: hour = 'la hora del murciélago 🦇'; break;
+  case 18: hour = 'el anochecer eterno 🌘'; break;
+  case 19: hour = 'la noche de los muertos vivientes 🧟'; break;
+  case 20: hour = 'la hora del cuervo nocturno 🐦⬛'; break;
+  case 21: hour = 'la medianoche de las almas 🌑'; break;
+  case 22: hour = 'la hora del demonio 😈'; break;
+  case 23: hour = 'la hora del pacto oscuro ⚰'; break;
 }
-  var greeting = "espero que tengas " + hour;
+var greeting = "Que tengas " + hour;
