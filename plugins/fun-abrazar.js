@@ -30,7 +30,7 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
         
         // Mensaje con formato mejorado
         const str = `
-▰▰▰▰▰🔶▰▰▰▰▰▰
+▰▰▰▰◆🔶◆▰▰▰▰▰
 ${senderName} le está dando un fuerte abrazo a ${targetName} 🫂
 ▰▰▰▰▰▰▰▰▰▰▰▰▰
 `.trim();
