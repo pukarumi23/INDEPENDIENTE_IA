@@ -12,7 +12,7 @@ let handler = async (m, { conn, usedPrefix }) => {
     let name2 = conn.getName(m.sender);
    // m.react('🫱');
     await conn.sendMessage(m.chat, { react: { text: '🫱', key: m.key } })
-    let str = `✦━─༺💀༻─━✦ \n ${name2} Le dio una cachetada a ${name} \n ✦━─༺💀༻─━✦`.trim();
+    let str = `✦━━━─༺💀༻─━━━✦ \n ${name2} Le dio una cachetada a ${name} \n ✦━━━─༺💀༻─━━━✦`.trim();
     if (m.isGroup){
 
     let pp = 'https://telegra.ph/file/3ba192c3806b097632d3f.mp4' 
