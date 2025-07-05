@@ -24,13 +24,14 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
     ];
     
     try {
-        const taguser = '@' + m.sender.split('@s.whatsapp.net')[0];
-        const target = '@' + who.split('@')[0];
+        // Obtener solo la parte principal del nombre del remitente (sin @lid)
+        const senderName = '@' + m.sender.split('@s.whatsapp.net')[0].split('@')[0];
+        const targetName = '@' + who.split('@')[0].split('@')[0];
         
         // Mensaje con formato mejorado
         const str = `
 ▰▰▰▰▰🔶▰▰▰▰▰▰
-${taguser} le está dando un fuerte abrazo a ${target} 🫂
+${senderName} le está dando un fuerte abrazo a ${targetName} 🫂
 ▰▰▰▰▰▰▰▰▰▰▰▰▰
 `.trim();
         
