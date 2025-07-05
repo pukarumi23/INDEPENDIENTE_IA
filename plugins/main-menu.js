@@ -28,20 +28,19 @@ let tags = {
 const defaultMenu = {
   before: `
 *🔥─── ⌁ ⌁Ⅱ◆Ⅱ⌁ ⌁ ───🔥*
- ◈                                  ◇
 “ Hola *%name* soy *Independiente*, %greeting ”
- ◈                                   ◇
 *🔥─── ⌁ ⌁Ⅱ◆Ⅱ⌁ ⌁ ────🔥*
 
-■── ︿︿︿︿︿ *⭒   ⭒   ⭒   ⭒   ⭒   ⭒*
-■ ‹‹ *Hello* :: *%name*
-■ *🔶INDEPENDIENTE CHANEL🔶*
-■─── 🔶Independiente🔶
-┊B [ *Modo* :: *Público*
-┊V [ *Baileys* :: *Multi Device*
-┊H [ *Tiempo Activo* :: *%muptime*
-┊3 [ *Usuarios* :: *%totalreg*
-╰─────────
+▣▰▰▰▰▰▰⋉◊⋊▰▰▰▰▰
+▮◊◊*Hello* :: *%name*
+▮ *🔶INDEPENDIENTE CHANEL*
+▮─── 🔶Independiente🔶
+▣▰▰▰▰▰▰▰▰▰▰▰▰
+▮⫸[ *Modo* :: *Público*
+▮⫸[ *Baileys* :: *Multi Device*
+▮⫸[ *Tiempo Activo* :: *%muptime*
+▮⫸[ *Usuarios* :: *%totalreg*
+▣▰▰▰▰▰▰⋉◊⋊▰▰▰▰▰
 %readmore
 *─ׄ─ׅ─ׄ─⭒ L I S T A  -  M E N Ú S ⭒─ׄ─ׅ─ׄ─*
 `.trimStart(),
