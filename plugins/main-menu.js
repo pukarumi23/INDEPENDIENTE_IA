@@ -28,7 +28,7 @@ let tags = {
 const defaultMenu = {
   before: `
 *🔥─── ⌁ ⌁Ⅱ◆Ⅱ⌁ ⌁ ───🔥*
-“ Hola *%name* soy *Independiente*, %greeting ”
+“Hola *%name* soy *Independiente*, %greeting”
 *🔥─── ⌁ ⌁Ⅱ◆Ⅱ⌁ ⌁ ────🔥*
 
 ▣▰▰▰▰⋉◊⋊▰▰▰▰
