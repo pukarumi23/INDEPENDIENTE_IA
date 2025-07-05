@@ -32,7 +32,7 @@ const defaultMenu = {
 “ Hola *%name* soy *Independiente*, %greeting ”
 
 ╭── ︿︿︿︿︿ *⭒   ⭒   ⭒   ⭒   ⭒   ⭒*
-▮ ‹‹ *Hello* :: *%name*
+■ ‹‹ *Hello* :: *%name*
 ┊01 *🔶INDEPENDIENTE CHANEL🔶*
 ╰─── 🔶Independiente🔶
 ┊B [ *Modo* :: *Público*
