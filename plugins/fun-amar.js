@@ -11,7 +11,7 @@ let handler = async (m, { conn, usedPrefix }) => {
     let name = conn.getName(who);
     let name2 = conn.getName(m.sender);
     m.react('😍');
-    let str = `❤️▰▰▰▰❤️‍🔥▰▰▰▰▰❤️\n ${name2} Está enamorad@ de ${name} \n ❤️▰▰▰▰▰▰▰▰▰▰❤️`.trim();
+    let str = `❤️▰▰▰▰❤️‍🔥▰▰▰▰❤️\n ${name2} Está enamorad@ de ${name} \n ❤️▰▰▰▰▰▰▰▰▰❤️`.trim();
     if (m.isGroup){
     
     let pp = 'https://files.catbox.moe/dzvzig.mp4' 
