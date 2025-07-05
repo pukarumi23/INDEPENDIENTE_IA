@@ -5,13 +5,13 @@ let handler = async (m, { conn, usedPrefix }) => {
     let who;
     if (m.isGroup) who = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : false;
     else who = m.chat;
-    if (!who) throw '🔶 Etiqueta o menciona a alguien';
+    if (!who) throw '▰▰▰▰▰🔶▰▰▰▰▰▰\n Etiqueta o menciona a alguien \n ▰▰▰▰▰▰▰▰▰▰▰▰▰';
 
     let user = global.db.data.users[who];
     let name = conn.getName(who);
     let name2 = conn.getName(m.sender);
     m.react('😍');
-    let str = `${name2} Está enamorad@ de ${name}`.trim();
+    let str = `▰▰▰▰▰🔶▰▰▰▰▰▰\n ${name2} Está enamorad@ de ${name} \n ▰▰▰▰▰▰▰▰▰▰▰▰▰`.trim();
     if (m.isGroup){
     
     let pp = 'https://files.catbox.moe/dzvzig.mp4' 
