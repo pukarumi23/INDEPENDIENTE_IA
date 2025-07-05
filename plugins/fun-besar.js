@@ -14,7 +14,7 @@ let handler = async (m, { conn, usedPrefix }) => {
     let name2 = conn.getName(m.sender);
    // m.react('💋');
     await conn.sendMessage(m.chat, { react: { text: '💋', key: m.key } })
-    let str = `${name2} Le dio un Beso a ${name}`.trim();
+    let str = `╔═══ೋღ🌹ღೋ═══╗\n ${name2} 💋 𝓵𝓮 𝓭𝓲𝓸 𝓾𝓷 𝓫𝓮𝓼𝓸 𝓪 ${name} 💞\n ╚═══ೋღ🌹ღೋ═══╝`.trim();
     if (m.isGroup){
     
     // Directorio que contiene las imágenes
