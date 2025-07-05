@@ -4,48 +4,46 @@ import fetch from 'node-fetch'
 import { xpRange } from '../lib/levelling.js'
 
 let tags = {
-  'main': '■ Information ■',
-  'search': '■ Search ■',
-  'game': '■ Games ■',
-  'serbot': '■ Sub-Bots ■',
-  'rpg': '■ Rpg ■',
-  'rg': '■ Registro ■',
-  'sticker': '■ Sticker ■',
-  'img': '■ Image ■',
-  'group': '■ Groups ■',
-  'nable': '■ On/Off ■', 
-  'premium': '■ Premium ■',
-  'downloader': '■ Download ■',
-  'tools': '■ Tools ■',
-  'fun': '■ Fun ■',
-  'nsfw': '■ Nsfw ■', 
-  'cmd': '■ Database ■',
-  'owner': '■ Creador ■', 
-  'audio': '■ Audios ■', 
-  'advanced': '■ Avanzado ■',
+  'main': 'INFORMACIÓN',
+  'search': 'BÚSQUEDAS',
+  'game': 'JUEGOS',
+  'serbot': 'SUB-BOTS',
+  'rpg': 'RPG',
+  'rg': 'REGISTRO',
+  'sticker': 'STICKERS',
+  'img': 'IMÁGENES',
+  'group': 'GRUPOS',
+  'nable': 'ON/OFF', 
+  'premium': 'PREMIUM',
+  'downloader': 'DESCARGAS',
+  'tools': 'HERRAMIENTAS',
+  'fun': 'DIVERSIÓN',
+  'nsfw': 'NSFW', 
+  'cmd': 'BASE DE DATOS',
+  'owner': 'CREADOR', 
+  'audio': 'AUDIOS', 
+  'advanced': 'AVANZADO',
 }
 
 const defaultMenu = {
   before: `
-▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰
+■▰■▰■▰■▰■▰■▰■▰■▰■▰■▰■▰■
 
-⫸⫸ *¡SALUDOS OSCUROS, %name!* ⫷⫷
-⫸ *Soy %me, tu guía en las sombras* 🔮
+  🔶 *INFORMACIÓN DEL BOT* 🔶
 
-■ *Estado del Bot* ■
-⫸ 🔶 *Modo:* Público
-⫸ 🔥 *Versión:* Multi-Device
-⫸ ■ *Uptime:* %muptime
-⫸ 🔆 *Usuarios:* %totalreg
+⫸ *Usuario:* %name
+⫸ *Hora actual:* %time
+⫸ *Fecha:* %date
+⫸ *Tiempo activo:* %muptime
+⫸ *Usuarios registrados:* %totalreg
 
-▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰
+■▰■▰■▰■▰■▰■▰■▰■▰■▰■▰■▰■
 %readmore
-■□■□■□■□■ *MENÚ GÓTICO* □■□■□■□■□■
 `.trimStart(),
-  header: '▣▣▣▣▣▣▣【 %category 】▣▣▣▣▣▣▣\n',
-  body: '⫸ 🔶 %cmd %islimit %isPremium\n',
-  footer: '▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣\n',
-  after: `> 🔮 ${textbot}`,
+  header: '🔥 *MENÚ DE %category* 🔥\n▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰\n',
+  body: '⫸ %cmd %islimit %isPremium\n',
+  footer: '▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰\n',
+  after: `🔆 *${textbot}* 🔆\n■▰■▰■▰■▰■▰■▰■▰■▰■▰■▰■▰■`,
 }
 
 let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
@@ -113,8 +111,8 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
           ...help.filter(menu => menu.tags && menu.tags.includes(tag) && menu.help).map(menu => {
             return menu.help.map(help => {
               return body.replace(/%cmd/g, menu.prefix ? help : '%p' + help)
-                .replace(/%islimit/g, menu.limit ? '■🔶■' : '')
-                .replace(/%isPremium/g, menu.premium ? '■🔆■' : '')
+                .replace(/%islimit/g, menu.limit ? '◜🔶◞' : '')
+                .replace(/%isPremium/g, menu.premium ? '◜🔆◞' : '')
                 .trim()
             }).join('\n')
           }),
@@ -146,20 +144,20 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
     
-    let pp = 'https://i.imgur.com/g5QZJ4E.jpg' // Gothic-themed image
-    let img = `./storage/img/gothic_menu.jpg`
-    await m.react('🔮')
-    await conn.sendFile(m.chat, img, 'gothic.jpg', text.trim(), m, null, rcanal)
+    let pp = 'https://i.imgur.com/8fK4h6i.jpg'
+    let img = `./storage/img/menu.jpg`
+    await m.react('🔶')
+    await conn.sendFile(m.chat, img, 'menu.jpg', text.trim(), m, null, rcanal)
 
   } catch (e) {
-    conn.reply(m.chat, '■ *Error en las sombras* ■', m)
+    conn.reply(m.chat, '🔶 Error al cargar el menú, intenta nuevamente.', m)
     throw e
   }
 }
 
-handler.help = ['menu', 'menúgótico']
+handler.help = ['menu', 'help', 'menú']
 handler.tags = ['main']
-handler.command = ['menu', 'help', 'menú', 'gothicmenu'] 
+handler.command = ['menu', 'help', 'menú'] 
 handler.register = true 
 export default handler
 
@@ -176,29 +174,29 @@ function clockString(ms) {
 var ase = new Date();
 var hour = ase.getHours();
 switch(hour){
-  case 0: hour = 'una noche de sombras eternas 🌑'; break;
-  case 1: hour = 'la hora del vampiro 🦇'; break;
-  case 2: hour = 'la hora del lobo 🐺'; break;
-  case 3: hour = 'el alba de los condenados 🌘'; break;
-  case 4: hour = 'el amanecer oscuro 🌒'; break;
-  case 5: hour = 'la hora del espectro 👻'; break;
-  case 6: hour = 'el despertar de las brujas 🔮'; break;
-  case 7: hour = 'el alba sangrienta 🌅'; break;
-  case 8: hour = 'la mañana oscura ☁'; break;
-  case 9: hour = 'la hora del cuervo 🐦⬛'; break;
-  case 10: hour = 'el día de los muertos 💀'; break;
-  case 11: hour = 'la hora del aquelarre ⚡'; break;
-  case 12: hour = 'el mediodía sombrío ☠'; break;
-  case 13: hour = 'la hora del eclipse 🌑'; break;
-  case 14: hour = 'la tarde de los condenados 🕯'; break;
-  case 15: hour = 'la hora del fantasma 👻'; break;
-  case 16: hour = 'el ocaso de las brujas 🧙'; break;
-  case 17: hour = 'la hora del murciélago 🦇'; break;
-  case 18: hour = 'el anochecer eterno 🌘'; break;
-  case 19: hour = 'la noche de los muertos vivientes 🧟'; break;
-  case 20: hour = 'la hora del cuervo nocturno 🐦⬛'; break;
-  case 21: hour = 'la medianoche de las almas 🌑'; break;
-  case 22: hour = 'la hora del demonio 😈'; break;
-  case 23: hour = 'la hora del pacto oscuro ⚰'; break;
+  case 0: hour = 'noche 🌙'; break;
+  case 1: hour = 'madrugada 💤'; break;
+  case 2: hour = 'madrugada 🦉'; break;
+  case 3: hour = 'madrugada ✨'; break;
+  case 4: hour = 'amanecer 💫'; break;
+  case 5: hour = 'amanecer 🌅'; break;
+  case 6: hour = 'mañana 🌄'; break;
+  case 7: hour = 'mañana 🌅'; break;
+  case 8: hour = 'mañana 💫'; break;
+  case 9: hour = 'mañana ✨'; break;
+  case 10: hour = 'día 🌞'; break;
+  case 11: hour = 'mediodía ☀️'; break;
+  case 12: hour = 'mediodía ❄'; break;
+  case 13: hour = 'tarde 🌤'; break;
+  case 14: hour = 'tarde 🌇'; break;
+  case 15: hour = 'tarde 🥀'; break;
+  case 16: hour = 'tarde 🌹'; break;
+  case 17: hour = 'atardecer 🌆'; break;
+  case 18: hour = 'noche 🌙'; break;
+  case 19: hour = 'noche 🌃'; break;
+  case 20: hour = 'noche 🌌'; break;
+  case 21: hour = 'noche 🌃'; break;
+  case 22: hour = 'noche 🌙'; break;
+  case 23: hour = 'noche 🌃'; break;
 }
-var greeting = "Que tengas " + hour;
+var greeting = "⫸ Que tengas una " + hour;
