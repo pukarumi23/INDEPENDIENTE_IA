@@ -4,46 +4,49 @@ import fetch from 'node-fetch'
 import { xpRange } from '../lib/levelling.js'
 
 let tags = {
-  'main': 'INFORMACIÓN',
-  'search': 'BÚSQUEDAS',
-  'game': 'JUEGOS',
-  'serbot': 'SUB-BOTS',
-  'rpg': 'RPG',
-  'rg': 'REGISTRO',
-  'sticker': 'STICKERS',
-  'img': 'IMÁGENES',
-  'group': 'GRUPOS',
-  'nable': 'ON/OFF', 
-  'premium': 'PREMIUM',
-  'downloader': 'DESCARGAS',
-  'tools': 'HERRAMIENTAS',
-  'fun': 'DIVERSIÓN',
-  'nsfw': 'NSFW', 
-  'cmd': 'BASE DE DATOS',
-  'owner': 'CREADOR', 
-  'audio': 'AUDIOS', 
-  'advanced': 'AVANZADO',
+  'main': 'Information',
+  'search': 'Search',
+  'game': 'Games',
+  'serbot': 'Sub-Bots',
+  'rpg': 'Rpg',
+  'rg': 'Registro',
+  'sticker': 'Sticker',
+  'img': 'Image',
+  'group': 'Groups',
+  'nable': 'On / Off', 
+  'premium': 'Premium',
+  'downloader': 'Download',
+  'tools': 'Tools',
+  'fun': 'Fun',
+  'nsfw': 'Nsfw', 
+  'cmd': 'Database',
+  'owner': 'Creador', 
+  'audio': 'Audios', 
+  'advanced': 'Avanzado',
 }
 
 const defaultMenu = {
   before: `
-■▰■▰■▰■▰■▰■▰■▰■▰■▰■▰■▰■
+  *💮🔶🥢⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯🥢🔶💮*
 
-  🔶 *INFORMACIÓN DEL BOT* 🔶
+“ Hola *%name* soy *🔶Independiente🔶*, %greeting ”
 
-⫸ *Usuario:* %name
-⫸ *Hora actual:* %time
-⫸ *Fecha:* %date
-⫸ *Tiempo activo:* %muptime
-⫸ *Usuarios registrados:* %totalreg
-
-■▰■▰■▰■▰■▰■▰■▰■▰■▰■▰■▰■
+╭── ︿︿︿︿︿ *⭒   ⭒   ⭒   ⭒   ⭒   ⭒*
+┊ ‹‹ *Hello* :: *%name*
+┊01 *🔶INDEPENDIENTE CHANEL🔶*
+╰─── 🔶Independiente🔶
+┊B [ *Modo* :: *Público*
+┊V [ *Baileys* :: *Multi Device*
+┊H [ *Tiempo Activo* :: *%muptime*
+┊3 [ *Usuarios* :: *%totalreg*
+╰─────────
 %readmore
+*─ׄ─ׅ─ׄ─⭒ L I S T A  -  M E N Ú S ⭒─ׄ─ׅ─ׄ─*
 `.trimStart(),
-  header: '🔥 *MENÚ DE %category* 🔥\n▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰\n',
-  body: '⫸ %cmd %islimit %isPremium\n',
-  footer: '▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰\n',
-  after: `🔆 *${textbot}* 🔆\n■▰■▰■▰■▰■▰■▰■▰■▰■▰■▰■▰■`,
+  header: '╔═══◇🔥【 𝑴𝑬𝑵Ú メ %category 】🔥◇═══╗\n║╔───────────────────────',
+    body: '║🔆┊%cmd %islimit %isPremium\n',
+   footer: '║───────────────────────────\n╚═════════◆◇◆═════════╝\n',
+    after: `> 🔶 ${textbot}`,
 }
 
 let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
@@ -111,8 +114,8 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
           ...help.filter(menu => menu.tags && menu.tags.includes(tag) && menu.help).map(menu => {
             return menu.help.map(help => {
               return body.replace(/%cmd/g, menu.prefix ? help : '%p' + help)
-                .replace(/%islimit/g, menu.limit ? '◜🔶◞' : '')
-                .replace(/%isPremium/g, menu.premium ? '◜🔆◞' : '')
+                .replace(/%islimit/g, menu.limit ? '◜⭐◞' : '')
+                .replace(/%isPremium/g, menu.premium ? '◜🪪◞' : '')
                 .trim()
             }).join('\n')
           }),
@@ -144,22 +147,25 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
     
-    let pp = 'https://i.imgur.com/8fK4h6i.jpg'
-    let img = `./storage/img/menu.jpg`
+    let pp = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1N2ysfAnHDOn09rUQY9Ma_WAZbeGJKbTpQg&s'
+    let img = `./storage/img/menu.jpeg`
     await m.react('🔶')
-    await conn.sendFile(m.chat, img, 'menu.jpg', text.trim(), m, null, rcanal)
+   // await conn.sendMessage(m.chat, { video: { url: [pp, pp2, pp3, pp4, pp5, pp6, pp7, pp8, pp9, pp10, pp11, pp12, pp13, pp14, pp15].getRandom() }, gifPlayback: true, caption: text.trim(), mentions: [m.sender] }, { quoted: estilo })
+    await conn.sendFile(m.chat, img, 'thumbnail.jpg', text.trim(), m, null, rcanal)
+   //await conn.sendAi(m.chat, botname, textbot, text.trim(), img, img, canal, estilo)
 
   } catch (e) {
-    conn.reply(m.chat, '🔶 Error al cargar el menú, intenta nuevamente.', m)
+    conn.reply(m.chat, '❎ Lo sentimos, el menú tiene un error.', m)
     throw e
   }
 }
 
-handler.help = ['menu', 'help', 'menú']
+handler.help = ['menu']
 handler.tags = ['main']
 handler.command = ['menu', 'help', 'menú'] 
 handler.register = true 
 export default handler
+
 
 const more = String.fromCharCode(8206)
 const readMore = more.repeat(4001)
@@ -171,32 +177,32 @@ function clockString(ms) {
   return [h, m, s].map(v => v.toString().padStart(2, 0)).join(':')
 }
 
-var ase = new Date();
-var hour = ase.getHours();
+  var ase = new Date();
+  var hour = ase.getHours();
 switch(hour){
-  case 0: hour = 'noche 🌙'; break;
-  case 1: hour = 'madrugada 💤'; break;
-  case 2: hour = 'madrugada 🦉'; break;
-  case 3: hour = 'madrugada ✨'; break;
-  case 4: hour = 'amanecer 💫'; break;
-  case 5: hour = 'amanecer 🌅'; break;
-  case 6: hour = 'mañana 🌄'; break;
-  case 7: hour = 'mañana 🌅'; break;
-  case 8: hour = 'mañana 💫'; break;
-  case 9: hour = 'mañana ✨'; break;
-  case 10: hour = 'día 🌞'; break;
-  case 11: hour = 'mediodía ☀️'; break;
-  case 12: hour = 'mediodía ❄'; break;
-  case 13: hour = 'tarde 🌤'; break;
-  case 14: hour = 'tarde 🌇'; break;
-  case 15: hour = 'tarde 🥀'; break;
-  case 16: hour = 'tarde 🌹'; break;
-  case 17: hour = 'atardecer 🌆'; break;
-  case 18: hour = 'noche 🌙'; break;
-  case 19: hour = 'noche 🌃'; break;
-  case 20: hour = 'noche 🌌'; break;
-  case 21: hour = 'noche 🌃'; break;
-  case 22: hour = 'noche 🌙'; break;
-  case 23: hour = 'noche 🌃'; break;
+  case 0: hour = 'una linda noche 🌙'; break;
+  case 1: hour = 'una linda noche 💤'; break;
+  case 2: hour = 'una linda noche 🦉'; break;
+  case 3: hour = 'una linda mañana ✨'; break;
+  case 4: hour = 'una linda mañana 💫'; break;
+  case 5: hour = 'una linda mañana 🌅'; break;
+  case 6: hour = 'una linda mañana 🌄'; break;
+  case 7: hour = 'una linda mañana 🌅'; break;
+  case 8: hour = 'una linda mañana 💫'; break;
+  case 9: hour = 'una linda mañana ✨'; break;
+  case 10: hour = 'un lindo dia 🌞'; break;
+  case 11: hour = 'un lindo dia 🌨'; break;
+  case 12: hour = 'un lindo dia ❄'; break;
+  case 13: hour = 'un lindo dia 🌤'; break;
+  case 14: hour = 'una linda tarde 🌇'; break;
+  case 15: hour = 'una linda tarde 🥀'; break;
+  case 16: hour = 'una linda tarde 🌹'; break;
+  case 17: hour = 'una linda tarde 🌆'; break;
+  case 18: hour = 'una linda noche 🌙'; break;
+  case 19: hour = 'una linda noche 🌃'; break;
+  case 20: hour = 'una linda noche 🌌'; break;
+  case 21: hour = 'una linda noche 🌃'; break;
+  case 22: hour = 'una linda noche 🌙'; break;
+  case 23: hour = 'una linda noche 🌃'; break;
 }
-var greeting = "⫸ Que tengas una " + hour;
+  var greeting = "espero que tengas " + hour;
