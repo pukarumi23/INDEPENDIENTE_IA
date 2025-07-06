@@ -8,111 +8,100 @@ let handler = async (m, { conn, args }) => {
   let q = m.quoted ? m.quoted : m
   let mime = (q.msg || q).mimetype || q.mediaType || ''
   let buffer
-  
+
   try {
-    if (/image|video/g.test(mime) {
+    // Verificar si el archivo existe y se puede descargar
+    if (/image|video/g.test(mime)) {
       if (/video/.test(mime) && (q.msg || q).seconds > 10) {
-        return conn.reply(m.chat, '💙 El video no puede durar más de *10 segundos*', m)
+        return m.reply('⚠️ El video no puede durar más de *10 segundos*.')
       }
       buffer = await q.download()
+      if (!buffer || buffer.length === 0) throw new Error('El archivo está vacío.')
     } else if (args[0] && isUrl(args[0])) {
-      try {
-        const res = await fetch(args[0])
-        if (!res.ok) throw new Error(`HTTP ${res.status}`)
-        buffer = await res.buffer()
-      } catch (e) {
-        throw new Error('No se pudo descargar el archivo de la URL')
-      }
+      const res = await fetch(args[0])
+      if (!res.ok) throw new Error(`Error ${res.status}: No se pudo descargar.`)
+      buffer = await res.buffer()
     } else {
-      return conn.reply(m.chat, '💙 Responde a una *imagen o video* o proporciona una URL válida', m)
+      return m.reply('🔹 *Responde a una imagen/video o envía una URL.*')
     }
+
+    await m.react('⏳')
+    const sticker = await createSticker(buffer)
     
-    await m.react('🕓')
-    const sticker = await createSticker(buffer, {
-      packname: 'Sticker',
-      author: 'Bot',
-      categories: ['😄', '🎉'],
-      quality: 50
-    })
-    
-    await conn.sendFile(m.chat, sticker, 'sticker.webp', '', m, null, {
-      asSticker: true
-    })
+    // Enviar el sticker como archivo webp
+    await conn.sendFile(
+      m.chat,
+      sticker,
+      'sticker.webp',
+      '',
+      m,
+      { asSticker: true }
+    )
     await m.react('✅')
-  } catch (e) {
-    console.error('Error:', e)
-    conn.reply(m.chat, `❌ Error al crear el sticker: ${e.message}`, m)
-    await m.react('✖️')
+  } catch (error) {
+    console.error('❌ Error al crear sticker:', error)
+    m.reply(`🚫 *Error al generar el sticker:* ${error.message}`)
+    await m.react('❌')
   }
 }
 
 handler.help = ['sticker']
 handler.tags = ['sticker']
 handler.command = ['s', 'sticker', 'stiker']
-handler.register = true 
-
 export default handler
 
-async function createSticker(buffer, metadata = {}) {
+// Función mejorada para crear stickers
+async function createSticker(buffer) {
   const { ext } = await fromBuffer(buffer) || {}
-  
-  if (!ext || !/(png|jpe?g|gif|webp|mp4|mkv|m4p)/i.test(ext)) {
-    throw new Error('Formato de archivo no compatible')
+  if (!ext || !/(png|jpe?g|gif|webp|mp4)/i.test(ext)) {
+    throw new Error('⚠️ Formato no compatible. Usa imágenes o videos cortos.')
   }
-  
-  const tempDir = global.tempDir || './tmp'
-  if (!fs.existsSync(tempDir)) fs.mkdirSync(tempDir)
-  
-  const input = path.join(tempDir, `${Date.now()}.${ext}`)
-  const output = path.join(tempDir, `${Date.now()}.webp`)
-  
-  fs.writeFileSync(input, buffer)
-  
-  const isVideo = /(mp4|mkv|m4p|gif)/i.test(ext)
-  const scaleFilter = metadata.crop ? 
-    `scale='if(gt(iw,ih),-1,299):if(gt(iw,ih),299,-1)',crop=299:299` :
-    `scale='min(320,iw)':min'(320,ih)':force_original_aspect_ratio=decrease`
-  
-  const options = [
-    '-vcodec', 'libwebp',
-    '-vf', `${scaleFilter},fps=15,pad=320:320:-1:-1:color=white@0.0`,
-    '-quality', metadata.quality || '50',
-    '-preset', 'default',
-    ...(isVideo ? ['-loop', '0', '-t', '00:00:10', '-an'] : [])
-  ]
-  
+
+  // Crear carpeta temporal si no existe
+  const tmpDir = path.join(process.cwd(), 'tmp')
+  if (!fs.existsSync(tmpDir)) fs.mkdirSync(tmpDir, { recursive: true })
+
+  const inputPath = path.join(tmpDir, `input_${Date.now()}.${ext}`)
+  const outputPath = path.join(tmpDir, `sticker_${Date.now()}.webp`)
+
+  // Guardar el buffer en un archivo temporal
+  fs.writeFileSync(inputPath, buffer)
+
   return new Promise((resolve, reject) => {
-    fluent(input)
-      .addOutputOptions(options)
+    fluent(inputPath)
+      .inputOptions('-t 10') // Limitar a 10 segundos si es video
+      .outputOptions([
+        '-vcodec libwebp',
+        '-vf scale=512:512:force_original_aspect_ratio=decrease',
+        '-preset default',
+        '-loop 0', // Para GIFs/animaciones
+        '-qscale 40', // Calidad
+        '-an' // Quitar audio
+      ])
       .toFormat('webp')
-      .on('error', reject)
+      .on('error', (err) => {
+        console.error('❌ FFmpeg error:', err)
+        reject(new Error('Error al convertir el archivo.'))
+      })
       .on('end', () => {
         try {
-          const result = fs.readFileSync(output)
-          cleanupFiles(input, output)
+          const result = fs.readFileSync(outputPath)
+          // Eliminar archivos temporales
+          fs.unlinkSync(inputPath)
+          fs.unlinkSync(outputPath)
           resolve(result)
-        } catch (e) {
-          cleanupFiles(input, output)
-          reject(e)
+        } catch (err) {
+          reject(err)
         }
       })
-      .save(output)
+      .save(outputPath)
   })
 }
 
-function cleanupFiles(...files) {
-  files.forEach(file => {
-    try {
-      if (fs.existsSync(file)) fs.unlinkSync(file)
-    } catch (e) {
-      console.error('Error limpiando archivo:', file, e)
-    }
-  })
-}
-
-function isUrl(text) {
+// Función para validar URLs
+function isUrl(url) {
   try {
-    new URL(text)
+    new URL(url)
     return true
   } catch {
     return false
