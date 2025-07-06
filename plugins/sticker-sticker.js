@@ -18,7 +18,7 @@ let handler = async (m, { conn, args }) => {
       const res = await fetch(args[0])
       buffer = await res.buffer()
     } else {
-      return conn.reply(m.chat,'🔶 La imagen y video SENSEI!?*.', m, rcanal)
+      return conn.reply(m.chat,'🔶 esponde a una imagen y video', m, rcanal)
     }
     await m.react('🕓')
 
