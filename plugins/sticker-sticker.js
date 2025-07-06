@@ -10,100 +10,73 @@ let handler = async (m, { conn, args }) => {
   let buffer
 
   try {
-    // Verificar si el archivo existe y se puede descargar
-    if (/image|video/g.test(mime)) {
-      if (/video/.test(mime) && (q.msg || q).seconds > 10) {
-        return m.reply('⚠️ El video no puede durar más de *10 segundos*.')
-      }
+    if (/image|video/g.test(mime) && q.download) {
+      if (/video/.test(mime) && (q.msg || q).seconds > 11)
+        return conn.reply(m.chat, '🔶 El video no puede durar más de *10 segundos*', m, rcanal)
       buffer = await q.download()
-      if (!buffer || buffer.length === 0) throw new Error('El archivo está vacío.')
     } else if (args[0] && isUrl(args[0])) {
       const res = await fetch(args[0])
-      if (!res.ok) throw new Error(`Error ${res.status}: No se pudo descargar.`)
       buffer = await res.buffer()
     } else {
-      return m.reply('🔹 *Responde a una imagen/video o envía una URL.*')
+      return conn.reply(m.chat,'🔶 La imagen y video SENSEI!?*.', m, rcanal)
     }
+    await m.react('🕓')
 
-    await m.react('⏳')
-    const sticker = await createSticker(buffer)
+    const stickers = await toWebp(buffer) 
     
-    // Enviar el sticker como archivo webp
-    await conn.sendFile(
-      m.chat,
-      sticker,
-      'sticker.webp',
-      '',
-      m,
-      { asSticker: true }
-    )
+    await conn.sendFile(m.chat, stickers, 'sticker.webp', '', m)
     await m.react('✅')
-  } catch (error) {
-    console.error('❌ Error al crear sticker:', error)
-    m.reply(`🚫 *Error al generar el sticker:* ${error.message}`)
-    await m.react('❌')
+  } catch (e) {
+    await m.react('✖️')
   }
 }
 
 handler.help = ['sticker']
 handler.tags = ['sticker']
 handler.command = ['s', 'sticker', 'stiker']
+handler.register = true 
+
 export default handler
 
-// Función mejorada para crear stickers
-async function createSticker(buffer) {
-  const { ext } = await fromBuffer(buffer) || {}
-  if (!ext || !/(png|jpe?g|gif|webp|mp4)/i.test(ext)) {
-    throw new Error('⚠️ Formato no compatible. Usa imágenes o videos cortos.')
-  }
+async function toWebp(buffer, opts = {}) {
+  const { name = '', author = '', emojis = [] } = opts
+  const { ext } = await fromBuffer(buffer)
+  if (!/(png|jpg|jpeg|mp4|mkv|m4p|gif|webp)/i.test(ext)) throw 'Media no compatible.'
 
-  // Crear carpeta temporal si no existe
-  const tmpDir = path.join(process.cwd(), 'tmp')
-  if (!fs.existsSync(tmpDir)) fs.mkdirSync(tmpDir, { recursive: true })
+  const input = path.join(global.tempDir || './tmp', `${Date.now()}.${ext}`)
+  const output = path.join(global.tempDir || './tmp', `${Date.now()}.webp`)
+  fs.writeFileSync(input, buffer)
 
-  const inputPath = path.join(tmpDir, `input_${Date.now()}.${ext}`)
-  const outputPath = path.join(tmpDir, `sticker_${Date.now()}.webp`)
+  let aspectRatio = opts.isFull
+    ? `scale='min(320,iw)':min'(320,ih)':force_original_aspect_ratio=decrease`
+    : `scale='if(gt(iw,ih),-1,299):if(gt(iw,ih),299,-1)', crop=299:299:exact=1`
 
-  // Guardar el buffer en un archivo temporal
-  fs.writeFileSync(inputPath, buffer)
+  let options = [
+    '-vcodec', 'libwebp',
+    '-vf', `${aspectRatio}, fps=15, pad=320:320:-1:-1:color=white@0.0, split [a][b]; [a] palettegen=reserve_transparent=on:transparency_color=ffffff [p]; [b][p] paletteuse`,
+    ...(ext.match(/(mp4|mkv|m4p|gif)/) ? ['-loop', '0', '-ss', '00:00:00', '-t', '00:00:10', '-preset', 'default', '-an', '-vsync', '0'] : [])
+  ]
 
   return new Promise((resolve, reject) => {
-    fluent(inputPath)
-      .inputOptions('-t 10') // Limitar a 10 segundos si es video
-      .outputOptions([
-        '-vcodec libwebp',
-        '-vf scale=512:512:force_original_aspect_ratio=decrease',
-        '-preset default',
-        '-loop 0', // Para GIFs/animaciones
-        '-qscale 40', // Calidad
-        '-an' // Quitar audio
-      ])
+    fluent(input)
+      .addOutputOptions(options)
       .toFormat('webp')
-      .on('error', (err) => {
-        console.error('❌ FFmpeg error:', err)
-        reject(new Error('Error al convertir el archivo.'))
-      })
+      .save(output)
       .on('end', () => {
-        try {
-          const result = fs.readFileSync(outputPath)
-          // Eliminar archivos temporales
-          fs.unlinkSync(inputPath)
-          fs.unlinkSync(outputPath)
-          resolve(result)
-        } catch (err) {
-          reject(err)
-        }
+        const result = fs.readFileSync(output)
+        fs.unlinkSync(input)
+        fs.unlinkSync(output)
+        resolve(result)
       })
-      .save(outputPath)
+      .on('error', (err) => {
+        fs.unlinkSync(input)
+        reject(err)
+      })
   })
 }
 
-// Función para validar URLs
-function isUrl(url) {
-  try {
-    new URL(url)
-    return true
-  } catch {
-    return false
-  }
+function isUrl(text) {
+  return text.match(
+    new RegExp(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&/=]*)(jpe?g|gif|png)/, 'gi')
+  )
 }
