@@ -34,20 +34,20 @@ let handler = async (m, { conn }) => {
 
   // ✨ Mensaje con diseño romántico mejorado
   const mensaje = `
-╔═══*.·:·.☽✧    ✦    ✧☾.·:·.*═══╗
-   ♡ۣۜۜۜ͜͡ꦿ⃟⸙ۣۜۜۜ【ＰＯＥＭＡ　ＲＯＭÁＮＴＩＣＯ】ۣۣۜۜ⸙ꦿ⃟ۣۜۜ♡͜͡
+╔══*.·:·.☽✧ ✦ ✧☾.·:·.*══╗
+♡ۣۜۜۜ͜͡ꦿ⃟⸙ۣۜۜۜ【ＰＯＥＭＡ　ＲＯＭÁＮＴＩＣＯ】ۣۣۜۜ⸙ꦿ⃟ۣۜۜ♡͜͡
 
-  *•.¸♡　Ｄｅ:　Ｉｎｄｅｐｅｎｄｉｅｎｔｅ　♡¸.•*
-  *•.¸♡　Ｐａｒａ: ${user}　♡¸.•*
-  *•.¸♡　Ｔｅｍａ: ${tema}　♡¸.•*
+  *•.¸♡Ｄｅ:　𝕴𝖓𝖉𝖊𝖕𝖊𝖓𝖉𝖎𝖊𝖓𝖊　♡¸.•*
+  *•.¸♡Ｐａｒａ: ${user}　♡¸.•*
+  *•.¸♡Ｔｅｍａ: ${tema}　♡¸.•*
 
 ${decoracion}
 ${texto}
 ${decoracion}
 
-╚═══*.·:·.☽✧    ✦    ✧☾.·:·.*═══╝
-　　　　　　　  　   🌹 *Con amor, Independiente* 🌹
-　　　　　　   ✧･ﾟ:* *:･ﾟ✧
+╚══*.·:·.☽✧ ✦ ✧☾.·:·.*══╝
+🌹 *Con amor, Independiente* 🌹
+　　　  ✧･ﾟ:* *:･ﾟ✧
 `.trim();
 
   // 📤 Enviar mensaje con diseño mejorado
