@@ -9,19 +9,19 @@ let handler = async (m, { conn }) => {
   // 💖 Poemas románticos mejorados
   const poemas = {
     "Alma Gemela": {
-      texto: "Eres las páginas que faltaban\n　　　　en mi libro incompleto,\nla rima que buscaba\n　　　　en cada verso imperfecto.",
+      texto: "Eres las páginas que faltaban\n en mi libro incompleto,\n la rima que buscaba\n en cada verso imperfecto.",
       decoracion: "✧･ﾟ: *✧･ﾟ:* ✧･ﾟ: *✧･ﾟ:*"
     },
     "Destino": {
-      texto: "El universo escribió nuestro amor\n　　　　con tinta de estrellas brillantes,\nun poema eterno\n　　　　en el libro de los instantes.",
+      texto: "El universo escribió nuestro amor\n con tinta de estrellas brillantes,\n un poema eterno\n en el libro de los instantes.",
       decoracion: "✨ ⋆｡˚✩˚｡⋆ ✨"
     },
     "Encantamiento": {
-      texto: "Hechizado por tu esencia,\n　　　　como grimoire de magia antigua,\nque solo revela sus secretos\n　　　　al alma que lo cultiva.",
+      texto: "Hechizado por tu esencia,\n como grimoire de magia antigua,\n que solo revela sus secretos\n al alma que lo cultiva.",
       decoracion: "✧˚・｡･ﾟ✧*̥˚✧*̥･ﾟ✧"
     },
     "Eternidad": {
-      texto: "Prometo amarte\n　　　　más allá del tiempo,\ncomo las palabras perduran\n　　　　en los versos que escribo.",
+      texto: "Prometo amarte\n más allá del tiempo,\n como las palabras perduran\n en los versos que escribo.",
       decoracion: "⋆ ˚｡⋆୨୧˚ ˚୨୧⋆｡˚ ⋆"
     }
   };
