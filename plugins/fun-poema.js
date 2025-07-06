@@ -1,60 +1,73 @@
 let handler = async (m, { conn }) => {
-  // [Mantén todas las definiciones de portadas, poemas y categorías igual...]
+  // Configuración de imágenes por categoría
+  const portadas = {
+    "🌹 Amor y sentimientos": 'https://st2.depositphotos.com/4083027/11890/v/450/depositphotos_118905110-stock-illustration-books-silhouette-of-lights-on.jpg',
+    "🌌 Naturaleza": 'https://thumbs.dreamstime.com/b/fondo-de-pantalla-verde-brillante-del-libro-abierto-con-p%C3%A1ginas-verdes-brillantes-en-una-perfecto-para-la-composici%C3%B3n-y-efectos-338036499.jpg',
+    "💭 Filosóficos": 'https://img.freepik.com/vector-premium/iconos-libros-ilustracion-luces-color-violeta-silueta-fondo-oscuro-lineas-puntos-brillantes_153454-7197.jpg'
+  };
 
-  // Selección aleatoria
-  const categoria = Object.keys(categorias)[Math.floor(Math.random() * Object.keys(categorias).length)];
-  const tema = categorias[categoria][Math.floor(Math.random() * categorias[categoria].length)];
-  const { poemas: listaPoemas, decoracion, sticker } = poemas[tema];
-  const poema = listaPoemas[Math.floor(Math.random() * listaPoemas.length)];
-  const username = m.pushName || 'alma poética';
+  // Base de datos de poemas
+  const poemas = {
+    "Amor imposible": {
+      texto: "Te amo como se aman las estrellas:\ncon la distancia que las hace brillar,\ncon la certeza de que nuestro amor\nserá siempre un \"casi\" celestial.",
+      decoracion: "☄️*✲⋆☄️"
+    },
+    "Amor propio": {
+      texto: "Hoy me miro al espejo\ny beso cada cicatriz,\nporque soy la obra de arte\nque nadie pudo repetir.",
+      decoracion: "✧˚·˚♡˚·˚✧"
+    },
+    "El mar": {
+      texto: "El mar guarda en sus olas\nlos secretos de mil naufragios,\ny en su profundidad oscura\nrisas de sirenas y dolores.",
+      decoracion: "◓◒◑◐◓"
+    }
+  };
+
+  // Obtener información del usuario que solicita
+  const user = '@' + m.sender.split('@')[0];
   
-  // Seleccionar imagen aleatoria de la categoría
-  const portada = portadas[categoria][Math.floor(Math.random() * portadas[categoria].length)];
+  // Selección aleatoria
+  const categorias = Object.keys(portadas);
+  const categoria = categorias[Math.floor(Math.random() * categorias.length)];
+  const temas = {
+    "🌹 Amor y sentimientos": ["Amor imposible", "Amor propio"],
+    "🌌 Naturaleza": ["El mar"],
+    "💭 Filosóficos": ["El tiempo"]
+  }[categoria];
+  
+  const tema = temas[Math.floor(Math.random() * temas.length)];
+  const { texto, decoracion } = poemas[tema];
 
-  // Crear un único mensaje que combine todo
-  const mensajeCompleto = `
-╭───────────────╮
-  📚 *POESÍA TEMÁTICA* 📚
-  ✨ ${categoria.toUpperCase()} ✨
-╰───────────────╯
+  // Construcción del mensaje
+  const mensaje = `
+╭─────────────────╮
+│  📜 POEMA DEL DÍA 📜  │
+├─────────────────┤
+│ Categoría: ${categoria}
+│ Tema: ${tema}
+│ De: Independiente
+│ Para: ${user}
+╰─────────────────╯
 
-*Tema:* 『 ${tema} 』
-*Para:* ${username}
+${decoracion} 
+${texto}
+${decoracion}
 
-✧･ﾟ: *✧･ﾟ:* *${tema.toUpperCase()}* *:･ﾟ✧*:･ﾟ✧
-
-${poema}
-
-${decoracion} *Que las musas te inspiren* ${decoracion}
+${decoracion} Que la inspiración te acompañe ${decoracion}
 `;
 
-  // Enviar la imagen con el texto como caption (un solo mensaje)
-  await conn.sendFile(m.chat, portada, 'portada.jpg', mensajeCompleto, m);
+  // Envío del mensaje unificado con mención al usuario
+  await conn.sendMessage(m.chat, {
+    image: { url: portadas[categoria] },
+    caption: mensaje,
+    mentions: [m.sender] // Menciona al usuario que lo solicitó
+  }, { quoted: m });
 
-  // Efecto de escritura antes de enviar multimedia
+  // Efecto de "escribiendo"
   await conn.sendPresenceUpdate('composing', m.chat);
-  await new Promise(resolve => setTimeout(resolve, 2000));
-
-  // Enviar sticker y audio después
-  setTimeout(async () => {
-    try {
-      await conn.sendFile(m.chat, sticker, 'sticker.webp', '', m);
-      const audios = {
-        "🌹": './media/romance.mp3',
-        "🌌": './media/naturaleza.mp3',
-        "💭": './media/filosofia.mp3',
-        "🕊️": './media/social.mp3',
-        "🔮": './media/abstracto.mp3'
-      };
-      await conn.sendFile(m.chat, audios[categoria.split(' ')[0]], 'audio.mp3', '', m, true);
-    } catch (e) {
-      console.error('Error al enviar multimedia:', e);
-    }
-  }, 1000);
 }
 
-handler.help = ['poema', 'verso']
-handler.tags = ['literatura', 'arte']
-handler.command = /^(poema|verso|poesia|poesía)$/i
+handler.help = ['poema'];
+handler.tags = ['literatura'];
+handler.command = /^(poema|verso)$/i;
 
-export default handler
+export default handler;
