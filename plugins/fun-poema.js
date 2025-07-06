@@ -1,49 +1,67 @@
 let handler = async (m, { conn }) => {
-  // Configuración de imágenes por categoría
+  // Configuración segura de imágenes por categoría
   const portadas = {
-    "🌹 Amor y sentimientos": 'https://st2.depositphotos.com/4083027/11890/v/450/depositphotos_118905110-stock-illustration-books-silhouette-of-lights-on.jpg',
-    "🌌 Naturaleza": 'https://thumbs.dreamstime.com/b/fondo-de-pantalla-verde-brillante-del-libro-abierto-con-p%C3%A1ginas-verdes-brillantes-en-una-perfecto-para-la-composici%C3%B3n-y-efectos-338036499.jpg',
-    "💭 Filosóficos": 'https://img.freepik.com/vector-premium/iconos-libros-ilustracion-luces-color-violeta-silueta-fondo-oscuro-lineas-puntos-brillantes_153454-7197.jpg'
+    "🌹 Amor y sentimientos": 'https://ejemplo.com/amor.jpg',
+    "🌌 Naturaleza": 'https://ejemplo.com/naturaleza.jpg',
+    "💭 Filosóficos": 'https://ejemplo.com/filosofia.jpg'
   };
 
-  // Base de datos de poemas
+  // Base de datos segura de poemas con valores por defecto
   const poemas = {
     "Amor imposible": {
-      texto: "Te amo como se aman las estrellas:\ncon la distancia que las hace brillar,\ncon la certeza de que nuestro amor\nserá siempre un \"casi\" celestial.",
-      decoracion: "☄️*✲⋆☄️"
+      texto: "Poema de amor imposible...",
+      decoracion: "✨"
     },
     "Amor propio": {
-      texto: "Hoy me miro al espejo\ny beso cada cicatriz,\nporque soy la obra de arte\nque nadie pudo repetir.",
-      decoracion: "✧˚·˚♡˚·˚✧"
+      texto: "Poema de amor propio...",
+      decoracion: "❤️"
     },
     "El mar": {
-      texto: "El mar guarda en sus olas\nlos secretos de mil naufragios,\ny en su profundidad oscura\nrisas de sirenas y dolores.",
-      decoracion: "◓◒◑◐◓"
+      texto: "Poema del mar...",
+      decoracion: "🌊"
+    },
+    // Valor por defecto para prevenir errores
+    "_default": {
+      texto: "Poema especial para ti...",
+      decoracion: "📜"
     }
   };
 
-  // Obtener usuario
-  const user = '@' + m.sender.split('@')[0];
-  
-  // Selección aleatoria
-  const categorias = Object.keys(portadas);
-  const categoria = categorias[Math.floor(Math.random() * categorias.length)];
-  const temas = {
+  // Categorías con temas existentes
+  const categoriasSeguras = {
     "🌹 Amor y sentimientos": ["Amor imposible", "Amor propio"],
     "🌌 Naturaleza": ["El mar"],
-    "💭 Filosóficos": ["El tiempo"]
-  }[categoria];
-  
-  const tema = temas[Math.floor(Math.random() * temas.length)];
-  const { texto, decoracion } = poemas[tema];
+    "💭 Filosóficos": ["El tiempo"] // Nota: "El tiempo" no existe en poemas
+  };
 
-  // Construir mensaje
-  const mensaje = `
+  try {
+    // Selección segura de categoría
+    const categoriasDisponibles = Object.keys(categoriasSeguras).filter(cat => 
+      categoriasSeguras[cat].some(tema => poemas[tema])
+    );
+    
+    if (categoriasDisponibles.length === 0) {
+      throw new Error("No hay categorías disponibles");
+    }
+
+    const categoria = categoriasDisponibles[Math.floor(Math.random() * categoriasDisponibles.length)];
+    const temasDisponibles = categoriasSeguras[categoria].filter(tema => poemas[tema]);
+    
+    if (temasDisponibles.length === 0) {
+      throw new Error(`No hay temas disponibles en ${categoria}`);
+    }
+
+    const tema = temasDisponibles[Math.floor(Math.random() * temasDisponibles.length)];
+    const { texto, decoracion } = poemas[tema] || poemas._default;
+
+    // Construcción del mensaje seguro
+    const user = m.sender.split('@')[0] ? '@' + m.sender.split('@')[0] : '@usuario';
+    const mensajeSeguro = `
 ╭─────────────────╮
 │  📜 POEMA DEL DÍA 📜  │
 ├─────────────────┤
-│ Categoría: ${categoria}
-│ Tema: ${tema}
+│ Categoría: ${categoria || 'Especial'}
+│ Tema: ${tema || 'Único'}
 │ De: Independiente
 │ Para: ${user}
 ╰─────────────────╯
@@ -53,13 +71,32 @@ ${texto}
 ${decoracion}
 
 ${decoracion} Que la inspiración te acompañe ${decoracion}
-`;
+`.trim();
 
-  // Enviar SOLO imagen con texto (sin multimedia adicional)
-  await conn.sendFile(m.chat, portadas[categoria], 'poema.jpg', mensaje, m, false, {
-    mentions: [m.sender],
-    ephemeralExpiration: 24 * 60 * 1000 // Opcional: mensaje efímero
-  });
+    // Envío seguro solo de imagen con texto
+    if (portadas[categoria]) {
+      await conn.sendFile(
+        m.chat, 
+        portadas[categoria], 
+        'poema.jpg', 
+        mensajeSeguro, 
+        m, 
+        false, 
+        { mentions: [m.sender] }
+      );
+    } else {
+      await conn.sendMessage(
+        m.chat,
+        { text: mensajeSeguro, mentions: [m.sender] },
+        { quoted: m }
+      );
+    }
+
+  } catch (error) {
+    console.error('Error generando poema:', error);
+    const mensajeError = `❌ Ocurrió un error al generar tu poema. Por favor intenta nuevamente.`;
+    await conn.sendMessage(m.chat, { text: mensajeError }, { quoted: m });
+  }
 }
 
 handler.help = ['poema'];
