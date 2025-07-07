@@ -36,7 +36,7 @@ let handler = async (m, { conn }) => {
 
         exec('uptime -p', (error, stdout, stderr) => {
 
-          conn.reply(m.chat, `*💙 Velocidad* : ${latensi.toFixed(4)} _ms_\n*» Procesador* : ${procesador}\n*» CPU* : ${cpu} MHz\n*» RAM* : ${format(totalmem() - freemem())} / ${format(totalmem())}\n*» Tiempo de actividad* : ${muptime}`, m, rcanal)
+          conn.reply(m.chat, `*🔶 Velocidad* : ${latensi.toFixed(4)} _ms_\n*» Procesador* : ${procesador}\n*» CPU* : ${cpu} MHz\n*» RAM* : ${format(totalmem() - freemem())} / ${format(totalmem())}\n*» Tiempo de actividad* : ${muptime}`, m, rcanal)
         })
       })
     })
