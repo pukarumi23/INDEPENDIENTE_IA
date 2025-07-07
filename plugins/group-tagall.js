@@ -16,7 +16,7 @@ const handler = async (m, {isOwner, isAdmin, conn, text, participants, args, com
   }
   teks += `└───────◆◈
 
-⋉INDEPENDIETE| By (CHASKI)`;
+INDEPENDIETE| By (CHASKI)`;
   conn.sendMessage(m.chat, {text: teks, mentions: participants.map((a) => a.id)} );
 };
 handler.help = ['tagall <mesaje>', 'invocar <mesaje>'];
