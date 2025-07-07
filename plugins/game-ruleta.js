@@ -13,23 +13,23 @@ let handler = async (m, { conn, text, command, usedPrefix }) => {
   
   cooldowns[m.sender] = Date.now()
 
-  if (!text) return conn.reply(m.chat, `🔶 Debes ingresar una cantidad de *🌱 Cebollines* y apostar a un color, por ejemplo: *${usedPrefix + command} 20 black*`, m, rcanal)
+  if (!text) return conn.reply(m.chat, `🔶 Debes ingresar una cantidad de *🪙 Intis* y apostar a un color, por ejemplo: *${usedPrefix + command} 20 black*`, m, rcanal)
 
   let args = text.trim().split(" ")
-  if (args.length !== 2) return conn.reply(m.chat, `🔶 Formato incorrecto. Debes ingresar una cantidad de *🌱 Cebollines* y apostar a un color, por ejemplo: *${usedPrefix + command} 20 black*`, m, rcanal)
+  if (args.length !== 2) return conn.reply(m.chat, `🔶 Formato incorrecto. Debes ingresar una cantidad de *🪙 Intis* y apostar a un color, por ejemplo: *${usedPrefix + command} 20 black*`, m, rcanal)
 
   let limit = parseInt(args[0])
   let color = args[1].toLowerCase()
 
   if (isNaN(limit) || limit <= 0) return conn.reply(m.chat, `🔶 Por favor, ingresa una cantidad válida para la apuesta.`, m, rcanal)
 
-  if (limit > 50) return conn.reply(m.chat, "🔶 La cantidad máxima de apuesta es de 50 *🌱 Cebollines*.", m, rcanal)
+  if (limit > 50) return conn.reply(m.chat, "🔶 La cantidad máxima de apuesta es de 50 *🪙 Intis*.", m, rcanal)
 
   if (!(color === 'black' || color === 'red')) return conn.reply(m.chat, "🔶 Debes apostar a un color válido: *black* o *red*.", m, rcanal)
 
-  if (limit > users.limit) return conn.reply(m.chat, "🔶 No tienes suficientes *🌱 Cebollines* para realizar esa apuesta.", m, rcanal)
+  if (limit > users.limit) return conn.reply(m.chat, "🔶 No tienes suficientes *🪙 Intis* para realizar esa apuesta.", m, rcanal)
   
-  await conn.reply(m.chat, `🔶 Apostaste ${limit} *🌱 Cebollines* al color ${color}. Espera *⏱ 10 segundos* para conocer el resultado.`, m, rcanal)
+  await conn.reply(m.chat, `🔶 Apostaste ${limit} *🪙 Intis* al color ${color}. Espera *⏱ 10 segundos* para conocer el resultado.`, m, rcanal)
 
   setTimeout(() => {
     let result = Math.random()
@@ -43,10 +43,10 @@ let handler = async (m, { conn, text, command, usedPrefix }) => {
     
     if (win) {
       users.limit += limit
-      conn.reply(m.chat, `🔶 ¡Ganaste! Obtuviste ${limit} *🌱 Cebollines*. Total: ${users.limit} *🌱 Cebollines*.`, m, rcanal)
+      conn.reply(m.chat, `🔶 ¡Ganaste! Obtuviste ${limit} *🪙 Intis*. Total: ${users.limit} *🪙 Intis*.`, m, rcanal)
     } else {
       users.limit -= limit
-      conn.reply(m.chat, `🔶 Perdiste. Se restaron ${limit} *🌱 Cebollines*. Total: ${users.limit} *🌱 Cebollines*.`, m, rcanal)
+      conn.reply(m.chat, `🔶 Perdiste. Se restaron ${limit} *🪙 Intis*. Total: ${users.limit} *🪙 Intis*.`, m, rcanal)
     }
 
     
