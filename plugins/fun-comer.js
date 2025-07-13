@@ -7,9 +7,9 @@ let handler = async (m, { conn }) => {
 
     // Crear el texto con el formato deseado
     let str = `
-▰▰▰▰▰🔶▰▰▰▰▰▰
+♛◆✧═❉═♛═⟡═♛═❉═✧◆♛ 
 ${name2} Está comiendo🍗
-▰▰▰▰▰▰▰▰▰▰▰▰▰`.trim();
+✦✧☾═══◆◇❉✦✶❉◇◆═══☽✧✦`.trim();
 
     // Si es un grupo, seleccionamos un video aleatorio y lo enviamos
     if (m.isGroup){
