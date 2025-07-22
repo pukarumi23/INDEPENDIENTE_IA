@@ -8,12 +8,12 @@ const {
 } = (await import("@whiskeysockets/baileys")).default;
 
 
-const redes = "https://github.com/Brauliovh3"; 
-const titulowm = "★彡 𝙃𝙖𝙩𝙨𝙪𝙣𝙚 𝙈𝙞𝙠𝙪 𝘿𝙚𝙨𝙘𝙖𝙧𝙜𝙖𝙨 彡★";
+const redes = "https://github.com/pukarumi23"; 
+const titulowm = "𝕀ℕ𝔻𝔼ℙ𝔼ℕ𝔻𝔼ℕ𝕋𝔼";
 
 let handler = async (message, { conn, text, usedPrefix, command }) => {
   if (!text) {
-    return conn.reply(message.chat, "💙 *¿QUÉ BÚSQUEDA DESEA REALIZAR EN TIKTOK?*", message);
+    return conn.reply(message.chat, "🔶 *¿QUÉ BÚSQUEDA DESEA REALIZAR EN TIKTOK?*", message);
   }
   async function createVideoMessage(url) {
     const { videoMessage } = await generateWAMessageContent({
@@ -30,14 +30,14 @@ let handler = async (message, { conn, text, usedPrefix, command }) => {
     }
   }
   try {
-    conn.reply(message.chat, '💙 *ENVIANDO SUS RESULTADOS..*', message, {
+    conn.reply(message.chat, '🔶 *ENVIANDO SUS RESULTADOS..*', message, {
       contextInfo: { 
         externalAdReply: { 
           mediaUrl: null, 
           mediaType: 1, 
           showAdAttribution: true,
-          title: '★彡 𝙃𝙖𝙩𝙨𝙪𝙣𝙚 𝙈𝙞𝙠𝙪 𝘿𝙚𝙨𝙘𝙖𝙧𝙜𝙖𝙨 彡★',
-          body: '(っ◔◡◔)っ 𝕄𝕚𝕜𝕦-ℂ𝕙𝕒𝕟 💙🎵',
+          title: '🔶𝕀ℕ𝔻𝔼ℙ𝔼ℕ𝔻𝔼ℕ𝕋𝔼 descargas🔶',
+          body: '⟡ 𝕀Ⲛ𝓓𝓔𝓟𝓔Ⲛ𝓓𝓘ⲈⲚ𝓣𝓔 ⟡',
           previewType: 0, 
           thumbnail: Buffer.alloc(0),
           sourceUrl: redes 
@@ -73,7 +73,7 @@ let handler = async (message, { conn, text, usedPrefix, command }) => {
               text: "✨️ RESULTADO DE: " + text
             }),
             footer: proto.Message.InteractiveMessage.Footer.create({
-              text: "(っ◔◡◔)っ 𝕄𝕚𝕜𝕦-ℂ𝕙𝕒𝕟 💙🎵"
+              text: "◈𝕀ℕ𝔻𝔼ℙ𝔼ℕ𝔻𝔼ℕ𝕋𝔼◆"
             }),
             header: proto.Message.InteractiveMessage.Header.create({
               hasMediaAttachment: false
