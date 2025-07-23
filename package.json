@@ -23,16 +23,16 @@
 		"MD",
 		"baileys-md"
 	],
-	"homepage": "https://github.com/Brauliovh3",
+	"homepage": "https://github.com/pukarumi23",
 	"author": {
 		"name": "(CHASKI)"
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/Brauliovh3/Hatsune_Miku_2.0.git"
+		"url": "https://github.com/pukarumi23/INDEPENDIENTE_IA.git"
 	},
 	"bugs": {
-		"url": "https://github.com/Brauliovh3/Hatsune_Miku_2.0/issues"
+		"url": "https://github.com/pukarumi23/INDEPENDIENTE_IA/issues"
 	},
 	"license": "GPL-3.0-or-later",
 	"dependencies": {
