@@ -38,17 +38,19 @@ let handler = async (m, { conn, usedPrefix, command }) => {
       console.error('Error al obtener la nacionalidad:', err);
     }
 
-    let txt = `💙 *P E R F I L  -  U S E R 💙*\n\n`;
-    txt += `┌  💙  *Nombre* : ${name}\n`;
-    txt += `│  💙  *Edad* : ${registered ? `${age} años` : '×'}\n`;
-    txt += `│  💙  *Número* : ${phoneFormatted}\n`;
-    txt += `│  💙  *Nacionalidad* : ${userNationality}\n`;
-    txt += `│  💙  *Link* : wa.me/${who.split`@`[0]}\n`;
-    txt += `│  💙  *Cebollines* : ${limit}\n`;
-    txt += `│  💙  *Nivel* : ${level}\n`;
-    txt += `│  💙  *XP* : Total ${exp} (${exp - min}/${xp})\n`;
-    txt += `│  💙  *Premium* : ${prem ? '✅ Sí' : '❌ No'}\n`;
-    txt += `└  💙  *Registrado* : ${registered ? '✅ Sí' : '❌ No'}`;
+    let txt = `🔶𝙋𝙀𝙍𝙁𝙄𝙇 𝙐𝙎𝙀𝙍🔶*\n\n`;
+    txt += `╔═══.·:·.◇🔶◆.·:·.═══╗  \n`;
+    txt += `▮ ⫸  *Nombre* : ${name}\n`;
+    txt += `▮ ⫸  *Edad* : ${registered ? `${age} años` : '×'}\n`;
+    txt += `▮ ⫸  *Número* : ${phoneFormatted}\n`;
+    txt += `▮ ⫸  *Nacionalidad* : ${userNationality}\n`;
+    txt += `▮ ⫸  *Link* : wa.me/${who.split`@`[0]}\n`;
+    txt += `▮ ⫸  *Intis* : ${limit}\n`;
+    txt += `▮ ⫸  *Nivel* : ${level}\n`;
+    txt += `▮ ⫸  *XP* : Total ${exp} (${exp - min}/${xp})\n`;
+    txt += `▮ ⫸  *Premium* : ${prem ? '✅ Sí' : '❌ No'}\n`;
+    txt += `▮ ⫸  *Registrado* : ${registered ? '✅ Sí' : '❌ No'}`;
+    txt += `╚═════════════════════════════╝`;
 
     let img = await (await fetch(pp)).buffer();
     await conn.sendFile(m.chat, img, 'thumbnail.jpg', txt, m, false, { mentions: [who] });
