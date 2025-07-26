@@ -43,17 +43,17 @@ let handler = async (m, { conn }) => {
         
         collection.forEach(waifu => rarityCount[waifu.rarity.toLowerCase()]++);
         
-        let message = `╭━━━━『💙*VOCALOID COLLECTION*💙』━━━━╮\n\n`;
+        let message = `╭━━『🔶*VOCALOID COLLECTION*🔶』━━╮\n\n`;
         
        
-        message += `❯💙*RESUMEN DE COLECCIÓN*💙❮\n`;
-        message += `\n┌──『 Rareza 』───『 Cantidad 』──┐\n`;
-        message += `│ 🔴 Legendaria  │ ${rarityCount['Legendaria'].toString().padEnd(3)} │ ${createBar(rarityCount['Legendaria'], 10)} │\n`;
-        message += `│ 🟡 Ultra Rara  │ ${rarityCount['ultra rara'].toString().padEnd(3)} │ ${createBar(rarityCount['ultra rara'], 10)} │\n`;
-        message += `│ 🟣 Épica       │ ${rarityCount['épica'].toString().padEnd(3)} │ ${createBar(rarityCount['épica'], 10)} │\n`;
-        message += `│ 🔵 Rara        │ ${rarityCount['rara'].toString().padEnd(3)} │ ${createBar(rarityCount['rara'], 10)} │\n`;
-        message += `│ ⚪ Común       │ ${rarityCount['común'].toString().padEnd(3)} │ ${createBar(rarityCount['común'], 10)} │\n`;
-        message += `└────────────────────────────┘\n\n`;
+        message += `❮🔶*RESUMEN DE COLECCIÓN*🔶❯\n`;
+        message += `\n┌─『 Rareza 』──『 Cantidad 』─┐\n`;
+        message += `│ 🔴 Legendaria  │ ${rarityCount['Legendaria'].toString().padEnd(3)} │ ${createBar(rarityCount['Legendaria'], 10)} \n`;
+        message += `│ 🟡 Ultra Rara  │ ${rarityCount['ultra rara'].toString().padEnd(3)} │ ${createBar(rarityCount['ultra rara'], 10)} \n`;
+        message += `│ 🟣 Épica       │ ${rarityCount['épica'].toString().padEnd(3)} │ ${createBar(rarityCount['épica'], 10)} \n`;
+        message += `│ 🔵 Rara        │ ${rarityCount['rara'].toString().padEnd(3)} │ ${createBar(rarityCount['rara'], 10)} \n`;
+        message += `│ ⚪ Común       │ ${rarityCount['común'].toString().padEnd(3)} │ ${createBar(rarityCount['común'], 10)} \n`;
+        message += `└────────────────────────┘\n\n`;
         
         
         message += `📊 Total: ${collection.length} personajes\n\n`;
@@ -89,7 +89,7 @@ let handler = async (m, { conn }) => {
             }
         }
         
-        message += `\n╰━━━━『 FIN DE COLECCIÓN 』━━━━╯`;
+        message += `\n╰━━『 FIN DE COLECCIÓN 』━━╯`;
         
         return conn.reply(m.chat, message, m);
     } catch (e) {
