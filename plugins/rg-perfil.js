@@ -49,8 +49,8 @@ let handler = async (m, { conn, usedPrefix, command }) => {
     txt += `▮ ⫸  *Nivel* : ${level}\n`;
     txt += `▮ ⫸  *XP* : Total ${exp} (${exp - min}/${xp})\n`;
     txt += `▮ ⫸  *Premium* : ${prem ? '✅ Sí' : '❌ No'}\n`;
-    txt += `▮ ⫸  *Registrado* : ${registered ? '✅ Sí' : '❌ No'}`;
-    txt += `╚═════════════════════════════╝`;
+    txt += `▮ ⫸  *Registrado* : ${registered ? '✅ Sí' : '❌ No'}\n`;
+    txt += `╚═══════════════════════╝`;
 
     let img = await (await fetch(pp)).buffer();
     await conn.sendFile(m.chat, img, 'thumbnail.jpg', txt, m, false, { mentions: [who] });
