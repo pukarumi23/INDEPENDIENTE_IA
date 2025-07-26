@@ -50,7 +50,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
     txt += `▮ ⫸  *XP* : Total ${exp} (${exp - min}/${xp})\n`;
     txt += `▮ ⫸  *Premium* : ${prem ? '✅ Sí' : '❌ No'}\n`;
     txt += `▮ ⫸  *Registrado* : ${registered ? '✅ Sí' : '❌ No'}\n`;
-    txt += `╚═══════════════════════╝`;
+    txt += `╚═════════════════╝`;
 
     let img = await (await fetch(pp)).buffer();
     await conn.sendFile(m.chat, img, 'thumbnail.jpg', txt, m, false, { mentions: [who] });
