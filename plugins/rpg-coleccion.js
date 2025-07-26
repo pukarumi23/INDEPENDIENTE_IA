@@ -43,7 +43,7 @@ let handler = async (m, { conn }) => {
         
         collection.forEach(waifu => rarityCount[waifu.rarity.toLowerCase()]++);
         
-        let message = `╭━━『🔶*VOCALOID COLLECTION*🔶』━━╮\n\n`;
+        let message = `╭━『🔶VOCALOID COLLECTION🔶』━╮\n\n`;
         
        
         message += `❮🔶*RESUMEN DE COLECCIÓN*🔶❯\n`;
