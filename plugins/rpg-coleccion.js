@@ -94,7 +94,7 @@ let handler = async (m, { conn }) => {
         return conn.reply(m.chat, message, m);
     } catch (e) {
         console.error(e);
-        return m.reply('💙 Error al mostrar la colección. Intenta de nuevo.');
+        return m.reply('🔶 Error al mostrar la colección. Intenta de nuevo.');
     }
 }
 
