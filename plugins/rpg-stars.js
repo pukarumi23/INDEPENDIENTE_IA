@@ -7,7 +7,7 @@ let handler = async (m, {conn, usedPrefix}) => {
     let name = conn.getName(who)
     if (!(who in global.db.data.users)) return conn.reply(m.chat, '🔶 El usuario no se encuentra en mi base de Datos.', m, rcanal).then(_ => m.react('✖️'))
     let img = await (await fetch(`https://img.freepik.com/vector-premium/cielo-anime-puesta-sol-fondo-nubes-puesta-sol_8071-63722.jpg`)).buffer()
-    let txt = `╔═════⊰ 🧅  𝙄𝙉𝙏𝙄𝙎 - 𝙐𝙎𝙀𝙍 ⊱═════╗ \n\n`
+    let txt = `╔═══⊰ 🧅  𝙄𝙉𝙏𝙄𝙎 - 𝙐𝙎𝙀𝙍 ⊱═══╗ \n\n`
         txt += `💠 𝙉𝙊𝙈𝘽𝙍𝙀 : ${user.name}\n`
         txt += `💰 𝙄𝙉𝙏𝙄𝙎    : ${toNum(user.limit)} ( *${user.limit}* )\n`
         txt += `🏦 𝘽𝘼𝙉𝘾𝙊  : ${toNum(user.bank)} ( *${user.bank}* )\n`
@@ -18,7 +18,7 @@ await conn.sendFile(m.chat, img, 'thumbnail.jpg', txt, m, null, rcanal)
 }
 handler.help = ['Cebollines']
 handler.tags = ['rpg']
-handler.command = ['coins', 'wallet', 'cartera', 'cebollines', 'cebollin', 'bal', 'balance']
+handler.command = ['coins', 'wallet', 'cartera', 'intis', 'inti', 'bal', 'balance']
 handler.register = true 
 export default handler
 
