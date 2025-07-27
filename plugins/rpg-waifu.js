@@ -261,7 +261,7 @@ let handler = async (m, { conn }) => {
     }
 
     
-    await conn.sendMessage(m.chat, { text: "💮 Invocando personaje..." });
+    await conn.sendMessage(m.chat, { text: "🔥 Invocando personaje..." });
 
    
     const roll = Math.random() * 100;
@@ -324,7 +324,7 @@ let handler = async (m, { conn }) => {
     message += `👤 Invocador: @${userId.split('@')[0]}\n`;
     message += `${rarityColors[selectedWaifu.rarity]} Rareza: ${selectedWaifu.rarity.toUpperCase()} (${rarityProbs[selectedWaifu.rarity]})\n`;
     message += `💫 ¡Felicidades! Obtuviste a:\n`;
-    message += `💙 ${selectedWaifu.name}\n`;
+    message += `🔶 ${selectedWaifu.name}\n`;
     message += `\n💫 Usa .save o .c para guardar tu waifu!`;
 
   
