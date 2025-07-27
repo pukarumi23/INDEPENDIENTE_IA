@@ -87,7 +87,7 @@ let handler = async (m, { conn, args }) => {
         
         
         if (args.length === 0) {
-            return m.reply(`💙 Uso: .ver <número>\n\nEjemplo: .ver 1\n\nUsa .col para ver tu colección y el orden de cada personaje.`);
+            return m.reply(`🔶 Uso: .ver <número>\n\nEjemplo: .ver 1\n\nUsa .col para ver tu colección y el orden de cada personaje.`);
         }
         
         const characterIndex = parseInt(args[0]) - 1;
@@ -124,7 +124,7 @@ let handler = async (m, { conn, args }) => {
         );
     } catch (e) {
         console.error(e);
-        return m.reply('💙 Error al mostrar el personaje. Intenta de nuevo.');
+        return m.reply('🔶 Error al mostrar el personaje. Intenta de nuevo.');
     }
 }
 
