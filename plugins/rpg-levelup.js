@@ -11,7 +11,7 @@ let handler = async (m, { conn }) => {
             txt += `🧿 𝙐𝙎𝙀𝙍: ${name}\n`
             txt += `📊 𝙀𝙓𝙋: ${user.level}\n`
             txt += `🔓 𝙓𝙋: ${user.exp - min}/${xp}\n\n`
-            txt += `🔶 𝙏𝙀 𝙁𝘼𝙇𝙏𝘼𝙉 *${max - user.exp}* de *💫 𝙓𝙋* 𝙥𝙖𝙧𝙖 𝙨𝙪𝙗𝙞𝙧 𝙙𝙚 𝙣𝙞𝙫𝙚𝙡`
+            txt += `🔶 𝙩𝙚 𝙛𝙖𝙡𝙩𝙖𝙣 *${max - user.exp}* de *💫 𝙓𝙋* 𝙥𝙖𝙧𝙖 𝙨𝙪𝙗𝙞𝙧 𝙙𝙚 𝙣𝙞𝙫𝙚𝙡`
 await conn.sendFile(m.chat, img, 'thumbnail.jpg', txt, m, null, rcanal)
     }
     let before = user.level * 1
