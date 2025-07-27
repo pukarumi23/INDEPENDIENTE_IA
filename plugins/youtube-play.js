@@ -309,7 +309,7 @@ let handler = async (m, { conn, text }) => {
 
     const { title, thumbnail, timestamp, views, ago, videoId } = res[0];
 
-    let txt = `╔═══════⟦ 🔶 YOUTUBE - PLAY 🔶 ⟧═══════╗\n\n`
+    let txt = `╔════⟦ 🔶 YOUTUBE - PLAY 🔶 ⟧════╗\n\n`
             + `🎵 𝙏í𝙩𝙪𝙡𝙤    : ${title}\n`
             + `⏱️ 𝘿𝙪𝙧𝙖𝙘𝙞𝙤́𝙣 : ${timestamp}\n`
             + `👁️ 𝙑𝙞𝙨𝙞𝙩𝙖𝙨   : ${views}\n`
@@ -320,7 +320,7 @@ let handler = async (m, { conn, text }) => {
             + `2️⃣ Video 🎥 (MP4)\n`
             + `3️⃣ Audio 📄 como documento\n`
             + `4️⃣ Video 📄 como documento\n`
-            + `╚════════════════════════════╝\n`;
+            + `╚════════════════════╝\n`;
 
     let SM = await conn.sendFile(m.chat, thumbnail, 'thumbnail.jpg', txt, m);
     
