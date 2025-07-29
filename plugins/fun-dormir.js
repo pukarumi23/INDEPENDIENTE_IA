@@ -6,7 +6,7 @@ let handler = async (m, { conn }) => {
     await conn.sendMessage(m.chat, { react: { text: '😴', key: m.key } }) // Enviar reacción
 
     // Mensaje indicando que la persona está durmiendo
-    let str = `${name2} está durmiendo.`.trim();
+    let str = `╔══════⋆｡°✩🌙✩°｡⋆══════╗\n ${name2} 𝙚𝙨𝙩𝙖́ 𝙙𝙪𝙧𝙢𝙞𝙚𝙣𝙙𝙤... 😴.\n╚══════⋆｡°✩💤✩°｡⋆══════╝`.trim();
 
     // Si es un grupo, seleccionamos un video aleatorio y lo enviamos
     if (m.isGroup){
