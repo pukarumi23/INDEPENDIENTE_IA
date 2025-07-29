@@ -1,70 +1,45 @@
-import fs from 'fs';
-import path from 'path';
-import uploadImage from '../lib/uploadImage.js';
-import { sticker } from '../lib/sticker.js';
-
-let handler = async (m, { conn, usedPrefix, text, participants }) => {
+let handler = async (m, { conn, usedPrefix, text }) => {
     let who;
     
-    // Mejorar la lógica para obtener el objetivo
+    // Determinar quién es el objetivo
     if (m.isGroup) {
-        // Si menciona a alguien
-        if (m.mentionedJid && m.mentionedJid[0]) {
-            who = m.mentionedJid[0];
-        }
-        // Si responde a un mensaje
-        else if (m.quoted && m.quoted.sender) {
-            who = m.quoted.sender;
-        }
-        // Si escribe un texto (buscar usuario por texto)
-        else if (text) {
-            let user = participants.find(u => 
-                conn.getName(u.id).toLowerCase().includes(text.toLowerCase())
-            );
-            who = user ? user.id : null;
-        }
-        // Si no especifica, error
-        else {
-            who = null;
-        }
+        who = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : null;
     } else {
-        // En chat privado, el objetivo es el chat
         who = m.chat;
     }
     
-    // Verificar que se haya especificado un objetivo
+    // Si no encuentra objetivo, mostrar error
     if (!who) {
-        return conn.reply(m.chat, `🔶 *Uso incorrecto*\n\n• Menciona: \`${usedPrefix}matar @usuario\`\n• Responde: \`${usedPrefix}matar\` (respondiendo a un mensaje)\n• Por nombre: \`${usedPrefix}matar nombre\``, m);
+        return m.reply(`🔶 *Uso incorrecto*\n\nEjemplos:\n• ${usedPrefix}matar @usuario\n• Responde a un mensaje y usa ${usedPrefix}matar`);
     }
     
-    // Verificar que no se mate a sí mismo
+    // No permitir auto-eliminación
     if (who === m.sender) {
-        return conn.reply(m.chat, '🤔 *No puedes matarte a ti mismo...*\n\n_¿Todo bien? Si necesitas ayuda, habla con alguien de confianza._', m);
+        return m.reply('🤔 No puedes eliminarte a ti mismo...');
     }
     
-    let user = global.db.data.users[who];
     let name = conn.getName(who);
     let name2 = conn.getName(m.sender);
     
     // Reacción al mensaje
     await conn.sendMessage(m.chat, { react: { text: '💀', key: m.key } });
     
-    // Mensaje mejorado con mejor diseño
-    let str = `╭━━━━━━━━━━━━━━━━━━━━━━╮
+    // Mensaje mejorado
+    let mensaje = `╭━━━━━━━━━━━━━━━━━━━━━━╮
 ┃ 💀 *ELIMINACIÓN VIRTUAL* 💀 ┃
 ╰━━━━━━━━━━━━━━━━━━━━━━╯
 
-🗡️ **${name2}** acaba de eliminar a **${name}**
+🗡️ **${name2}** eliminó a **${name}**
 
 💀 *Estado:* ~~Vivo~~ ➤ **Muerto**
-⚰️ *Causa:* Comando de diversión
-🎭 *Efecto:* Solo virtual, tranquilos
+⚰️ *Efecto:* Solo virtual
+🎭 *Diversión pura*
 
 ━━━━━━━━━━━━━━━━━━━━━━
-_¡Es solo por diversión! Nadie sale lastimado realmente._`.trim();
+_¡Nadie sale realmente lastimado!_`;
     
     if (m.isGroup) {
-        // URLs de videos (verificar que funcionen)
+        // Videos de eliminación
         let videos = [
             'https://qu.ax/GQLO.mp4',
             'https://qu.ax/bzFY.mp4', 
@@ -72,30 +47,33 @@ _¡Es solo por diversión! Nadie sale lastimado realmente._`.trim();
             'https://qu.ax/GssX.mp4'
         ];
         
-        const video = videos[Math.floor(Math.random() * videos.length)];
+        const videoElegido = videos[Math.floor(Math.random() * videos.length)];
         
         try {
-            // Enviar el video con menciones
+            // Intentar enviar video
             await conn.sendMessage(m.chat, { 
-                video: { url: video }, 
+                video: { url: videoElegido }, 
                 gifPlayback: true, 
-                caption: str, 
+                caption: mensaje, 
                 mentions: [who, m.sender] 
             }, { quoted: m });
-        } catch (error) {
-            // Si falla el video, enviar solo el texto
-            console.log('Error enviando video:', error);
-            await conn.reply(m.chat, str, m, { mentions: [who, m.sender] });
+        } catch (e) {
+            // Si falla, enviar solo texto
+            await conn.sendMessage(m.chat, { 
+                text: mensaje, 
+                mentions: [who, m.sender] 
+            }, { quoted: m });
         }
     } else {
-        // En chat privado, solo texto
-        await conn.reply(m.chat, str, m);
+        // Chat privado - solo texto
+        await m.reply(mensaje);
     }
 }
 
-handler.help = ['matar @tag/responder/nombre'];
+// Configuración del handler
+handler.help = ['matar @usuario'];
 handler.tags = ['fun'];
-handler.command = /^(matar|kill|asesinar)$/i;
+handler.command = ['matar', 'kill', 'asesinar'];
 handler.register = true;
 handler.group = true;
 
