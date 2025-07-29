@@ -40,4 +40,5 @@ global.iq = [
 'Tu IQ es de: 5000',
 'Tu IQ es de: 7500',
 'Tu IQ es de: 10000',
+'Tu IQ es de: 1000000000000000000',
 ]
