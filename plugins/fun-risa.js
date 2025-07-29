@@ -25,7 +25,7 @@ let handler = async (m, { conn }) => {
 
 handler.help = ['reirse'];
 handler.tags = ['fun'];
-handler.command = ['laugh', 'reírse', 'reirse','graciosa','gracioso','risa'];
+handler.command = ['laugh', 'reírse', 'reirse','graciosa','gracioso','jaja','risa'];
 handler.group = true;
 
 export default handler;
