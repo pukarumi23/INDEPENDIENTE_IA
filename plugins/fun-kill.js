@@ -31,7 +31,7 @@ let handler = async (m, { conn, usedPrefix, text }) => {
 
 🗡️ **${name2}** eliminó a **${name}**
 
-💀 *Estado:* ~~Vivo~~ ➤ **Muerto**
+💀 *Estado:* ~~Vivo~~ ➤ **Muerto**`;
     
     if (m.isGroup) {
         // Videos de eliminación
