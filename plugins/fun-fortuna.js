@@ -52,7 +52,7 @@ let handler = async (m, { conn }) => {
 │ 🥠 *GALLETA DE LA FORTUNA* 🥠
 ╰━━━━━━━━━━━━━━━━━━━━━━━╯
 
-Hola ${username}! Miku ha preparado tu galleta de la fortuna...
+Hola ${username}!Independiente ha preparado tu galleta de la fortuna...
 
 *Tu mensaje:* 
 ${randomEmoji} ${fortune}
