@@ -6,7 +6,7 @@ let handler = async (m, { conn }) => {
     m.react('😠'); // Reacción al mensaje
 
     // Mensaje indicando que la persona está enojada
-    let str = `${name2} está enojado/a😡💢.`.trim();
+    let str = `╔═══════💢🔥💢═══════╗\n ${name2} 𝙚𝙨𝙩𝙖́ 𝙚𝙣𝙤𝙟𝙖𝙙𝙤/𝙖😡💢\n╚═════💥🌋💥═════╝.`.trim();
 
     // Si es un grupo, seleccionamos un video aleatorio y lo enviamos
     if (m.isGroup) {
