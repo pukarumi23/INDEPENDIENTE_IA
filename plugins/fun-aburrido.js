@@ -6,7 +6,7 @@ let handler = async (m, { conn }) => {
     m.react('🔥'); // Reacción al mensaje
 
     // Mensaje indicando que la persona está aburrida
-    let str = `▰▰▰▰▰🔶▰▰▰▰▰▰ \n ${name2} está aburrido/a🥱. \n ▰▰▰▰▰▰▰▰▰▰▰▰▰`.trim();
+    let str = `༺══✦༻༺══✦༻❀༺✦══༻༺══✦༻ \n ${name2} está aburrido/a🥱. \n༺══✦༻༺══✦༻❀༺✦══༻༺══✦༻`.trim();
 
     // Si es un grupo, seleccionamos un video aleatorio y lo enviamos
     if (m.isGroup){
