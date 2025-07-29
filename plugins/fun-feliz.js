@@ -6,8 +6,7 @@ let handler = async (m, { conn }) => {
     m.react('😁'); // Reacción al mensaje
 
     // Mensaje indicando que la persona está feliz
-    let str = `${name2} Se encuentra Feliz.`.trim();
-
+    let str = `╔══════⊰✨🌟✨⊱══════╗${name2} 𝙎𝙚 𝙚𝙣𝙘𝙪𝙚𝙣𝙩𝙧𝙖 𝙁𝙚𝙡𝙞𝙯 😊.\n╚══════⊰🌈💫🌈⊱══════╝`.trim();
     // Si es un grupo, seleccionamos un video aleatorio y lo enviamos
     if (m.isGroup){
         let pp = 'https://files.catbox.moe/92bs9b.mp4';
