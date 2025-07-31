@@ -8,7 +8,8 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     }
 
     // Validar que sea un enlace de TikTok
-    if (!args[0].match(/tiktok|vm.tiktok/gi)) {
+    const tiktokRegex = /(tiktok\.com|vm\.tiktok\.com|vt\.tiktok\.com)/i;
+    if (!tiktokRegex.test(args[0])) {
         return conn.reply(m.chat, `🔶 El enlace proporcionado no es de TikTok. Verifica el enlace e inténtalo nuevamente.`, m);
     }
 
@@ -25,36 +26,59 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
         }
 
         // Crear texto descriptivo
-        let txt = `🔶 *TikTok Images Downloader* 🔶\n\n`;
-        txt += `👤 *Usuario:* ${result.author?.username || 'Desconocido'}\n`;
-        txt += `👀 *Vistas:* ${result.play_count || 'N/A'}\n`;
-        txt += `💬 *Comentarios:* ${result.comment_count || 'N/A'}\n`;
-        txt += `🔄 *Compartidos:* ${result.share_count || 'N/A'}\n`;
-        txt += `❤️ *Likes:* ${result.digg_count || 'N/A'}\n\n`;
-        txt += `ℹ️ Descargando ${result.images.length} imagen(es)...`;
+        let caption = `*🔶 TikTok Images Downloader 🔶*\n\n`;
+        caption += `👤 *Usuario:* ${result.author?.username || 'Desconocido'}\n`;
+        caption += `📌 *Descripción:* ${result.description || 'Sin descripción'}\n`;
+        caption += `👀 *Vistas:* ${result.play_count || 'N/A'}\n`;
+        caption += `💬 *Comentarios:* ${result.comment_count || 'N/A'}\n`;
+        caption += `🔄 *Compartidos:* ${result.share_count || 'N/A'}\n`;
+        caption += `❤️ *Likes:* ${result.digg_count || 'N/A'}\n\n`;
+        caption += `📸 *Imágenes encontradas:* ${result.images.length}`;
 
-        // Enviar cada imagen
-        for (let i = 0; i < result.images.length; i++) {
+        // Primero enviar el texto con la primera imagen
+        if (result.images[0]) {
+            await conn.sendFile(
+                m.chat, 
+                result.images[0], 
+                'tiktok-img.jpg', 
+                caption, 
+                m,
+                null,
+                { 
+                    mentions: [m.sender],
+                    quoted: m,
+                    // Configuración para asegurar que se envíe como imagen
+                    mimetype: 'image/jpeg',
+                    contextInfo: {
+                        forwardingScore: 999,
+                        isForwarded: true
+                    }
+                }
+            );
+            await m.react('✅');
+        }
+
+        // Enviar el resto de imágenes (si hay más)
+        for (let i = 1; i < result.images.length; i++) {
             try {
-                // Verificar si la URL de la imagen es válida
-                const imageUrl = result.images[i];
-                if (!imageUrl.match(/^https?:\/\//i)) continue;
-
-                // Descargar la imagen primero para verificar
-                const res = await fetch(imageUrl);
-                if (!res.ok) continue;
-
-                // Enviar la imagen al chat
                 await conn.sendFile(
                     m.chat,
-                    imageUrl,
-                    `tiktok-img-${i + 1}.jpg`,
-                    i === 0 ? txt : '', // Solo enviar el texto con la primera imagen
-                    m
+                    result.images[i],
+                    `tiktok-img-${i+1}.jpg`,
+                    '', // Sin texto adicional
+                    m,
+                    null,
+                    {
+                        mimetype: 'image/jpeg',
+                        contextInfo: {
+                            forwardingScore: 999,
+                            isForwarded: true
+                        }
+                    }
                 );
                 await m.react('✅');
             } catch (error) {
-                console.error(`Error al enviar imagen ${i + 1}:`, error);
+                console.error(`Error al enviar imagen ${i+1}:`, error);
                 await m.react('⚠️');
             }
         }
